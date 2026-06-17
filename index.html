@@ -1,119 +1,250 @@
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>برگین | محصولات خانگی</title>
+
+<title>برگین</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <style>
-body{
+
+*{
 margin:0;
-font-family:Tahoma, sans-serif;
-background:#f5f1e8;
-color:#234d32;
+padding:0;
+box-sizing:border-box;
 }
-.hero{
-padding:40px 20px;
-text-align:center;
-background:linear-gradient(to bottom,#f5f1e8,#ffffff);
-}
-.logo{
-font-size:52px;
-font-weight:bold;
-}
-.slogan{
-color:#8b6f2d;
-font-size:22px;
-margin-top:10px;
-}
-.desc{
-max-width:800px;
-margin:20px auto;
-line-height:2;
-}
-.buttons{
-max-width:500px;
-margin:30px auto;
-}
-.btn{
-display:block;
-text-decoration:none;
-padding:16px;
-margin:12px 0;
-border-radius:14px;
-background:#1f5c36;
-color:white;
-font-size:18px;
-text-align:center;
-}
-.phone{background:#8b6f2d;}
-.section{
-max-width:1000px;
-margin:auto;
-padding:30px 20px;
-}
-.cards{
+
+body{
+background:#000;
+color:#fff;
+font-family:tahoma,sans-serif;
+height:100vh;
 display:flex;
-flex-wrap:wrap;
-gap:15px;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.left{
+width:40%;
+padding-left:40px;
+border-left:1px solid #333;
+}
+
+.brand{
+font-size:90px;
+font-weight:bold;
+line-height:1;
+color:#fff;
+}
+
+.right{
+width:55%;
+}
+
+.title{
+font-size:48px;
+color:#d9b54a;
+margin-bottom:20px;
+}
+
+.subtitle{
+font-size:24px;
+color:#ddd;
+margin-bottom:50px;
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+margin-bottom:30px;
+}
+
+.icon{
+width:65px;
+height:65px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+margin-left:20px;
+transition:.3s;
+}
+
+.phone{
+background:;
+}
+
+.ble{
+background:;
+}
+
+.eitaa{
+background:;
+}
+
+.contact-item:hover .ble{
+background:;
+transform:scale(1.2);
+}
+
+.contact-item:hover .eitaa{
+background:;
+transform:scale(1.2);
+}
+
+.contact-item:hover .phone{
+background:;
+transform:scale(1.2);
+}
+
+.contact-info h3{
+	font-size: 33px;
+	margin-bottom: 5px;
+	font-family: "B Mitra";
+}
+
+.contact-info a{
+color:#fff;
+font-size:24px;
+text-decoration:none;
+transition:.3s;
+}
+
+.contact-info a:hover{
+color:#d9b54a;
+}
+
+.separator{
+height:1px;
+background:#222;
+margin:25px 0;
+}
+
+@media(max-width:768px){
+
+.container{
+flex-direction:column;
+text-align:center;
+}
+
+.left{
+width:100%;
+border:none;
+padding:0;
+margin-bottom:50px;
+}
+
+.right{
+width:100%;
+}
+
+.brand{
+font-size:70px;
+}
+
+.title{
+	font-size: 70px;
+	font-family: IranNastaliq;
+}
+
+.contact-item{
 justify-content:center;
 }
-.card{
-background:white;
-border-radius:14px;
-padding:20px;
-width:220px;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
-text-align:center;
+
 }
-.footer{
-text-align:center;
-padding:25px;
-color:#666;
-}
+
 </style>
+
 </head>
+
 <body>
 
-<div class="hero">
-<div class="logo">برگین</div>
-<div class="slogan">طعم و عطر طبیعت</div>
+<div class="container">
 
-<div class="desc">
-برگین تولیدکننده محصولات خانگی شامل سبزی خشک، دمنوش‌های گیاهی و ترکیبات طبیعی است.
-ما با انتخاب دقیق مواد اولیه و بسته‌بندی بهداشتی تلاش می‌کنیم بهترین کیفیت را به خانه شما بیاوریم.
-</div>
-
-<div class="buttons">
-<a class="btn" href="https://ble.ir/bargiin">🌿 کانال بله</a>
-<a class="btn" href="https://eitaa.com/Bargiin">🌿 کانال ایتا</a>
-<a class="btn phone" href="tel:+989012767169">📞 تماس مستقیم</a>
+<div class="left">
+<div class="brand" style="font-family: IranNastaliq; font-size: 150px;">
+برگین
 </div>
 </div>
 
-<div class="section">
-<h2 style="text-align:center;">محصولات برگین</h2>
+<div class="right">
 
-<div class="cards">
-<div class="card">🌱 سبزی خشک خانگی</div>
-<div class="card">🍵 دمنوش‌های گیاهی</div>
-<div class="card">🌹 ترکیبات اختصاصی دمنوش</div>
-<div class="card">🌿 محصولات طبیعی و دست‌چین</div>
-</div>
-</div>
+<h1 class="title" style="font-family: 'B Mitra'; font-size: 50px;">
+این آغاز ماجرای ماست ....
+</h1>
 
-<div class="section">
-<h2 style="text-align:center;">چرا برگین؟</h2>
-<div class="cards">
-<div class="card">100٪ گیاهی</div>
-<div class="card">بدون افزودنی</div>
-<div class="card">کاملاً بهداشتی</div>
-<div class="card">انتخاب‌شده با دقت</div>
-</div>
+<p class="subtitle" style="font-family: 'B Mitra'; font-size: 40px;">
+خوشحال می‌شیم به ما بپیوندید
+</p>
+
+<div class="contact-item">
+
+<div class="icon phone"><img src="Untitled.png" width="63" height="59"  alt=""/>
+
 </div>
 
-<div class="footer">
-برگین | محصولات خانگی
+<div class="contact-info">
+<h3>تماس مستقیم</h3>
+
+<a href="tel:09012767169">
+09012767169
+</a>
+
+</div>
+
+</div>
+
+<div class="separator"></div>
+
+<div class="contact-item">
+
+<div class="icon ble"><img src="941_ca20211dfe5a29ee7916f6a87df17e69_thumb.png" width="65" height="67"  alt=""/></div>
+
+<div class="contact-info">
+<h3>بله</h3>
+
+<a href="https://ble.ir/bargiin" target="_blank">
+ble.ir/bargiin
+</a>
+
+</div>
+
+</div>
+
+<div class="separator"></div>
+
+<div class="contact-item">
+
+<div class="icon eitaa"><img src="eitaa-icon/eitaa-icon-colorful.png" width="61" height="64"  alt=""/>
+
+</div>
+
+<div class="contact-info">
+<h3>ایتا</h3>
+
+<a href="https://eitaa.com/Bargiin" target="_blank">
+eitaa.com/Bargiin
+</a>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </body>
