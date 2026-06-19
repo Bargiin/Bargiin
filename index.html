@@ -1,16 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>برگین</title>
+<title>برگین | این آغاز ماجرای ماست</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
 <style>
+
+:root{
+--gold:#d8b24c;
+--green:#588157;
+--green-light:#7fb069;
+--cream:#f4f1e8;
+--dark:#050505;
+}
 
 *{
 margin:0;
@@ -19,68 +28,90 @@ box-sizing:border-box;
 }
 
 body{
-background:#000;
-color:#fff;
-font-family:tahoma,sans-serif;
-height:100vh;
+font-family:'Vazirmatn',sans-serif;
+background:
+#050505;
+
+color:white;
+min-height:100vh;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
+padding:30px;
+overflow-x:hidden;
 }
 
 .container{
-width:90%;
-max-width:1100px;
+width:100%;
+max-width:1200px;
 display:flex;
 align-items:center;
 justify-content:space-between;
+gap:70px;
 }
 
 .left{
 width:40%;
-padding-left:40px;
-border-left:1px solid #333;
+padding-left:50px;
+border-left:1px solid rgba(255,255,255,.15);
 }
 
 .brand{
-font-size:90px;
-font-weight:bold;
+font-size:120px;
+font-weight:900;
 line-height:1;
-color:#fff;
+letter-spacing:-3px;
+color:#ffffff;
+text-shadow:
+0 0 20px rgba(255,255,255,.08);
+}
+
+.leaf{
+display:block;
+font-size:48px;
+margin-bottom:10px;
+color:var(--green-light);
 }
 
 .right{
-width:55%;
+width:60%;
 }
 
 .title{
-font-size:48px;
-color:#d9b54a;
-margin-bottom:20px;
+font-size:56px;
+font-weight:800;
+color:var(--gold);
+margin-bottom:15px;
+animation:fadeIn 2s ease;
 }
 
 .subtitle{
-font-size:24px;
-color:#ddd;
-margin-bottom:50px;
+font-size:28px;
+font-weight:400;
+color:#eaeaea;
+margin-bottom:45px;
 }
 
-.contact-item{
+.contact-box{
 display:flex;
 align-items:center;
-margin-bottom:30px;
+gap:20px;
+padding:22px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .icon{
-width:65px;
-height:65px;
+width:72px;
+height:72px;
 border-radius:50%;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 font-size:30px;
-margin-left:20px;
-transition:.3s;
+font-weight:bold;
+transition:.35s;
+cursor:pointer;
+flex-shrink:0;
 }
 
 .phone{
@@ -95,56 +126,73 @@ background:;
 background:;
 }
 
-.contact-item:hover .ble{
+.contact-box:hover .phone{
 background:;
-transform:scale(1.2);
+transform:scale(1.1);
 }
 
-.contact-item:hover .eitaa{
+.contact-box:hover .ble{
 background:;
-transform:scale(1.2);
+transform:scale(1.1);
+box-shadow:0 0 10px rgba(31,183,93,.5);
 }
 
-.contact-item:hover .phone{
+.contact-box:hover .eitaa{
 background:;
-transform:scale(1.2);
+transform:scale(1.1);
+box-shadow:0 0 20px rgba(242,140,0,.5);
 }
 
-.contact-info h3{
-	font-size: 33px;
-	margin-bottom: 5px;
-	font-family: "B Mitra";
+.info h3{
+font-size:28px;
+font-weight:700;
+margin-bottom:5px;
 }
 
-.contact-info a{
-color:#fff;
-font-size:24px;
+.info a{
+color:white;
 text-decoration:none;
+font-size:24px;
 transition:.3s;
 }
 
-.contact-info a:hover{
-color:#d9b54a;
+.info a:hover{
+color:var(--gold);
 }
 
-.separator{
-height:1px;
-background:#222;
-margin:25px 0;
+.footer-note{
+margin-top:30px;
+font-size:15px;
+color:#999;
 }
 
-@media(max-width:768px){
+.footer-note span{
+color:var(--green-light);
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(-15px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:900px){
 
 .container{
 flex-direction:column;
 text-align:center;
+gap:40px;
 }
 
 .left{
 width:100%;
 border:none;
 padding:0;
-margin-bottom:50px;
 }
 
 .right{
@@ -152,22 +200,33 @@ width:100%;
 }
 
 .brand{
-font-size:70px;
+font-size:90px;
 }
 
 .title{
-	font-size: 70px;
-	font-family: IranNastaliq;
+font-size:40px;
 }
 
-.contact-item{
+.subtitle{
+font-size:22px;
+}
+
+.contact-box{
 justify-content:center;
+text-align:right;
+}
+
+.info h3{
+font-size:22px;
+}
+
+.info a{
+font-size:18px;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
@@ -175,87 +234,104 @@ justify-content:center;
 <div class="container">
 
 <div class="left">
-<div class="brand" style="font-family: IranNastaliq; font-size: 150px; src:url("fonts/")">
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;برگین</div>
+
+<div class="brand"><img src="LOGO1.png" width="350" height="200"  alt=""/>
+
+</div>
+
 </div>
 
 <div class="right">
 
-  <h1 class="title" style="font-family: 'B Mitra'; font-size: 50px;"><br>
-  </h1>
-  <h1 class="title" style="font-family: 'B Mitra'; font-size: 50px;"> این آغاز ماجرای ماست .... </h1>
-<p class="subtitle" style="font-family: 'B Mitra'; font-size: 40px;">
-  خوشحال می‌شیم به ما بپیوندید
+<h1 class="title">
+این آغاز ماجرای ماست ...
+</h1>
+
+<p class="subtitle">
+خوشحال می‌شیم به ما بپیوندید
 </p>
 
-<div class="contact-item">
+<div class="contact-box">
 
 <div class="icon phone"><img src="Untitled.png" width="63" height="59"  alt=""/>
 
 </div>
 
-<div class="contact-info">
-<h3>تماس مستقیم</h3>
+<div class="info">
 
-<a href="tel:09219092651">
+<h3>
+تماس مستقیم
+</h3>
 
+<a href="tel:09012767169">
+09012767169
 </a>
 
 </div>
 
 </div>
 
-<div class="separator"></div>
+<div class="contact-box">
 
-<div class="contact-item">
+<div class="icon ble"><img src="941_ca20211dfe5a29ee7916f6a87df17e69_thumb.png" width="65" height="67"  alt=""/>
 
-<div class="icon ble"><img src="941_ca20211dfe5a29ee7916f6a87df17e69_thumb.png" width="65" height="67"  alt=""/></div>
+</div>
 
-<div class="contact-info">
-<h3>بله</h3>
+<div class="info">
+
+<h3>
+بله
+</h3>
 
 <a href="https://ble.ir/bargiin" target="_blank">
-
+ble.ir/bargiin
 </a>
 
 </div>
 
 </div>
 
-<div class="separator"></div>
-
-<div class="contact-item">
+<div class="contact-box">
 
 <div class="icon eitaa"><img src="Eitaa-Logo.png" width="125" height="125"  alt=""/>
-
-</div>
-
-<div class="contact-info">
-<h3>ایتا</h3>
-
-<a href="https://eitaa.com/Bargiin" target="_blank">
-
-</a>
-
-</div>
 	
 </div>
 
-<div class="separator"></div>
+<div class="info">
 
-<div class="contact-item">
+<h3>
+ایتا
+</h3>
 
-<div class="icon ble"><img src="instagram-logo.png" width="63" height="63"  alt=""/></div>
-
-<div class="contact-info">
-<h3>اینستاگرام</h3>
-
-<a href="https://www.instagram.com/bargiin.ir?igsh=MWVrM2s2cGFuYXF5Yg==" target="_blank">
-
+<a href="https://eitaa.com/Bargiin" target="_blank">
+eitaa.com/Bargiin
 </a>
 
 </div>
 
+</div>
+<div class="contact-box">
+
+<div class="icon eitaa"><img src="instagram-logo.png" width="60" height="60"  alt=""/>
+	
+</div>
+
+<div class="info">
+
+<h3>
+اینستاگرام
+</h3>
+
+<a href="https://www.instagram.com/bargiin.ir?utm_source=qr&igsh=bHVwdGduMWUxeWtt" target="_blank">
+instagram.com/bargiin.ir
+</a>
+
+</div>
+
+</div>
+<div class="footer-note">
+
+<span>برگین</span> | محصولات خانگی • دمنوش‌های گیاهی • سبزی خشک • ترشی خانگی
 
 </div>
 
