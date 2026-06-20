@@ -170,7 +170,28 @@ color:#999;
 .footer-note span{
 color:var(--green-light);
 }
+@media(max-width:900px){
 
+.contact-box{
+    display:grid;
+    grid-template-columns:72px 1fr;
+    align-items:center;
+    gap:15px;
+    width:100%;
+    max-width:450px;
+    margin:0 auto;
+}
+
+.icon{
+    width:72px;
+    height:72px;
+}
+
+.info{
+    text-align:right;
+}
+
+}
 @keyframes fadeIn{
 from{
 opacity:0;
