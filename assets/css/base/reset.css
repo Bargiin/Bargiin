@@ -1,0 +1,407 @@
+/*==================================================
+File : assets/css/base/reset.css
+Project : Bargiin
+Version : 1.0
+==================================================*/
+
+/*==================================
+CSS Reset
+==================================*/
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/*==================================
+HTML
+==================================*/
+
+html{
+    font-size:16px;
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+}
+
+html.no-js{
+    scroll-behavior:auto;
+}
+
+/*==================================
+BODY
+==================================*/
+
+body{
+
+    font-family:var(--font-family);
+    font-size:var(--font-size-base);
+    font-weight:var(--font-normal);
+    line-height:var(--line-height);
+
+    color:var(--text-primary);
+    background:var(--site-bg);
+	position:relative;
+z-index:0;
+    direction:rtl;
+
+    overflow-x:hidden;
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+}
+
+body::before{
+
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:url("../../images/patterns/pattern.webp");
+    background-repeat:repeat;
+    background-size:1000px;
+
+    opacity:.18;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+/*==================================
+Selection
+==================================*/
+
+::selection{
+
+    background:var(--color-primary);
+    color:#fff;
+
+}
+
+/*==================================
+Images
+==================================*/
+
+img{
+
+    display:block;
+    max-width:100%;
+    height:auto;
+    border:none;
+
+}
+
+/*==================================
+Picture
+==================================*/
+
+picture{
+
+    display:block;
+
+}
+
+/*==================================
+SVG
+==================================*/
+
+svg{
+
+    display:block;
+    max-width:100%;
+
+}
+
+/*==================================
+Links
+==================================*/
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+    transition:var(--transition);
+
+}
+
+/*==================================
+Lists
+==================================*/
+
+ul,
+ol{
+
+    list-style:none;
+
+}
+
+/*==================================
+Buttons
+==================================*/
+
+button{
+
+    font:inherit;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    color:inherit;
+
+}
+
+/*==================================
+Inputs
+==================================*/
+
+input,
+textarea,
+select{
+
+    font:inherit;
+
+    color:inherit;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+/*==================================
+Placeholder
+==================================*/
+
+::placeholder{
+
+    color:var(--text-light);
+    opacity:1;
+
+}
+
+/*==================================
+Tables
+==================================*/
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    border-spacing:0;
+
+}
+
+/*==================================
+Iframe
+==================================*/
+
+iframe{
+
+    border:0;
+
+}
+
+/*==================================
+HR
+==================================*/
+
+hr{
+
+    border:none;
+
+    border-top:1px solid var(--border-color);
+
+}
+
+/*==================================
+Headings
+==================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-weight:var(--font-bold);
+
+    line-height:1.35;
+
+    color:var(--text-primary);
+
+}
+
+/*==================================
+Paragraph
+==================================*/
+
+p{
+
+    color:var(--text-secondary);
+
+}
+
+/*==================================
+Strong
+==================================*/
+
+strong{
+
+    font-weight:var(--font-bold);
+
+}
+
+/*==================================
+Container
+==================================*/
+
+.container{
+
+    width:100%;
+    max-width:var(--container-width);
+
+    margin:0 auto;
+
+    padding-right:var(--container-padding);
+    padding-left:var(--container-padding);
+
+}
+
+/*==================================
+Section
+==================================*/
+
+section{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+/*==================================
+Main
+==================================*/
+
+main{
+
+    display:block;
+
+    width:100%;
+
+}
+
+/*==================================
+Utility
+==================================*/
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.visible{
+
+    display:block !important;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.w-100{
+
+    width:100%;
+
+}
+
+/*==================================
+Focus
+==================================*/
+
+:focus-visible{
+
+    outline:2px solid var(--color-primary);
+
+    outline-offset:3px;
+
+}
+
+/*==================================
+Scrollbar
+==================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg-soft);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--color-primary);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--color-primary-dark);
+
+}
+
+/*==================================
+Page Wrapper
+==================================*/
+
+#page{
+
+    width:100%;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/*==================================================
+END OF FILE
+reset.css COMPLETED
+==================================================*/

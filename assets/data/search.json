@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "آرامیس",
+    "type": "دمنوش گیاهی",
+    "category": "دمنوش",
+    "url": "products/aramis.html",
+    "image": "assets/images/products/aramis.png",
+    "keywords": [
+      "آرامیس",
+      "آرامش",
+      "به لیمو",
+      "به‌لیمو",
+      "گل گاوزبان",
+      "اسطوخودوس",
+      "بهارنارنج"
+    ]
+  },
+
+  {
+    "id": 2,
+    "title": "ماه بانو",
+    "type": "دمنوش گیاهی",
+    "category": "دمنوش",
+    "url": "products/mah-banoo.html",
+    "image": "assets/images/products/mah-banoo.png",
+    "keywords": [
+      "ماه بانو",
+      "بانوان",
+      "بابونه",
+      "رازیانه",
+      "گل محمدی"
+    ]
+  },
+
+  {
+    "id": 3,
+    "title": "سبزگام",
+    "type": "دمنوش گیاهی",
+    "category": "دمنوش",
+    "url": "products/sabzgam.html",
+    "image": "assets/images/products/sabzgam.png",
+    "keywords": [
+      "سبزگام",
+      "چای سبز",
+      "لاغری",
+      "زنجبیل",
+      "دارچین"
+    ]
+  }
+]

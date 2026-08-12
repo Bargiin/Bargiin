@@ -1,0 +1,125 @@
+@import url("base/variables.css");
+@import url("base/reset.css");
+
+@import url("components/header.css");
+@import url("components/header-hover.css");
+@import url("components/header-sticky.css");
+@import url("components/mobile-menu.css");
+@import url("components/search-box.css");
+@import url("components/header-animations.css");
+
+@import url("components/hero.css");
+@import url("components/hero-layout.css");
+@import url("components/hero-buttons.css");
+@import url("components/hero-image.css");
+@import url("components/hero-effects.css");
+@import url("components/hero-responsive.css");
+@import url("components/hero-animations.css");
+
+@import url("components/about-preview.css");
+@import url("components/product-categories.css");
+@import url("components/featured-products.css");
+@import url("components/why-bargiin.css");
+@import url("components/featured-herb.css");
+@import url("components/latest-articles.css");
+@import url("components/contact-cta.css");
+@import url("components/footer.css");
+
+@import url("responsive.css");
+@import url("components/search.css");
+
+/*==================================
+BACK TO TOP
+==================================*/
+
+.back-to-top{
+
+    position:fixed;
+
+    left:30px;
+
+    bottom:30px;
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--primary-color);
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:.35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+    z-index:999;
+
+}
+
+.back-to-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.back-to-top:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.back-to-top i{
+
+    pointer-events:none;
+
+}
+
+@media (max-width:768px){
+
+    .back-to-top{
+
+        width:46px;
+
+        height:46px;
+
+        left:18px;
+
+        bottom:18px;
+
+        font-size:16px;
+
+    }
+
+}
+
+.back-to-top{
+
+    background:#2E5E3E !important;
+
+    color:#ffffff !important;
+
+}

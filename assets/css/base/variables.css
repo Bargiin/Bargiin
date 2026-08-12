@@ -1,0 +1,169 @@
+/*==================================================
+File: assets/css/base/variables.css
+Project: Bargiin
+Version: 1.0
+==================================================*/
+
+:root {
+	
+	 --site-bg:#F7F5EF;
+
+    /*==================================
+      Brand Colors
+    ==================================*/
+
+    --color-primary: #2E5E3E;
+    --color-primary-dark: #214730;
+    --color-primary-light: #4D8760;
+
+    --color-secondary: #C9A86A;
+    --color-secondary-dark: #AE8A49;
+    --color-secondary-light: #E3C998;
+
+    --color-accent: #7DA86B;
+    --color-accent-light: #A9C79B;
+
+    /*==================================
+      Background
+    ==================================*/
+
+    --bg-body: #F6F4EE;
+    --bg-section: #FFFFFF;
+    --bg-soft: #F9F7F2;
+    --bg-dark: #274734;
+    --bg-footer: #20372A;
+
+    --bg-glass: rgba(255,255,255,.75);
+    --bg-overlay: rgba(25,35,25,.65);
+
+    /*==================================
+      Text
+    ==================================*/
+
+    --text-primary: #263126;
+    --text-secondary: #5C675F;
+    --text-light: #7A857E;
+    --text-white: #FFFFFF;
+
+    /*==================================
+      Border
+    ==================================*/
+
+    --border-color: #E4E2DB;
+    --border-light: #EFEDE7;
+
+    /*==================================
+      Status
+    ==================================*/
+
+    --success: #3FA86D;
+    --warning: #D6A545;
+    --danger: #D54F4F;
+    --info: #4D88C7;
+
+    /*==================================
+      Shadow
+    ==================================*/
+
+    --shadow-xs: 0 2px 5px rgba(0,0,0,.04);
+
+    --shadow-sm: 0 6px 18px rgba(0,0,0,.08);
+
+    --shadow-md: 0 12px 35px rgba(0,0,0,.12);
+
+    --shadow-lg: 0 20px 60px rgba(0,0,0,.18);
+
+    /*==================================
+      Radius
+    ==================================*/
+
+    --radius-xs: 6px;
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 40px;
+    --radius-full: 999px;
+
+    /*==================================
+      Container
+    ==================================*/
+
+    --container-width: 1320px;
+    --container-padding: 20px;
+
+    /*==================================
+      Header
+    ==================================*/
+
+    --header-height: 90px;
+    --header-sticky-height: 76px;
+
+    --header-bg: rgba(255,255,255,.92);
+    --header-border: rgba(0,0,0,.05);
+
+    /*==================================
+      Typography
+    ==================================*/
+
+    --font-family: "Vazirmatn", sans-serif;
+
+    --font-size-xs: .75rem;
+    --font-size-sm: .875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+    --font-size-3xl: 2.8rem;
+    --font-size-4xl: 3.6rem;
+
+    --font-light:300;
+    --font-normal:400;
+    --font-medium:500;
+    --font-semibold:600;
+    --font-bold:700;
+    --font-extrabold:800;
+
+    --line-height:1.9;
+
+    /*==================================
+      Z-index
+    ==================================*/
+
+    --z-dropdown:1000;
+    --z-sticky:1020;
+    --z-fixed:1030;
+    --z-overlay:1100;
+    --z-modal:1200;
+    --z-loader:9999;
+
+    /*==================================
+      Transition
+    ==================================*/
+
+    --transition-fast:.2s ease;
+
+    --transition:.35s ease;
+
+    --transition-slow:.55s ease;
+
+    /*==================================
+      Buttons
+    ==================================*/
+
+    --btn-height:52px;
+    --btn-radius:999px;
+
+    /*==================================
+      Search
+    ==================================*/
+
+    --search-width:520px;
+
+    /*==================================
+      Hero
+    ==================================*/
+
+    --hero-min-height:100vh;
+
+}

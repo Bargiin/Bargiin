@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="preloader-active">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>برگین | طعم و عطر طبیعت</title>
+
+    <meta name="description"
+        content="برگین | تولید کننده دمنوش‌های گیاهی، سبزی‌های خشک و محصولات طبیعی با کیفیت">
+
+    <meta name="keywords"
+        content="برگین, دمنوش گیاهی, سبزی خشک, آرامیس, ماه بانو, سبزگام">
+
+    <meta name="author" content="Bargiin">
+
+    <meta name="theme-color" content="#2E5E3E">
+
+    <link rel="icon" href="assets/images/logo/favicon.png">
+
+    <!-- ================= Fonts ================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+        
+    <!--==================================
+    FONT AWESOME
+    ==================================-->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+                
+    <!-- Remix Icon -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+ <!--==================================
+    MAIN CSS
+    ==================================-->
+
+    <link rel="stylesheet"
+          href="assets/css/style.css">
+	
+	<link rel="stylesheet" href="assets/css/responsive.css">
+	
+	<link rel="stylesheet" href="assets/css/product-gallery.css">
+	
+	<link rel="stylesheet" href="assets/css/components/product-categories.css">
+	
+	<link
+    rel="stylesheet"
+    href="assets/css/welcome-popup.css"
+	>
+
+</head>
+	
+<button class="back-to-top" aria-label="بازگشت به بالا">
+
+    <i class="fa-solid fa-chevron-up"></i>
+
+</button>
+
+<body>
+
+
+    <!-- ================= PRELOADER ================= -->
+
+    <div id="preloader"></div>
+
+<!-- ===========================
+HEADER
+=========================== -->
+
+<header id="header" class="header">
+
+    <div class="container">
+
+        <!-- Logo -->
+
+        <a href="index.html" class="logo">
+
+            <img src="assets/images/logo/logo.svg" alt="برگین">
+
+        </a>
+
+        <!-- Navigation -->
+
+        <nav class="navbar">
+
+            <ul>
+
+                <li>
+                    <a href="index.html" class="active">
+                        خانه
+                    </a>
+                </li>
+
+<!-- ===========================
+منوهایی آبشاری بالای صفحه
+=========================== -->
+
+      <li class="has-dropdown">
+
+    <a href="products.html">
+
+        محصولات
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </a>
+
+    <ul class="dropdown">
+
+        <li>
+            <a href="herbal-tea.html">دمنوش‌های گیاهی
+			</a>
+        </li>
+
+        <li>
+            <a href="dried-herbs.html">سبزیجات خشک</a>
+        </li>
+
+        <li>
+            <a href="pickles.html">ترشیجات</a>
+        </li>
+		
+		<li>
+            <a href="other-products.html">سایر محصولات</a>
+        </li>
+
+    </ul>
+
+</li>
+
+                
+
+                <li class="has-dropdown">
+
+    <a href="articles/herbs.html">
+
+        مجله برگین
+
+        <i class="fa-solid fa-chevron-down"></i>
+
+    </a>
+
+    <ul class="dropdown">
+
+        <li>
+            <a href="articles/herbs.html">خواص گیاهان</a>
+        </li>
+
+        <li>
+            <a href="articles/lifestyle.html">سبک زندگی</a>
+        </li>
+
+        <li>
+            <a href="articles/news.html">اخبار برگین</a>
+        </li>
+
+    </ul>
+					
+
+</li>
+				
+				<li class="has-dropdown">
+
+    <a href="about.html">
+
+        درباره برگین
+		
+    </a>
+
+</li>
+
+                <li class="has-dropdown">
+
+    <a href="contact.html">
+
+        ارتباط با ما
+
+
+    </a>
+
+
+</li>
+
+
+
+            </ul>
+
+        </nav>
+
+        <!-- Actions -->
+
+        <div class="header-actions">
+
+            <a href="#" class="search-btn" aria-label="جستجو">
+
+    <i class="ri-search-line"></i>
+
+</a>
+
+<div class="search-container">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="liveSearch"
+            placeholder="جستجو در برگین..."
+            autocomplete="off"
+        >
+
+        <div class="search-results" id="searchResults"></div>
+
+    </div>
+
+</div>
+<!-- دکمه سفارش محصول
+<a href="#" class="order-btn">
+
+    سفارش محصول
+
+</a>
+-->
+			<div class="header-social">
+
+    <a href="https://eitaa.com/Bargiin"
+   class="social-btn eitaa"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="ایتا">
+
+    <img src="assets/images/icons/eitaa.svg" alt="ایتا">
+
+</a>
+
+   <a href="https://ble.ir/bargiin"
+   class="social-btn bale"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="بله">
+
+    <img src="assets/images/icons/bale.svg" alt="بله">
+
+</a>
+
+	<a href="https://instagram.com/bargiin.ir"
+   class="social-btn instagram"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="اینستاگرام">
+    <img src="assets/images/icons/instagram.svg" alt="اینستاگرام">
+
+</a>
+				
+ <a href="tel:+989135205605"
+   class="social-btn phone"
+   aria-label="تماس">
+
+    <img src="assets/images/icons/phone.svg" alt="تلفن">
+
+</a>
+
+</div>
+			
+            <button class="menu-btn" aria-label="منوی موبایل">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+	
+	<div class="header-overlay"></div>
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+<section class="product-gallery" id="productGallery">
+
+    <div class="product-gallery-track">
+
+        <a href="products/tea-aramis.html"
+           class="product-gallery-slide active"
+		   aria-label="مشاهده دمنوش آرامیس"
+		   >
+
+            <img
+                src="assets/images/products/aramis1.png"
+                alt="دمنوش آرامیس"
+            >
+
+        </a>
+
+        <a href="products/tea-mah-banoo.html"
+           class="product-gallery-slide"
+		   aria-label="مشاهده دمنوش ماه بانو"
+		   >
+
+            <img
+                src="assets/images/products/mah-banoo.png"
+                alt="دمنوش ماه بانو"
+            >
+
+        </a>
+
+
+        <a href="products/tea-sabzgam.html"
+           class="product-gallery-slide"
+		   aria-label="مشاهده دمنوش سبزگام"
+		   >
+
+            <img
+                src="assets/images/products/sabzgam.png"
+                alt="دمنوش سبزگام"
+            >
+
+        </a>
+
+    </div>
+
+
+    <button
+        type="button"
+        class="product-gallery-prev"
+        aria-label="تصویر قبلی"
+    >
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+
+    <button
+        type="button"
+        class="product-gallery-next"
+        aria-label="تصویر بعدی"
+    >
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+
+    <div class="product-gallery-dots">
+
+        <button
+            type="button"
+            class="active"
+            aria-label="تصویر اول"
+        ></button>
+
+        <button
+            type="button"
+            aria-label="تصویر دوم"
+        ></button>
+
+        <button
+            type="button"
+            aria-label="تصویر سوم"
+        ></button>
+
+    </div>
+
+</section>
+<!--==================================
+PRODUCT CATEGORIES
+==================================-->
+
+<section class="product-categories" id="categories">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-badge">
+                محصولات برگین
+            </span>
+
+            <h2 class="section-title">
+                دنیای <span>طعم‌های طبیعی</span>
+            </h2>
+
+        </div>
+
+
+        <div class="categories-grid">
+
+
+            <!-- HERBAL TEA -->
+
+            <a
+                href="herbal-tea.html"
+                class="category-card category-tea"
+            >
+
+                <div class="category-icon">
+					
+					<i class="fa-solid fa-seedling"></i>
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        مجموعه
+                    </span>
+
+                    <h3>
+                           دمنوش‌های گیاهی
+                    </h3>
+
+                    <p>
+                        ترکیب‌هایی از عطر و آرامش طبیعت
+                    </p>
+
+                </div>
+
+                <div class="category-arrow">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- DRIED HERBS -->
+
+            <a
+                href="dried-herbs.html"
+                class="category-card category-herbs"
+            >
+
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        مجموعه
+                    </span>
+
+                    <h3>
+                        سبزی‌های خشک
+                    </h3>
+
+                    <p>
+                        عطر و طعم اصیل سبزی‌های ایرانی
+                    </p>
+
+                </div>
+
+                <div class="category-arrow">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- PICKLES -->
+
+            <a
+                href="pickles.html"
+                class="category-card category-pickles"
+            >
+
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-jar"></i>
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        مجموعه
+                    </span>
+
+                    <h3>
+                        ترشی‌ها
+                    </h3>
+
+                    <p>
+                        طعم‌های اصیل و خانگی برگین
+                    </p>
+
+                </div>
+
+                <div class="category-arrow">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- COMING SOON -->
+
+            <a
+                href="other-products.html"
+                class="category-card category-soon"
+                aria-label="سایر محصولات"
+            >
+
+                <div class="category-icon">
+
+                    <i class="fa-solid fa-spa"></i>
+
+                </div>
+
+                <div class="category-content">
+
+                    <span>
+                        به‌زودی
+                    </span>
+
+                    <h3>
+                        سایر محصولات
+                    </h3>
+
+                    <p>
+                        چیزهای تازه‌ای در راه است...
+                    </p>
+
+                </div>
+
+                <div class="category-arrow">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--==================================================
+Section : Why Bargiin
+File : index.html
+Status : COMPLETE
+==================================================-->
+
+<section class="why-bargiin" id="why-bargiin">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-badge">
+                چرا برگین؟
+            </span>
+
+
+            <h2 class="section-title">
+
+                تفاوت برگین،
+                <span>در انتخاب و کیفیت</span>
+
+            </h2>
+
+
+            <p class="section-description">
+
+                ما تلاش می‌کنیم تجربه‌ای متفاوت از طعم،
+                عطر و آرامش طبیعت را با انتخاب دقیق گیاهان
+                و توجه به جزئیات برای شما فراهم کنیم.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="why-grid">
+
+
+
+            <div class="why-card">
+
+
+                <div class="why-icon">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+
+                <h3>
+                    مواد اولیه طبیعی
+                </h3>
+
+
+                <p>
+
+                    استفاده از گیاهان باکیفیت
+                    بدون افزودنی‌های غیرضروری.
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="why-card">
+
+
+                <div class="why-icon">
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                </div>
+
+
+                <h3>
+                    تهیه با عشق
+                </h3>
+
+
+                <p>
+
+                    هر محصول برگین با دقت،
+                    حوصله و توجه به جزئیات آماده می‌شود.
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="why-card">
+
+
+                <div class="why-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </div>
+
+
+                <h3>
+                    ترکیبات اختصاصی
+                </h3>
+
+
+                <p>
+
+                    فرمول‌های منحصربه‌فرد برای
+                    تجربه‌ای متفاوت از دمنوش‌های گیاهی.
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="why-card">
+
+
+                <div class="why-icon">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                </div>
+
+
+                <h3>
+                    بسته‌بندی حرفه‌ای
+                </h3>
+
+
+                <p>
+
+                    حفظ کیفیت، عطر و زیبایی محصول
+                    از تولید تا رسیدن به دست شما.
+
+                </p>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="why-banner">
+
+
+            <div class="why-banner-content">
+
+
+                <h3>
+                    طبیعت را با دقت انتخاب می‌کنیم
+                </h3>
+
+
+                <p>
+
+                    برگین فقط یک محصول نیست؛
+                    تجربه‌ای از آرامش و حس خوب طبیعت است.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="why-banner-icon">
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+</section>
+
+
+    </main>
+	
+
+<!--==================================================
+Section : Footer
+File : index.html
+Status : COMPLETE
+==================================================-->
+
+<footer class="footer" id="footer">
+
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+
+            <div class="footer-brand">
+
+
+                <a href="index.html" class="footer-logo">
+
+                    <img
+                        src="assets/images/logo/logo-white.svg"
+						 alt="برگین"
+                    >
+
+                </a>
+
+
+
+                <p>
+
+                    برگین؛ همراه طبیعت در مسیر
+                    آرامش، سلامتی و طعم‌های اصیل گیاهی.
+
+                </p>
+
+<!-- را های ارتباطی با اینستا و تلگرام و واتس آپ --
+
+                <div class="footer-social">
+
+
+                    <a href="#"
+                       aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                       aria-label="Telegram">
+
+                        <i class="fa-brands fa-telegram"></i>
+
+                    </a>
+
+
+                    <a href="#"
+                       aria-label="WhatsApp">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </a>
+
+
+                </div>
+
+-->
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+
+                <h3>
+
+                    دسترسی سریع
+
+                </h3>
+
+
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            صفحه اصلی
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="products.html">
+                            محصولات
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="articles.html">
+                            مقالات
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="about.html">
+                            درباره برگین
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="footer-column">
+
+
+                <h3>
+
+                    محصولات
+
+                </h3>
+
+
+
+                <ul>
+
+
+                    <li>
+                        <a href="products/tea-aramis.html">
+                            آرامیس
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="products/tea-mah-banoo.html">
+                            ماه بانو
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="products/tea-sabzgam.html">
+                            سبزگام
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="dried-herbs.html">
+                            سبزیجات خشک
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+
+
+            <div class="footer-column footer-contact">
+
+
+                <h3>
+
+                    ارتباط با ما
+
+                </h3>
+
+
+
+                <ul>
+
+
+                    <li>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        یزد، ایران
+
+                    </li>
+
+
+
+                    <li>
+
+    <i class="fa-solid fa-phone"></i>
+
+    <a href="tel:+989135205605">
+
+        0913XXXXXXX
+
+    </a>
+
+</li>
+
+
+<!-- Email --
+                    <li>
+
+    <i class="fa-solid fa-envelope"></i>
+
+    <a href="mailto:info@bargiin.ir">
+
+        info@bargiin.ir
+
+    </a>
+
+</li>
+
+-->
+
+
+                </ul>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div class="footer-bottom">
+
+
+            <p>
+
+                © 2026 برگین | تمامی حقوق محفوظ است
+
+            </p>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</footer>
+
+    <!-- ================= Back To Top ================= -->
+
+    <button id="backToTop"></button>
+
+	
+<!--==================================
+BARGIIN WELCOME POPUP
+==================================-->
+
+<div class="welcome-popup" id="welcomePopup">
+
+    <div class="welcome-popup-overlay"></div>
+
+    <div class="welcome-popup-box">
+
+        <button
+            type="button"
+            class="welcome-popup-close"
+            id="welcomePopupClose"
+            aria-label="بستن"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="welcome-popup-logo">
+            <img
+                src="assets/images/logo/logo.svg"
+                alt="برگین"
+            >
+        </div>
+
+        <h2>
+            به برگین خوش آمدید 🌿
+        </h2>
+
+        <p>
+            این سایت به منظور آشنایی با مجموعه برگین
+            و محصولات آن ایجاد شده است.
+        </p>
+
+        <p>
+            خوشحال می‌شیم نظر یا پیشنهادی دارید
+            با ما در میان بگذارید.
+        </p>
+
+        <button
+            type="button"
+            class="welcome-popup-button"
+            id="welcomePopupOk"
+        >
+            متوجه شدم
+        </button>
+
+    </div>
+
+</div>
+	
+<!-- Header -->
+<script src="assets/js/header.js"></script>
+<script src="assets/js/featured-herb.js"></script>
+
+<!-- Hero -->
+<script src="assets/js/hero.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+
+<script src="assets/js/search-data.js"></script>
+
+<script src="assets/js/search.js"></script>
+<!-- Core -->
+<script src="assets/js/about-preview.js"></script>
+<script src="assets/js/latest-articles.js"></script>
+	
+<script src="assets/js/product-gallery.js"></script>
+	
+<script src="assets/js/app.js"></script>
+	
+<script src="assets/js/preloader.js"></script>
+	
+
+
+	
+<script src="assets/js/welcome-popup.js"></script>
+
+</body>
+
+
+</html>

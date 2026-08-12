@@ -1,0 +1,182 @@
+/*==================================
+BARGIIN WELCOME POPUP
+==================================*/
+
+.welcome-popup{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    visibility:hidden;
+    opacity:0;
+    transition:.3s ease;
+}
+
+.welcome-popup.active{
+    visibility:visible;
+    opacity:1;
+}
+
+
+.welcome-popup-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(20,35,27,.62);
+    backdrop-filter:blur(4px);
+}
+
+
+.welcome-popup-box{
+    position:relative;
+    z-index:2;
+
+    width:min(90%,480px);
+
+    padding:42px 35px 35px;
+
+    background:#fff;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.22);
+
+    transform:translateY(20px) scale(.96);
+
+    transition:.35s ease;
+}
+
+.welcome-popup.active
+.welcome-popup-box{
+    transform:translateY(0) scale(1);
+}
+
+
+/* LOGO */
+
+.welcome-popup-logo{
+    width:75px;
+    height:75px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.welcome-popup-logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+
+/* TITLE */
+
+.welcome-popup-box h2{
+    margin:0 0 18px;
+
+    color:#2f5b3d;
+
+    font-size:24px;
+}
+
+
+/* TEXT */
+
+.welcome-popup-box p{
+    margin:8px 0;
+
+    color:#68736b;
+
+    font-size:15px;
+
+    line-height:2;
+}
+
+
+/* CLOSE */
+
+.welcome-popup-close{
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    width:34px;
+    height:34px;
+
+    border:0;
+    border-radius:50%;
+
+    background:#f2f2ed;
+
+    color:#59645d;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:.25s ease;
+}
+
+.welcome-popup-close:hover{
+    background:#2f5b3d;
+    color:#fff;
+}
+
+
+/* BUTTON */
+
+.welcome-popup-button{
+    margin-top:22px;
+
+    padding:11px 30px;
+
+    border:0;
+    border-radius:30px;
+
+    background:#2f5b3d;
+    color:#fff;
+
+    font-family:inherit;
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.welcome-popup-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(47,91,61,.2);
+}
+
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .welcome-popup-box{
+        width:calc(100% - 30px);
+        padding:35px 22px 28px;
+        border-radius:20px;
+    }
+
+    .welcome-popup-box h2{
+        font-size:21px;
+    }
+
+    .welcome-popup-box p{
+        font-size:14px;
+    }
+
+}
+

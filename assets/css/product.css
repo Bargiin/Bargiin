@@ -1,0 +1,525 @@
+/*==================================================
+BARGIIN
+PRODUCT DETAIL PAGE
+==================================================*/
+
+.product-page{
+    padding-top:90px;
+    background:#f8f6f0;
+    color:#243b2d;
+}
+
+
+/*==================================
+PRODUCT HERO
+==================================*/
+
+.product-hero{
+    padding:70px 0 90px;
+}
+
+.product-hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:70px;
+}
+
+
+/*==================================
+PRODUCT IMAGE
+==================================*/
+
+.product-image-box{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.product-image{
+    width:100%;
+    max-width:520px;
+    height:560px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:26px;
+    background:#eeece4;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+    transition:transform .4s ease;
+}
+
+.product-image:hover img{
+    transform:scale(1.03);
+}
+
+
+/*==================================
+PRODUCT CONTENT
+==================================*/
+
+.product-content{
+    max-width:560px;
+}
+
+.product-category{
+    display:inline-block;
+    margin-bottom:14px;
+    padding:7px 16px;
+    border-radius:30px;
+    background:rgba(47,91,61,.09);
+    color:#2f5b3d;
+    font-size:13px;
+}
+
+.product-content h1{
+    margin:0 0 18px;
+    color:#243b2d;
+    font-size:44px;
+    line-height:1.5;
+}
+
+.product-intro{
+    margin:0 0 30px;
+    color:#68736b;
+    font-size:16px;
+    line-height:2.1;
+}
+
+
+/*==================================
+FEATURES
+==================================*/
+
+.product-features{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.product-feature{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#405148;
+    font-size:14px;
+}
+
+.product-feature i{
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    background:rgba(47,91,61,.09);
+    color:#2f5b3d;
+}
+
+
+/*==================================
+GENERAL SECTION
+==================================*/
+
+.product-section{
+    padding:90px 0;
+}
+
+.product-section-header{
+    margin-bottom:45px;
+    text-align:center;
+}
+
+.product-section-header > span,
+.product-section-label{
+    display:inline-block;
+    margin-bottom:10px;
+    color:#6c806f;
+    font-size:14px;
+    font-weight:600;
+}
+
+.product-section-header h2{
+    margin:0 0 10px;
+    color:#243b2d;
+    font-size:34px;
+    line-height:1.6;
+}
+
+.product-section-header p{
+    margin:0;
+    color:#707a73;
+    font-size:14px;
+}
+
+
+/*==================================
+INGREDIENTS
+==================================*/
+
+.product-ingredients{
+    background:#f1efe7;
+}
+
+.ingredients-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.ingredient-card{
+    padding:30px 20px;
+    text-align:center;
+    border:1px solid rgba(36,59,45,.07);
+    border-radius:18px;
+    background:#fff;
+    box-shadow:0 7px 25px rgba(35,56,43,.05);
+    transition:.3s ease;
+}
+
+.ingredient-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 13px 32px rgba(35,56,43,.09);
+}
+
+.ingredient-icon{
+    width:58px;
+    height:58px;
+    margin:0 auto 15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(47,91,61,.09);
+    color:#2f5b3d;
+    font-size:21px;
+}
+
+.ingredient-card h3{
+    margin:0 0 8px;
+    font-size:18px;
+}
+
+.ingredient-card strong{
+    color:#2f5b3d;
+    font-size:15px;
+}
+
+
+/*==================================
+DESCRIPTION
+==================================*/
+
+.product-description-section{
+    background:#f8f6f0;
+}
+
+.product-description-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
+    align-items:start;
+}
+
+.product-description-grid h2{
+    margin:0;
+    font-size:34px;
+    line-height:1.7;
+}
+
+.product-description-grid h2 span{
+    color:#2f5b3d;
+}
+
+.product-description-grid p{
+    margin:0 0 18px;
+    color:#68736b;
+    font-size:15px;
+    line-height:2.2;
+}
+
+
+/*==================================
+HOW TO USE
+==================================*/
+
+.product-use{
+    padding-top:20px;
+}
+
+.product-use-box{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    padding:45px;
+    border-radius:24px;
+    background:#e9eee8;
+}
+
+.product-use-icon{
+    width:90px;
+    height:90px;
+    flex:0 0 90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.7);
+    color:#2f5b3d;
+    font-size:35px;
+}
+
+.product-use-box h2{
+    margin:0 0 10px;
+    font-size:28px;
+}
+
+.product-use-box p{
+    max-width:750px;
+    margin:0;
+    color:#68736b;
+    font-size:14px;
+    line-height:2;
+}
+
+
+/*==================================
+BOTTOM
+==================================*/
+
+.product-bottom{
+    padding:20px 0 90px;
+    text-align:center;
+}
+
+.product-back{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:#2f5b3d;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    transition:.25s ease;
+}
+
+.product-back:hover{
+    transform:translateX(4px);
+}
+
+.product-back i{
+    transition:.25s ease;
+}
+
+.product-back:hover i{
+    transform:translateX(4px);
+}
+
+
+/*==================================
+TABLET
+==================================*/
+
+@media(max-width:992px){
+
+    .product-page{
+        padding-top:85px;
+    }
+
+    .product-hero{
+        padding:60px 0 70px;
+    }
+
+    .product-hero-grid{
+        grid-template-columns:1fr 1fr;
+        gap:35px;
+    }
+
+    .product-image{
+        height:450px;
+    }
+
+    .product-content h1{
+        font-size:36px;
+    }
+
+    .ingredients-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-description-grid{
+        gap:45px;
+    }
+
+}
+
+
+/*==================================
+MOBILE
+==================================*/
+
+@media(max-width:768px){
+
+    .product-page{
+        padding-top:72px;
+    }
+
+    .product-hero{
+        padding:40px 0 60px;
+    }
+
+    .product-hero-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .product-image{
+        height:400px;
+        max-width:100%;
+        border-radius:20px;
+    }
+
+    .product-content{
+        max-width:none;
+        text-align:center;
+    }
+
+    .product-content h1{
+        font-size:30px;
+    }
+
+    .product-intro{
+        font-size:14px;
+    }
+
+    .product-features{
+        align-items:center;
+    }
+
+    .product-feature{
+        justify-content:center;
+    }
+
+    .product-section{
+        padding:65px 0;
+    }
+
+    .product-section-header{
+        margin-bottom:30px;
+    }
+
+    .product-section-header h2{
+        font-size:28px;
+    }
+
+    .ingredients-grid{
+        grid-template-columns:1fr 1fr;
+        gap:14px;
+    }
+
+    .ingredient-card{
+        padding:24px 15px;
+    }
+
+    .ingredient-card h3{
+        font-size:16px;
+    }
+
+    .product-description-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+        text-align:right;
+    }
+
+    .product-description-grid h2{
+        font-size:28px;
+    }
+
+    .product-description-grid p{
+        font-size:14px;
+    }
+
+    .product-use{
+        padding-top:0;
+    }
+
+    .product-use-box{
+        flex-direction:column;
+        text-align:center;
+        padding:35px 22px;
+        gap:20px;
+    }
+
+    .product-use-box p{
+        font-size:14px;
+    }
+
+    .product-bottom{
+        padding-bottom:65px;
+    }
+
+}
+
+
+/*==================================
+SMALL MOBILE
+==================================*/
+
+@media(max-width:480px){
+
+    .product-category{
+        font-size:12px;
+    }
+
+    .product-content h1{
+        font-size:27px;
+    }
+
+    .product-image{
+        height:330px;
+    }
+
+    .product-feature{
+        font-size:13px;
+    }
+
+    .product-feature i{
+        width:36px;
+        height:36px;
+    }
+
+    .product-section-header h2{
+        font-size:25px;
+    }
+
+    .ingredients-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ingredient-card{
+        padding:22px 15px;
+    }
+
+    .product-description-grid h2{
+        font-size:25px;
+    }
+
+    .product-use-icon{
+        width:75px;
+        height:75px;
+        flex-basis:75px;
+        font-size:28px;
+    }
+
+    .product-use-box h2{
+        font-size:25px;
+    }
+
+}

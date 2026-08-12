@@ -1,0 +1,238 @@
+/*==================================
+ABOUT PREVIEW
+==================================*/
+
+.about-preview{
+
+    position:relative;
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+}
+
+.about-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+.about-image{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.about-image img{
+
+    width:100%;
+
+    max-width:480px;
+
+    display:block;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.about-image-circle{
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(46,94,62,.08);
+
+    z-index:1;
+
+}
+
+.about-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+.about-text{
+
+    line-height:2.2;
+
+    color:var(--text-color);
+
+}
+
+.about-features{
+
+    display:grid;
+
+    gap:22px;
+
+}
+
+.about-feature{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.about-feature-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(46,94,62,.10);
+
+    color:var(--primary-color);
+
+    font-size:22px;
+
+    flex-shrink:0;
+
+}
+
+.about-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    width:max-content;
+
+}
+
+/*==================================
+ABOUT RESPONSIVE
+==================================*/
+
+@media (max-width:992px){
+
+    .about-container{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+        text-align:center;
+
+    }
+
+    .about-content{
+
+        align-items:center;
+
+    }
+
+    .about-features{
+
+        width:100%;
+
+    }
+
+    .about-feature{
+
+        justify-content:center;
+
+        text-align:right;
+
+    }
+
+    .about-btn{
+
+        margin:auto;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .about-preview{
+
+        padding:80px 0;
+
+    }
+
+    .about-container{
+
+        gap:45px;
+
+    }
+
+    .about-image-circle{
+
+        width:280px;
+
+        height:280px;
+
+    }
+
+    .about-image img{
+
+        max-width:300px;
+
+    }
+
+    .about-text{
+
+        font-size:.97rem;
+
+        line-height:2;
+
+    }
+
+    .about-feature{
+
+        gap:14px;
+
+    }
+
+    .about-feature-icon{
+
+        width:48px;
+
+        height:48px;
+
+        font-size:18px;
+
+    }
+
+}
+

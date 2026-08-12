@@ -1,0 +1,445 @@
+/*==================================================
+BARGIIN
+FEATURED-HERB.CSS
+==================================================*/
+
+/*==============================
+SECTION
+==============================*/
+
+.featured-herb{
+
+    position:relative;
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+    background:transparent;
+
+}
+
+
+/*==============================
+CONTAINER
+==============================*/
+
+.featured-herb-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:80px;
+
+}
+
+
+/*==============================
+IMAGE
+==============================*/
+
+.featured-herb-image{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.herb-background-circle{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(46,94,62,.12),
+    transparent 70%);
+
+    z-index:1;
+
+}
+
+
+.featured-herb-image img{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:430px;
+
+    display:block;
+
+    filter:drop-shadow(0 25px 40px rgba(0,0,0,.15));
+
+}
+
+
+/*==============================
+FLOATING LABEL
+==============================*/
+
+.herb-floating-label{
+
+    position:absolute;
+
+    left:30px;
+
+    bottom:50px;
+
+    z-index:5;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    background:#fff;
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+    font-weight:700;
+
+}
+
+.herb-floating-label i{
+
+    color:var(--color-primary);
+
+}
+
+
+/*==============================
+CONTENT
+==============================*/
+
+.featured-herb-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+
+.section-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 20px;
+
+    border-radius:999px;
+
+    background:#EAF5EC;
+
+    color:var(--color-primary);
+
+    font-weight:700;
+
+    margin-bottom:24px;
+
+}
+
+
+.section-title{
+
+    margin:0 0 20px;
+
+    font-size:46px;
+
+    line-height:1.4;
+
+    font-weight:800;
+
+    color:var(--text-primary);
+
+}
+
+.section-title span{
+
+    color:var(--color-primary);
+
+}
+
+
+.featured-herb-name{
+
+    margin-bottom:20px;
+
+    font-size:32px;
+
+    color:var(--color-primary);
+
+}
+
+
+.featured-herb-text{
+
+    font-size:17px;
+
+    line-height:2.1;
+
+    color:var(--text-secondary);
+
+    margin-bottom:35px;
+
+}
+
+
+/*==============================
+BENEFITS
+==============================*/
+
+.herb-benefits{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    width:100%;
+
+    margin-bottom:40px;
+
+}
+
+
+.benefit-item{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:24px 16px;
+
+    text-align:center;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+    transition:.35s;
+
+}
+
+
+.benefit-item:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.benefit-icon{
+
+    width:60px;
+
+    height:60px;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#F1F8F2;
+
+    font-size:22px;
+
+    color:var(--color-primary);
+
+}
+
+
+/*==============================
+BUTTON
+==============================*/
+
+.herb-more-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px 32px;
+
+    border-radius:999px;
+
+    background:var(--color-primary);
+
+    color:#fff;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.herb-more-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 18px 40px rgba(46,94,62,.22);
+
+}
+
+.herb-more-btn i{
+
+    transition:.35s;
+
+}
+
+.herb-more-btn:hover i{
+
+    transform:translateX(-6px);
+
+}
+
+
+/*==============================
+ANIMATION CLASSES
+==============================*/
+
+.featured-herb-content,
+.featured-herb-image{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:.8s ease;
+
+}
+
+.featured-herb-content.show,
+.featured-herb-image.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/*==============================
+RESPONSIVE
+==============================*/
+
+@media(max-width:991px){
+
+.featured-herb{
+
+padding:90px 0;
+
+}
+
+.featured-herb-container{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+}
+
+.featured-herb-content{
+
+text-align:center;
+
+align-items:center;
+
+}
+
+.herb-benefits{
+
+grid-template-columns:1fr;
+
+}
+
+.herb-floating-label{
+
+left:50%;
+
+transform:translateX(-50%);
+
+}
+
+.section-title{
+
+font-size:34px;
+
+}
+
+.featured-herb-name{
+
+font-size:28px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.featured-herb-image img{
+
+max-width:300px;
+
+}
+
+.herb-background-circle{
+
+width:320px;
+
+height:320px;
+
+}
+
+.section-title{
+
+font-size:28px;
+
+}
+
+.featured-herb-text{
+
+font-size:15px;
+
+}
+
+.herb-more-btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+}

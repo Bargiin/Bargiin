@@ -1,0 +1,241 @@
+/*==================================
+LATEST ARTICLES
+==================================*/
+
+.latest-articles{
+
+    position:relative;
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+}
+
+.articles-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:32px;
+
+    margin-top:60px;
+
+}
+
+.article-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+}
+
+.article-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.article-image{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.article-image img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+.article-card:hover .article-image img{
+
+    transform:scale(1.08);
+
+}
+
+.article-category{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    background:var(--primary-color);
+
+    color:#fff;
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    font-size:.85rem;
+
+}
+
+.article-content{
+
+    padding:28px;
+
+}
+
+.article-meta{
+
+    display:flex;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:18px;
+
+    font-size:.9rem;
+
+    color:#777;
+
+}
+
+.article-meta span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+}
+
+.article-content h3{
+
+    margin-bottom:14px;
+
+    line-height:1.7;
+
+}
+
+.article-content p{
+
+    line-height:2;
+
+    color:var(--text-color);
+
+}
+
+.article-link,
+
+.articles-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.articles-more{
+
+    text-align:center;
+
+    margin-top:60px;
+
+}
+
+/*==================================
+LATEST ARTICLES RESPONSIVE
+==================================*/
+
+@media (max-width:992px){
+
+    .articles-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:28px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .latest-articles{
+
+        padding:80px 0;
+
+    }
+
+    .articles-grid{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .article-content{
+
+        padding:22px;
+
+    }
+
+    .article-meta{
+
+        gap:14px;
+
+        font-size:.82rem;
+
+    }
+
+    .article-category{
+
+        font-size:.78rem;
+
+        padding:7px 14px;
+
+    }
+
+}
+
+.article-card{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:
+    opacity .7s ease,
+    transform .7s ease,
+    box-shadow .35s ease;
+
+}
+
+.article-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+

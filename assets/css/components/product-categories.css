@@ -1,0 +1,437 @@
+/*==================================
+PRODUCT CATEGORIES
+==================================*/
+
+.product-categories{
+    padding:70px 0;
+    background:#fff;
+}
+
+.categories-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+
+/*==================================
+CATEGORY CARD
+==================================*/
+
+.category-card{
+
+    position:relative;
+
+    min-height:155px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:20px 15px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(31,61,43,.10);
+
+    border-radius:18px;
+
+    background:#f8f6f0;
+
+    color:#1f3d2b;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    box-shadow:
+        0 6px 20px rgba(31,61,43,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+}
+
+
+/*==================================
+BACKGROUND IMAGE
+==================================*/
+
+.category-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:var(--category-image);
+
+    background-position:center;
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    opacity:1;
+
+    z-index:0;
+
+    transition:
+        opacity .35s ease,
+        transform .5s ease;
+
+}
+
+
+/*==================================
+OVERLAY
+==================================*/
+
+.category-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        rgba(248,246,240,.72);
+
+    z-index:1;
+
+}
+
+
+/*==================================
+CONTENT
+==================================*/
+
+.category-icon,
+.category-content,
+.category-arrow{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/*==================================
+ICON
+==================================*/
+
+.category-icon{
+
+    flex:0 0 auto;
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:#1f3d2b;
+
+    color:#fff;
+
+    font-size:20px;
+
+    box-shadow:
+        0 7px 16px rgba(31,61,43,.14);
+
+    transition:
+        transform .3s ease;
+
+}
+
+.category-card:hover .category-icon{
+
+    transform:
+        scale(1.06)
+        rotate(-4deg);
+
+}
+
+
+/*==================================
+CONTENT
+==================================*/
+
+.category-content{
+
+    direction:rtl;
+
+    text-align:center;
+
+}
+
+.category-content span{
+
+    display:none;
+
+}
+
+.category-content h3{
+
+    margin:0;
+
+    color:#1f3d2b;
+
+    font-size:17px;
+
+    line-height:1.5;
+
+}
+
+.category-content p{
+
+    display:none;
+
+}
+
+
+/*==================================
+ARROW
+==================================*/
+
+.category-arrow{
+
+    width:28px;
+    height:28px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid rgba(31,61,43,.15);
+
+    border-radius:50%;
+
+    color:#1f3d2b;
+
+    font-size:11px;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+.category-card:hover .category-arrow{
+
+    background:#1f3d2b;
+
+    color:#fff;
+
+    transform:translateX(-4px);
+
+}
+
+
+/*==================================
+HOVER IMAGE
+==================================*/
+
+.category-card:hover::after{
+
+    opacity:.5;
+
+    transform:scale(1.05);
+
+}
+
+
+/*==================================
+INDIVIDUAL IMAGES
+==================================*/
+
+.category-tea{
+
+    --category-image:
+        url("../../images/products/aramis.png");
+
+}
+
+.category-herbs{
+
+    --category-image:
+        url("../../images/products/shevid1.png");
+
+}
+
+.category-pickles{
+
+    --category-image:
+        url("../../images/products/torshi-anbe.jpg");
+
+}
+
+.category-soon{
+
+    --category-image:
+        url("../../images/products/lobia3.png");
+
+}
+
+
+/*==================================
+COMING SOON
+==================================*/
+
+.category-soon .category-icon{
+
+    background:#a88f59;
+
+}
+
+.category-soon .category-content h3{
+
+    color:#725f38;
+
+}
+
+
+/*==================================
+TABLET
+==================================*/
+
+@media(max-width:992px){
+
+    .categories-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:15px;
+
+    }
+
+    .category-card{
+
+        min-height:145px;
+
+    }
+
+}
+
+
+/*==================================
+MOBILE
+==================================*/
+
+@media(max-width:768px){
+
+    .product-categories{
+
+        padding:55px 0;
+
+    }
+
+    .categories-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+
+        margin-top:28px;
+
+    }
+
+    .category-card{
+
+        min-height:135px;
+
+        padding:15px 10px;
+
+        border-radius:15px;
+
+    }
+
+    .category-icon{
+
+        width:43px;
+        height:43px;
+
+        border-radius:12px;
+
+        font-size:18px;
+
+    }
+
+    .category-content h3{
+
+        font-size:15px;
+
+    }
+
+    .category-arrow{
+
+        width:25px;
+        height:25px;
+
+        font-size:10px;
+
+    }
+
+}
+
+
+/*==================================
+SMALL MOBILE
+==================================*/
+
+@media(max-width:480px){
+
+    .categories-grid{
+
+        gap:10px;
+
+    }
+
+    .category-card{
+
+        min-height:120px;
+
+    }
+
+    .category-icon{
+
+        width:40px;
+        height:40px;
+
+        font-size:17px;
+
+    }
+
+    .category-content h3{
+
+        font-size:14px;
+
+    }
+
+}

@@ -1,0 +1,309 @@
+/*==================================================
+File : assets/css/components/why-bargiin.css
+Component : Why Bargiin
+Status : COMPLETE
+==================================================*/
+
+
+.why-bargiin{
+
+    padding:110px 0;
+
+    background:#fdfcf9;
+
+}
+
+
+
+/*==================================
+GRID
+==================================*/
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+
+
+/*==================================
+CARD
+==================================*/
+
+.why-card{
+
+    text-align:center;
+
+    background:#ffffff;
+
+    padding:35px 25px;
+
+    border-radius:28px;
+
+    border:1px solid rgba(46,94,62,.06);
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+        0 25px 55px rgba(46,94,62,.10);
+
+}
+
+
+
+/*==================================
+ICON
+==================================*/
+
+.why-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:0 auto 22px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(46,94,62,.08);
+
+    color:var(--primary-color);
+
+    font-size:28px;
+
+    transition:
+
+        transform .35s ease,
+
+        background-color .35s ease;
+
+}
+
+
+
+.why-card:hover .why-icon{
+
+    transform:scale(1.1);
+
+    background:var(--primary-color);
+
+    color:#ffffff;
+
+}
+
+
+
+/*==================================
+TEXT
+==================================*/
+
+.why-card h3{
+
+    margin:0 0 14px;
+
+    color:var(--heading-color);
+
+    font-size:20px;
+
+}
+
+
+
+.why-card p{
+
+    margin:0;
+
+    color:var(--text-color);
+
+    font-size:14px;
+
+    line-height:2;
+
+}
+
+
+
+/*==================================
+BANNER
+==================================*/
+
+.why-banner{
+
+    margin-top:70px;
+
+    padding:45px 55px;
+
+    border-radius:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(46,94,62,.08),
+            rgba(201,169,106,.12)
+        );
+
+}
+
+
+
+.why-banner-content h3{
+
+    margin:0 0 12px;
+
+    color:var(--heading-color);
+
+    font-size:28px;
+
+}
+
+
+
+.why-banner-content p{
+
+    margin:0;
+
+    color:var(--text-color);
+
+    line-height:2;
+
+}
+
+
+
+.why-banner-icon{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--primary-color);
+
+    color:#ffffff;
+
+    font-size:35px;
+
+}
+
+
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+
+@media(max-width:1200px){
+
+.why-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+.why-bargiin{
+
+    padding:80px 0;
+
+}
+
+
+.why-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+.why-banner{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:30px;
+
+    padding:35px 25px;
+
+}
+
+
+.why-banner-content h3{
+
+    font-size:24px;
+
+}
+
+}
+
+
+
+@media(max-width:480px){
+
+.why-card{
+
+    padding:30px 20px;
+
+}
+
+
+.why-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:24px;
+
+}
+
+}
+
+
+/*==================================================
+END OF FILE
+why-bargiin.css COMPLETED
+==================================================*/
