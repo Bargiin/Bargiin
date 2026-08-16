@@ -238,8 +238,7 @@ MOBILE
 @media (max-width: 768px) {
 
     .product-gallery {
-
-        height: calc(100vh - 72px);
+		
 
         margin-top: 72px;
 
