@@ -1226,8 +1226,19 @@ html.preloader-active{
     overflow:hidden;
 }
 
-html.preloader-active body > *:not(#preloader){
+html.preloader-active body{
+    overflow:hidden;
+}
+
+html.preloader-active #preloader{
+    visibility:visible;
+    opacity:1;
+}
+
+html.preloader-done #preloader{
     visibility:hidden;
+    opacity:0;
+    pointer-events:none;
 }
 
 html.preloader-active #preloader{

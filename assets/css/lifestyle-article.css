@@ -1,0 +1,609 @@
+/*==================================================
+BARGIIN
+LIFESTYLE ARTICLE
+==================================================*/
+
+.lifestyle-article-page{
+    padding-top:90px;
+    background:#f8f6f0;
+    color:#243b2d;
+}
+
+
+/*==================================
+HERO
+==================================*/
+
+.lifestyle-article-hero{
+    padding:75px 0 50px;
+    text-align:center;
+}
+
+.lifestyle-article-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 18px;
+    margin-bottom:18px;
+
+    border-radius:30px;
+
+    background:rgba(47,91,61,.09);
+    color:#2f5b3d;
+
+    font-size:14px;
+}
+
+.lifestyle-article-hero h1{
+    max-width:850px;
+    margin:0 auto;
+
+    font-size:44px;
+    line-height:1.7;
+}
+
+.lifestyle-article-hero h1 span{
+    color:#2f5b3d;
+}
+
+.lifestyle-article-hero p{
+    max-width:650px;
+
+    margin:18px auto 0;
+
+    color:#68736b;
+
+    font-size:16px;
+    line-height:2.1;
+}
+
+
+/*==================================
+MAIN IMAGE
+==================================*/
+
+.article-main-image{
+    padding:0 0 55px;
+}
+
+.article-main-image img{
+    display:block;
+
+    width:100%;
+    height:480px;
+
+    object-fit:cover;
+    object-position:center;
+
+    border-radius:28px;
+
+    box-shadow:
+        0 15px 45px rgba(35,56,43,.12);
+}
+
+
+/*==================================
+ARTICLE LAYOUT
+==================================*/
+
+.article-content-section{
+    padding:30px 0 90px;
+}
+
+.article-layout{
+    display:grid;
+
+    grid-template-columns:minmax(0,1fr) 280px;
+
+    align-items:start;
+
+    gap:60px;
+}
+
+
+/*==================================
+CONTENT
+==================================*/
+
+.article-content{
+    min-width:0;
+
+    padding:45px;
+
+    border-radius:24px;
+
+    background:#fff;
+
+    border:1px solid rgba(36,59,45,.07);
+
+    box-shadow:
+        0 8px 30px rgba(35,56,43,.05);
+}
+
+
+.article-content p{
+    margin:0 0 24px;
+
+    color:#59675e;
+
+    font-size:16px;
+
+    line-height:2.4;
+}
+
+
+.article-content .article-intro{
+    padding-bottom:28px;
+
+    margin-bottom:35px;
+
+    border-bottom:
+        1px solid rgba(47,91,61,.12);
+
+    color:#405148;
+
+    font-size:18px;
+
+    line-height:2.3;
+}
+
+
+.article-content h2{
+
+    margin:55px 0 22px;
+
+    padding-right:16px;
+
+    border-right:4px solid #2f5b3d;
+
+    color:#243b2d;
+
+    font-size:27px;
+
+    line-height:1.8;
+}
+
+
+.article-content h2:first-of-type{
+    margin-top:0;
+}
+
+/*==================================
+ARTICLE ANCHOR FIX
+==================================*/
+
+.article-content h2,
+.article-content h3,
+.article-section {
+    scroll-margin-top: 110px;
+}
+
+@media(max-width:768px){
+
+    .article-content h2,
+    .article-content h3,
+    .article-section {
+        scroll-margin-top: 90px;
+    }
+
+}
+
+
+/*==================================
+LIST
+==================================*/
+
+.article-content ul{
+    margin:0 0 28px;
+
+    padding:0 22px 0 0;
+}
+
+.article-content li{
+    margin-bottom:12px;
+
+    color:#59675e;
+
+    font-size:15px;
+
+    line-height:2;
+}
+
+
+/*==================================
+QUOTE
+==================================*/
+
+.article-quote{
+    margin:40px 0;
+
+    padding:28px 30px;
+
+    border-radius:18px;
+
+    background:#edf2eb;
+
+    border-right:5px solid #2f5b3d;
+
+    color:#2f5b3d;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    line-height:2.2;
+
+    text-align:center;
+}
+
+
+/*==================================
+TIPS
+==================================*/
+
+.article-tips{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
+
+    margin:30px 0 40px;
+}
+
+.article-tips div{
+    padding:18px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    background:#f3f5f0;
+
+    color:#405148;
+
+    font-size:15px;
+}
+
+
+/*==================================
+FINAL MESSAGE
+==================================*/
+
+.article-final-message{
+    margin-top:40px;
+
+    padding:32px;
+
+    border-radius:20px;
+
+    background:#2f5b3d;
+
+    color:#fff;
+
+    font-size:19px;
+
+    line-height:2.2;
+
+    text-align:center;
+}
+
+
+/*==================================
+SIDEBAR
+==================================*/
+
+.article-sidebar{
+    position:sticky;
+
+    top:120px;
+}
+
+
+/*==================================
+TABLE OF CONTENTS
+==================================*/
+
+.article-toc{
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:#fff;
+
+    border:
+        1px solid rgba(36,59,45,.08);
+
+    box-shadow:
+        0 8px 30px rgba(35,56,43,.06);
+}
+
+
+.article-toc-button{
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:18px 20px;
+
+    border:none;
+
+    background:#2f5b3d;
+
+    color:#fff;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    cursor:pointer;
+}
+
+
+.toc-arrow{
+    transition:.3s ease;
+}
+
+
+.article-toc.active .toc-arrow{
+    transform:rotate(180deg);
+}
+
+
+.article-toc-content{
+	
+	display:none;
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+}
+
+
+.article-toc.active .article-toc-content{
+	
+	display:block;
+    max-height:500px;
+}
+
+
+.article-toc-content a{
+    display:block;
+
+    padding:14px 20px;
+
+    border-bottom:
+        1px solid rgba(36,59,45,.06);
+
+    color:#59675e;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    transition:.25s ease;
+}
+
+
+.article-toc-content a:hover{
+    padding-right:27px;
+
+    background:#f3f5f0;
+
+    color:#2f5b3d;
+}
+
+
+/*==================================
+RELATED ARTICLES
+==================================*/
+
+.related-articles{
+    padding:80px 0 100px;
+
+    background:#f1efe7;
+
+    text-align:center;
+}
+
+.related-articles h2{
+    margin:0 0 35px;
+
+    font-size:32px;
+}
+
+
+.related-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+
+    max-width:800px;
+
+    margin:auto;
+}
+
+
+.related-grid a{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:110px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    color:#2f5b3d;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    box-shadow:
+        0 7px 25px rgba(35,56,43,.05);
+
+    transition:.3s ease;
+}
+
+
+.related-grid a:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(35,56,43,.10);
+}
+
+
+/*==================================
+TABLET
+==================================*/
+
+@media(max-width:992px){
+
+    .lifestyle-article-page{
+        padding-top:85px;
+    }
+
+    .lifestyle-article-hero h1{
+        font-size:38px;
+    }
+
+    .article-main-image img{
+        height:400px;
+    }
+
+    .article-layout{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .article-sidebar{
+        position:static;
+        order:-1;
+    }
+
+}
+
+
+/*==================================
+MOBILE
+==================================*/
+
+@media(max-width:768px){
+
+    .lifestyle-article-page{
+        padding-top:72px;
+    }
+
+    .lifestyle-article-hero{
+        padding:50px 0 35px;
+    }
+
+    .lifestyle-article-hero h1{
+        font-size:30px;
+    }
+
+    .lifestyle-article-hero p{
+        font-size:14px;
+    }
+
+    .article-main-image{
+        padding-bottom:35px;
+    }
+
+    .article-main-image img{
+        height:280px;
+
+        border-radius:20px;
+    }
+
+    .article-content-section{
+        padding-bottom:65px;
+    }
+
+    .article-content{
+        padding:28px 22px;
+
+        border-radius:20px;
+    }
+
+    .article-content p{
+        font-size:14px;
+
+        line-height:2.3;
+    }
+
+    .article-content .article-intro{
+        font-size:16px;
+    }
+
+    .article-content h2{
+        margin-top:42px;
+
+        font-size:22px;
+    }
+
+    .article-quote{
+        padding:22px 18px;
+
+        font-size:16px;
+    }
+
+    .article-tips{
+        grid-template-columns:1fr;
+    }
+
+    .related-articles{
+        padding:60px 0 70px;
+    }
+
+    .related-articles h2{
+        font-size:27px;
+    }
+
+}
+
+
+/*==================================
+SMALL MOBILE
+==================================*/
+
+@media(max-width:480px){
+
+    .lifestyle-article-hero h1{
+        font-size:26px;
+    }
+
+    .article-main-image img{
+        height:220px;
+    }
+
+    .article-content{
+        padding:24px 18px;
+    }
+
+    .article-content h2{
+        font-size:20px;
+    }
+
+    .related-grid{
+        grid-template-columns:1fr;
+    }
+
+}

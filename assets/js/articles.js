@@ -1,114 +1,77 @@
-/*==================================================
-BARGIIN
-ARTICLES.JS
-==================================================*/
+document.addEventListener("DOMContentLoaded", function () {
 
-(function(){
+    const tocBox = document.querySelector(".article-toc-box");
+    const tocToggle = document.querySelector(".article-toc-toggle");
 
-    "use strict";
-
-
-    /*==================================
-    CATEGORY FILTER
-    ==================================*/
-
-    const buttons =
-        document.querySelectorAll(
-            ".articles-category"
-        );
-
-    const cards =
-        document.querySelectorAll(
-            ".article-card"
-        );
-
-
-    if(buttons.length && cards.length){
-
-        buttons.forEach(function(button){
-
-            button.addEventListener(
-                "click",
-                function(e){
-
-                    const filter =
-                        this.getAttribute(
-                            "data-filter"
-                        );
-
-
-                    buttons.forEach(function(item){
-
-                        item.classList.remove(
-                            "active"
-                        );
-
-                    });
-
-
-                    this.classList.add(
-                        "active"
-                    );
-
-
-                    cards.forEach(function(card){
-
-                        const category =
-                            card.getAttribute(
-                                "data-category"
-                            );
-
-
-                        if(
-                            filter === "all" ||
-                            category === filter
-                        ){
-
-                            card.style.display =
-                                "flex";
-
-                        }
-
-                        else{
-
-                            card.style.display =
-                                "none";
-
-                        }
-
-                    });
-
-                }
-            );
-
-        });
-
+    if (!tocBox || !tocToggle) {
+        return;
     }
 
+    tocToggle.addEventListener("click", function () {
 
-    /*==================================
-    IMAGE ERROR
-    ==================================*/
+        const isOpen = tocBox.classList.toggle("active");
 
-    const images =
-        document.querySelectorAll(
-            ".article-card-image img"
-        );
-
-
-    images.forEach(function(image){
-
-        image.addEventListener(
-            "error",
-            function(){
-
-                this.style.display =
-                    "none";
-
-            }
+        tocToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
         );
 
     });
 
+	
+    /*==================================
+    SMOOTH SCROLL
+    ==================================*/
 
-})();
+    document.querySelectorAll(".article-toc-content a").forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+
+            const headerOffset =
+                window.innerWidth <= 480 ? 82 :
+                window.innerWidth <= 768 ? 90 :
+                110;
+
+            const targetPosition =
+                target.getBoundingClientRect().top +
+                window.pageYOffset -
+                headerOffset;
+
+			    window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+            });
+
+            /* بستن فهرست بعد از انتخاب */
+            tocBox.classList.remove("active");
+
+            tocToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            history.replaceState(
+                null,
+                "",
+                targetId
+            );
+
+        });
+
+    });
+
+});
