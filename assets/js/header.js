@@ -324,6 +324,220 @@ behavior:"smooth"
 })();
 
 /*==================================================
+BARGIIN
+MOBILE MENU
+==================================================*/
+
+(function(){
+
+    "use strict";
+
+
+    var menuBtn =
+        document.getElementById("menuBtn");
+
+
+    var navbar =
+        document.getElementById("mainNavbar");
+
+
+    var overlay =
+        document.getElementById("headerOverlay");
+
+
+    if(!menuBtn || !navbar){
+
+        return;
+
+    }
+
+
+    /*==================================
+OPEN / CLOSE MENU
+==================================*/
+
+    function openMenu(){
+
+        menuBtn.classList.add("active");
+
+        navbar.classList.add("active");
+
+        document.body.classList.add("menu-open");
+
+
+        if(overlay){
+
+            overlay.classList.add("active");
+
+        }
+
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+    }
+
+
+    function closeMenu(){
+
+        menuBtn.classList.remove("active");
+
+        navbar.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+
+        if(overlay){
+
+            overlay.classList.remove("active");
+
+        }
+
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+
+    menuBtn.addEventListener(
+        "click",
+        function(){
+
+            if(navbar.classList.contains("active")){
+
+                closeMenu();
+
+            }else{
+
+                openMenu();
+
+            }
+
+        }
+    );
+
+
+    /*==================================
+OVERLAY CLOSE
+==================================*/
+
+    if(overlay){
+
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+    /*==================================
+DROPDOWN
+==================================*/
+
+    var dropdowns =
+        navbar.querySelectorAll(".dropdown");
+
+
+    for(
+        var i = 0;
+        i < dropdowns.length;
+        i++
+    ){
+
+        (function(dropdown){
+
+            var toggle =
+                dropdown.querySelector(
+                    ".dropdown-toggle"
+                );
+
+
+            if(!toggle){
+
+                return;
+
+            }
+
+
+            toggle.addEventListener(
+                "click",
+                function(event){
+
+                    event.preventDefault();
+
+                    dropdown.classList.toggle(
+                        "active"
+                    );
+
+                }
+            );
+
+        })(dropdowns[i]);
+
+    }
+
+
+    /*==================================
+CLOSE MENU AFTER CLICK
+==================================*/
+
+    var links =
+        navbar.querySelectorAll(
+            "a:not(.dropdown-toggle)"
+        );
+
+
+    for(
+        var j = 0;
+        j < links.length;
+        j++
+    ){
+
+        links[j].addEventListener(
+            "click",
+            function(){
+
+                if(
+                    window.innerWidth <= 992
+                ){
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /*==================================
+WINDOW RESIZE
+==================================*/
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            if(window.innerWidth > 992){
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
+
+})();
+
+/*==================================================
 HEADER.JS
 Part 3
 ADVANCED FEATURES
@@ -473,212 +687,7 @@ document.body.classList.remove("keyboard-user");
 
 });
 
-/*==================================================
-BARGIIN MOBILE MENU
-FINAL VERSION
-==================================================*/
 
-document.addEventListener("DOMContentLoaded", function(){
-
-    "use strict";
-
-
-    var menuBtn =
-        document.querySelector(".menu-btn");
-
-
-    var navbar =
-        document.querySelector(".navbar");
-
-
-    var overlay =
-        document.querySelector(".header-overlay");
-
-
-    if(!menuBtn || !navbar){
-
-        return;
-
-    }
-
-
-    /*==================================
-OPEN MENU
-==================================*/
-
-    function openMenu(){
-
-        navbar.classList.add("active");
-
-        menuBtn.classList.add("active");
-
-        document.body.classList.add("menu-open");
-
-
-        if(overlay){
-
-            overlay.classList.add("active");
-
-        }
-
-    }
-
-
-    /*==================================
-CLOSE MENU
-==================================*/
-
-    function closeMenu(){
-
-        navbar.classList.remove("active");
-
-        menuBtn.classList.remove("active");
-
-        document.body.classList.remove("menu-open");
-
-
-        if(overlay){
-
-            overlay.classList.remove("active");
-
-        }
-
-    }
-
-
-    /*==================================
-MENU BUTTON
-==================================*/
-
-    menuBtn.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        e.stopPropagation();
-
-
-        if(navbar.classList.contains("active")){
-
-            closeMenu();
-
-        }else{
-
-            openMenu();
-
-        }
-
-    });
-
-
-    /*==================================
-OVERLAY
-==================================*/
-
-    if(overlay){
-
-        overlay.addEventListener("click", function(){
-
-            closeMenu();
-
-        });
-
-    }
-
-
-    /*==================================
-EVENT DELEGATION
-DROPDOWNS + LINKS
-==================================*/
-
-    navbar.addEventListener("click", function(e){
-
-        var dropdownToggle =
-            e.target.closest(".dropdown-toggle");
-
-
-        /* Dropdown */
-
-        if(dropdownToggle){
-
-            e.preventDefault();
-
-            e.stopPropagation();
-
-
-            var dropdown =
-                dropdownToggle.closest(".dropdown");
-
-
-            if(!dropdown){
-
-                return;
-
-            }
-
-
-            navbar
-                .querySelectorAll(".dropdown")
-                .forEach(function(item){
-
-                    if(item !== dropdown){
-
-                        item.classList.remove("active");
-
-                    }
-
-                });
-
-
-            dropdown.classList.toggle("active");
-
-            return;
-
-        }
-
-
-        /* لینک‌های معمولی */
-
-        var link =
-            e.target.closest("a");
-
-
-        if(link){
-
-            var href =
-                link.getAttribute("href");
-
-
-            if(
-                href &&
-                href !== "#" &&
-                !link.closest(".dropdown-toggle")
-            ){
-
-                closeMenu();
-
-            }
-
-        }
-
-    });
-
-
-    /*==================================
-RESIZE
-==================================*/
-
-    window.addEventListener("resize", function(){
-
-        if(window.innerWidth > 992){
-
-            closeMenu();
-
-        }
-
-    });
-
-
-});
 /*==============================
 AUTO CLOSE MENU
 ==============================*/
