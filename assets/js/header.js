@@ -473,7 +473,220 @@ document.body.classList.remove("keyboard-user");
 
 });
 
+/*==================================================
+BARGIIN
+MOBILE MENU
+==================================================*/
 
+(function(){
+
+    "use strict";
+
+
+    var menuBtn =
+        document.getElementById("menuBtn");
+
+
+    var navbar =
+        document.getElementById("mainNavbar");
+
+
+    var overlay =
+        document.getElementById("headerOverlay");
+
+
+    if(!menuBtn || !navbar){
+
+        return;
+
+    }
+
+
+    /*==================================
+OPEN / CLOSE MENU
+==================================*/
+
+    function openMenu(){
+
+        menuBtn.classList.add("active");
+
+        navbar.classList.add("active");
+
+        document.body.classList.add("menu-open");
+
+
+        if(overlay){
+
+            overlay.classList.add("active");
+
+        }
+
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+    }
+
+
+    function closeMenu(){
+
+        menuBtn.classList.remove("active");
+
+        navbar.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+
+        if(overlay){
+
+            overlay.classList.remove("active");
+
+        }
+
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+
+    menuBtn.addEventListener(
+        "click",
+        function(){
+
+            if(navbar.classList.contains("active")){
+
+                closeMenu();
+
+            }else{
+
+                openMenu();
+
+            }
+
+        }
+    );
+
+
+    /*==================================
+OVERLAY CLOSE
+==================================*/
+
+    if(overlay){
+
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
+
+    }
+
+
+    /*==================================
+DROPDOWN
+==================================*/
+
+    var dropdowns =
+        navbar.querySelectorAll(".dropdown");
+
+
+    for(
+        var i = 0;
+        i < dropdowns.length;
+        i++
+    ){
+
+        (function(dropdown){
+
+            var toggle =
+                dropdown.querySelector(
+                    ".dropdown-toggle"
+                );
+
+
+            if(!toggle){
+
+                return;
+
+            }
+
+
+            toggle.addEventListener(
+                "click",
+                function(event){
+
+                    event.preventDefault();
+
+                    dropdown.classList.toggle(
+                        "active"
+                    );
+
+                }
+            );
+
+        })(dropdowns[i]);
+
+    }
+
+
+    /*==================================
+CLOSE MENU AFTER CLICK
+==================================*/
+
+    var links =
+        navbar.querySelectorAll(
+            "a:not(.dropdown-toggle)"
+        );
+
+
+    for(
+        var j = 0;
+        j < links.length;
+        j++
+    ){
+
+        links[j].addEventListener(
+            "click",
+            function(){
+
+                if(
+                    window.innerWidth <= 992
+                ){
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /*==================================
+WINDOW RESIZE
+==================================*/
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            if(window.innerWidth > 992){
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
+
+})();
+	
 /*==============================
 AUTO CLOSE MENU
 ==============================*/
