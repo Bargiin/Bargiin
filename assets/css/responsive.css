@@ -2868,3 +2868,117 @@ MOBILE MENU - CLICK & DROPDOWN FIX
     }
 
 }
+
+/*==================================================
+MOBILE MENU - FINAL CLICK FIX
+==================================================*/
+
+@media (max-width:992px){
+
+    /* خود هدر باید بالاتر از Overlay باشد */
+
+    .header{
+        position:fixed !important;
+        top:0;
+        right:0;
+        left:0;
+
+        z-index:10002 !important;
+    }
+
+
+    /* منوی باز شده */
+
+    .header .navbar{
+        position:fixed !important;
+
+        top:0 !important;
+        right:-100% !important;
+
+        width:320px !important;
+        max-width:88vw !important;
+
+        height:100vh !important;
+
+        padding-top:90px !important;
+
+        z-index:10003 !important;
+
+        pointer-events:auto !important;
+
+        transition:right .35s ease !important;
+    }
+
+
+    .header .navbar.active{
+        right:0 !important;
+    }
+
+
+    /* Overlay باید پشت Header باشد */
+
+    .header-overlay{
+        position:fixed !important;
+
+        inset:0 !important;
+
+        z-index:10001 !important;
+
+        pointer-events:none !important;
+    }
+
+
+    .header-overlay.active{
+        pointer-events:auto !important;
+    }
+
+
+    /* دکمه سه خط */
+
+    .menu-btn{
+        position:relative !important;
+
+        z-index:10004 !important;
+
+        pointer-events:auto !important;
+    }
+
+
+    /* تمام آیتم‌های منو */
+
+    .navbar a,
+    .navbar button,
+    .navbar li{
+        position:relative !important;
+
+        z-index:10005 !important;
+
+        pointer-events:auto !important;
+
+        cursor:pointer !important;
+    }
+
+
+    /* Dropdown */
+
+    .navbar .dropdown-menu{
+        position:static !important;
+
+        display:none !important;
+
+        opacity:1 !important;
+
+        visibility:visible !important;
+
+        pointer-events:auto !important;
+
+        transform:none !important;
+    }
+
+
+    .navbar .dropdown.active > .dropdown-menu,
+    .navbar .dropdown.open > .dropdown-menu{
+        display:block !important;
+    }
+
+}

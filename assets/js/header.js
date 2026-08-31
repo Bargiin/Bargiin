@@ -474,30 +474,28 @@ document.body.classList.remove("keyboard-user");
 });
 
 /*==================================================
-BARGIIN
-MOBILE HEADER MENU
+BARGIIN MOBILE MENU
+FINAL VERSION
 ==================================================*/
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
 
     "use strict";
 
 
     var menuBtn =
-        document.getElementById("menuBtn");
+        document.querySelector(".menu-btn");
 
 
     var navbar =
-        document.getElementById("mainNavbar");
+        document.querySelector(".navbar");
 
 
     var overlay =
-        document.getElementById("headerOverlay");
+        document.querySelector(".header-overlay");
 
 
-    /* اگر IDها وجود نداشتند */
-
-    if (!menuBtn || !navbar) {
+    if(!menuBtn || !navbar){
 
         return;
 
@@ -508,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function () {
 OPEN MENU
 ==================================*/
 
-    function openMenu() {
+    function openMenu(){
 
         navbar.classList.add("active");
 
@@ -517,7 +515,7 @@ OPEN MENU
         document.body.classList.add("menu-open");
 
 
-        if (overlay) {
+        if(overlay){
 
             overlay.classList.add("active");
 
@@ -530,7 +528,7 @@ OPEN MENU
 CLOSE MENU
 ==================================*/
 
-    function closeMenu() {
+    function closeMenu(){
 
         navbar.classList.remove("active");
 
@@ -539,7 +537,7 @@ CLOSE MENU
         document.body.classList.remove("menu-open");
 
 
-        if (overlay) {
+        if(overlay){
 
             overlay.classList.remove("active");
 
@@ -552,18 +550,18 @@ CLOSE MENU
 MENU BUTTON
 ==================================*/
 
-    menuBtn.addEventListener("click", function (event) {
+    menuBtn.addEventListener("click", function(e){
 
-        event.preventDefault();
+        e.preventDefault();
 
-        event.stopPropagation();
+        e.stopPropagation();
 
 
-        if (navbar.classList.contains("active")) {
+        if(navbar.classList.contains("active")){
 
             closeMenu();
 
-        } else {
+        }else{
 
             openMenu();
 
@@ -576,9 +574,9 @@ MENU BUTTON
 OVERLAY
 ==================================*/
 
-    if (overlay) {
+    if(overlay){
 
-        overlay.addEventListener("click", function () {
+        overlay.addEventListener("click", function(){
 
             closeMenu();
 
@@ -588,118 +586,90 @@ OVERLAY
 
 
     /*==================================
-DROPDOWN MENU
+EVENT DELEGATION
+DROPDOWNS + LINKS
 ==================================*/
 
-    var dropdowns =
-        navbar.querySelectorAll(".dropdown");
+    navbar.addEventListener("click", function(e){
+
+        var dropdownToggle =
+            e.target.closest(".dropdown-toggle");
 
 
-    dropdowns.forEach(function (dropdown) {
+        /* Dropdown */
 
-        var toggle =
-            dropdown.querySelector(
-                ".dropdown-toggle"
-            );
+        if(dropdownToggle){
 
+            e.preventDefault();
 
-        /* حالت اول:
-           اگر dropdown-toggle وجود دارد */
-
-        if (toggle) {
-
-            toggle.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
+            e.stopPropagation();
 
 
-                    /* بستن سایر Dropdownها */
-
-                    dropdowns.forEach(function (item) {
-
-                        if (item !== dropdown) {
-
-                            item.classList.remove("active");
-
-                            item.classList.remove("open");
-
-                        }
-
-                    });
+            var dropdown =
+                dropdownToggle.closest(".dropdown");
 
 
-                    /* باز و بسته کردن */
-
-                    dropdown.classList.toggle("active");
-
-                    dropdown.classList.toggle("open");
-
-                }
-            );
-
-        }
-
-    });
-
-
-    /*==================================
-NORMAL LINKS
-==================================*/
-
-    var links =
-        navbar.querySelectorAll("a");
-
-
-    links.forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            var parentDropdown =
-                link.closest(".dropdown");
-
-
-            /* اگر لینک مربوط به باز کردن Dropdown باشد،
-               اجازه ناوبری نده */
-
-            if (
-                link.classList.contains("dropdown-toggle") ||
-                link.parentElement.classList.contains("dropdown-toggle")
-            ) {
-
-                event.preventDefault();
+            if(!dropdown){
 
                 return;
 
             }
 
 
-            /* لینک‌های معمولی باید کاملاً طبیعی کار کنند */
+            navbar
+                .querySelectorAll(".dropdown")
+                .forEach(function(item){
 
-            if (
-                link.getAttribute("href") &&
-                link.getAttribute("href") !== "#"
-            ) {
+                    if(item !== dropdown){
+
+                        item.classList.remove("active");
+
+                    }
+
+                });
+
+
+            dropdown.classList.toggle("active");
+
+            return;
+
+        }
+
+
+        /* لینک‌های معمولی */
+
+        var link =
+            e.target.closest("a");
+
+
+        if(link){
+
+            var href =
+                link.getAttribute("href");
+
+
+            if(
+                href &&
+                href !== "#" &&
+                !link.closest(".dropdown-toggle")
+            ){
 
                 closeMenu();
 
             }
 
-        });
+        }
 
     });
 
 
     /*==================================
-ESC KEY
+RESIZE
 ==================================*/
 
-    document.addEventListener("keydown", function (event) {
+    window.addEventListener("resize", function(){
 
-        if (event.key === "Escape") {
+        if(window.innerWidth > 992){
 
             closeMenu();
 
@@ -707,23 +677,8 @@ ESC KEY
 
     });
 
-
-    /*==================================
-DESKTOP RESET
-==================================*/
-
-    window.addEventListener("resize", function () {
-
-        if (window.innerWidth > 992) {
-
-            closeMenu();
-
-        }
-
-    });
 
 });
-	
 /*==============================
 AUTO CLOSE MENU
 ==============================*/
