@@ -48,210 +48,134 @@ header.classList.remove('scrolled');
 
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+/*==============================
+MOBILE MENU
+==============================*/
 
-    "use strict";
+function openMenu(){
 
+if(!navbar)return;
 
-    var menuBtn = document.getElementById("menuBtn");
+navbar.classList.add('active');
 
-    var navbar = document.querySelector(".navbar");
+menuBtn.classList.add('active');
 
-    var overlay = document.querySelector(".header-overlay");
+if(overlay){
 
+overlay.classList.add('active');
 
-    if (!menuBtn || !navbar) {
-        return;
-    }
+}
 
+document.body.style.overflow='hidden';
 
-    /* ==========================
-       OPEN / CLOSE MAIN MENU
-    ========================== */
+}
 
-    function openMenu() {
+function closeMenu(){
 
-        navbar.classList.add("active");
+if(!navbar)return;
 
-        if (overlay) {
-            overlay.classList.add("active");
-        }
+navbar.classList.remove('active');
 
-        menuBtn.setAttribute("aria-expanded", "true");
+menuBtn.classList.remove('active');
 
-    }
+if(overlay){
 
+overlay.classList.remove('active');
 
-    function closeMenu() {
+}
 
-        navbar.classList.remove("active");
+document.body.style.overflow='';
 
-        if (overlay) {
-            overlay.classList.remove("active");
-        }
+}
 
-        menuBtn.setAttribute("aria-expanded", "false");
+if(menuBtn){
 
-    }
+menuBtn.addEventListener('click',function(){
 
+if(navbar.classList.contains('active')){
 
-    menuBtn.addEventListener("click", function (event) {
+closeMenu();
 
-        event.preventDefault();
+}else{
 
-        if (navbar.classList.contains("active")) {
+openMenu();
 
-            closeMenu();
+}
 
-        } else {
+});
 
-            openMenu();
+}
 
-        }
 
-    });
+/*==============================
+OVERLAY
+==============================*/
 
+if(overlay){
 
-    /* ==========================
-       OVERLAY
-    ========================== */
+overlay.addEventListener('click',function(){
 
-    if (overlay) {
+closeMenu();
 
-        overlay.addEventListener("click", function () {
+closeSearch();
 
-            closeMenu();
+});
 
-        });
+}
 
-    }
+/*==============================
+ESC
+==============================*/
 
+document.addEventListener('keydown',function(e){
 
-    /* ==========================
-       MOBILE DROPDOWNS
-    ========================== */
+if(e.key==="Escape"){
 
-    var dropdownItems =
-        navbar.querySelectorAll(".has-dropdown");
+closeMenu();
 
+closeSearch();
 
-    dropdownItems.forEach(function (item) {
+}
 
-        var link =
-            item.querySelector(":scope > a");
+});
 
-        var dropdown =
-            item.querySelector(":scope > .dropdown");
+/*==============================
+ACTIVE LINK
+==============================*/
 
+const current=window.location.pathname.split('/').pop()||'index.html';
 
-        /* اگر زیرمنو ندارد */
-        if (!dropdown) {
-            return;
-        }
+document.querySelectorAll('.navbar a').forEach(function(link){
 
+const href=link.getAttribute('href');
 
-        link.addEventListener("click", function (event) {
+if(href===current){
 
-            /* فقط در موبایل */
-            if (window.innerWidth > 992) {
-                return;
-            }
+link.classList.add('active');
 
+}
 
-            event.preventDefault();
+});
 
-            event.stopPropagation();
+/*==============================
+DROPDOWN MOBILE
+==============================*/
 
+dropdowns.forEach(function(item){
 
-            /* بستن سایر زیرمنوها */
+const link=item.querySelector('a');
 
-            dropdownItems.forEach(function (otherItem) {
+if(!link)return;
 
-                if (otherItem !== item) {
+link.addEventListener('click',function(e){
 
-                    otherItem.classList.remove("active");
+if(window.innerWidth>991)return;
 
-                }
+e.preventDefault();
 
-            });
+item.classList.toggle('open');
 
-
-            /* باز و بسته کردن */
-
-            item.classList.toggle("active");
-
-        });
-
-    });
-
-
-    /* ==========================
-       NORMAL MENU LINKS
-    ========================== */
-
-    var normalLinks =
-        navbar.querySelectorAll(
-            "li:not(.has-dropdown) > a"
-        );
-
-
-    normalLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            if (window.innerWidth <= 992) {
-
-                closeMenu();
-
-            }
-
-        });
-
-    });
-
-
-    /* ==========================
-       DROPDOWN LINKS
-    ========================== */
-
-    var subLinks =
-        navbar.querySelectorAll(".dropdown a");
-
-
-    subLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            if (window.innerWidth <= 992) {
-
-                closeMenu();
-
-            }
-
-        });
-
-    });
-
-
-    /* ==========================
-       RESET ON DESKTOP
-    ========================== */
-
-    window.addEventListener("resize", function () {
-
-        if (window.innerWidth > 992) {
-
-            closeMenu();
-
-            dropdownItems.forEach(function (item) {
-
-                item.classList.remove("active");
-
-            });
-
-        }
-
-    });
+});
 
 });
 
