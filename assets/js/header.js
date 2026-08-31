@@ -48,64 +48,212 @@ header.classList.remove('scrolled');
 
 }
 
-/*==============================
-MOBILE MENU
-==============================*/
+document.addEventListener("DOMContentLoaded", function () {
 
-function openMenu(){
+    "use strict";
 
-if(!navbar)return;
 
-navbar.classList.add('active');
+    var menuBtn = document.getElementById("menuBtn");
 
-menuBtn.classList.add('active');
+    var navbar = document.querySelector(".navbar");
 
-if(overlay){
+    var overlay = document.querySelector(".header-overlay");
 
-overlay.classList.add('active');
 
-}
+    if (!menuBtn || !navbar) {
+        return;
+    }
 
-document.body.style.overflow='hidden';
 
-}
+    /* ==========================
+       OPEN / CLOSE MAIN MENU
+    ========================== */
 
-function closeMenu(){
+    function openMenu() {
 
-if(!navbar)return;
+        navbar.classList.add("active");
 
-navbar.classList.remove('active');
+        if (overlay) {
+            overlay.classList.add("active");
+        }
 
-menuBtn.classList.remove('active');
+        menuBtn.setAttribute("aria-expanded", "true");
 
-if(overlay){
+    }
 
-overlay.classList.remove('active');
 
-}
+    function closeMenu() {
 
-document.body.style.overflow='';
+        navbar.classList.remove("active");
 
-}
+        if (overlay) {
+            overlay.classList.remove("active");
+        }
 
-if(menuBtn){
+        menuBtn.setAttribute("aria-expanded", "false");
 
-menuBtn.addEventListener('click',function(){
+    }
 
-if(navbar.classList.contains('active')){
 
-closeMenu();
+    menuBtn.addEventListener("click", function (event) {
 
-}else{
+        event.preventDefault();
 
-openMenu();
+        if (navbar.classList.contains("active")) {
 
-}
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
+
+    });
+
+
+    /* ==========================
+       OVERLAY
+    ========================== */
+
+    if (overlay) {
+
+        overlay.addEventListener("click", function () {
+
+            closeMenu();
+
+        });
+
+    }
+
+
+    /* ==========================
+       MOBILE DROPDOWNS
+    ========================== */
+
+    var dropdownItems =
+        navbar.querySelectorAll(".has-dropdown");
+
+
+    dropdownItems.forEach(function (item) {
+
+        var link =
+            item.querySelector(":scope > a");
+
+        var dropdown =
+            item.querySelector(":scope > .dropdown");
+
+
+        /* اگر زیرمنو ندارد */
+        if (!dropdown) {
+            return;
+        }
+
+
+        link.addEventListener("click", function (event) {
+
+            /* فقط در موبایل */
+            if (window.innerWidth > 992) {
+                return;
+            }
+
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            /* بستن سایر زیرمنوها */
+
+            dropdownItems.forEach(function (otherItem) {
+
+                if (otherItem !== item) {
+
+                    otherItem.classList.remove("active");
+
+                }
+
+            });
+
+
+            /* باز و بسته کردن */
+
+            item.classList.toggle("active");
+
+        });
+
+    });
+
+
+    /* ==========================
+       NORMAL MENU LINKS
+    ========================== */
+
+    var normalLinks =
+        navbar.querySelectorAll(
+            "li:not(.has-dropdown) > a"
+        );
+
+
+    normalLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (window.innerWidth <= 992) {
+
+                closeMenu();
+
+            }
+
+        });
+
+    });
+
+
+    /* ==========================
+       DROPDOWN LINKS
+    ========================== */
+
+    var subLinks =
+        navbar.querySelectorAll(".dropdown a");
+
+
+    subLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (window.innerWidth <= 992) {
+
+                closeMenu();
+
+            }
+
+        });
+
+    });
+
+
+    /* ==========================
+       RESET ON DESKTOP
+    ========================== */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 992) {
+
+            closeMenu();
+
+            dropdownItems.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+        }
+
+    });
 
 });
-
-}
-
 
 /*==============================
 OVERLAY
