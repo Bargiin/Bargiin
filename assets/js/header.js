@@ -51,56 +51,91 @@ header.classList.remove('scrolled');
 /*==============================
 MOBILE MENU
 ==============================*/
+/*==================================================
+BARGIIN
+MOBILE HEADER MENU
+==================================================*/
+
 document.addEventListener("DOMContentLoaded", function () {
 
     "use strict";
 
 
-    var menuBtn = document.getElementById("menuBtn");
+    var menuBtn =
+        document.getElementById("menuBtn");
 
-    var navbar = document.querySelector(".navbar");
 
-    var overlay = document.querySelector(".header-overlay");
+    var navbar =
+        document.getElementById("mainNavbar");
 
+
+    var overlay =
+        document.getElementById("headerOverlay");
+
+
+    /* اگر IDها وجود نداشتند */
 
     if (!menuBtn || !navbar) {
+
         return;
+
     }
 
 
-    /* ==========================
-       OPEN / CLOSE MAIN MENU
-    ========================== */
+    /*==================================
+OPEN MENU
+==================================*/
 
     function openMenu() {
 
         navbar.classList.add("active");
 
-        if (overlay) {
-            overlay.classList.add("active");
-        }
+        menuBtn.classList.add("active");
 
-        menuBtn.setAttribute("aria-expanded", "true");
+        document.body.classList.add("menu-open");
+
+
+        if (overlay) {
+
+            overlay.classList.add("active");
+
+        }
 
     }
 
+
+    /*==================================
+CLOSE MENU
+==================================*/
 
     function closeMenu() {
 
         navbar.classList.remove("active");
 
-        if (overlay) {
-            overlay.classList.remove("active");
-        }
+        menuBtn.classList.remove("active");
 
-        menuBtn.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+
+
+        if (overlay) {
+
+            overlay.classList.remove("active");
+
+        }
 
     }
 
 
+    /*==================================
+MENU BUTTON
+==================================*/
+
     menuBtn.addEventListener("click", function (event) {
 
         event.preventDefault();
+
+        event.stopPropagation();
+
 
         if (navbar.classList.contains("active")) {
 
@@ -115,9 +150,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* ==========================
-       OVERLAY
-    ========================== */
+    /*==================================
+OVERLAY
+==================================*/
 
     if (overlay) {
 
@@ -130,79 +165,102 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ==========================
-       MOBILE DROPDOWNS
-    ========================== */
+    /*==================================
+DROPDOWN MENU
+==================================*/
 
-    var dropdownItems =
-        navbar.querySelectorAll(".has-dropdown");
-
-
-    dropdownItems.forEach(function (item) {
-
-        var link =
-            item.querySelector(":scope > a");
-
-        var dropdown =
-            item.querySelector(":scope > .dropdown");
+    var dropdowns =
+        navbar.querySelectorAll(".dropdown");
 
 
-        /* اگر زیرمنو ندارد */
-        if (!dropdown) {
-            return;
+    dropdowns.forEach(function (dropdown) {
+
+        var toggle =
+            dropdown.querySelector(
+                ".dropdown-toggle"
+            );
+
+
+        /* حالت اول:
+           اگر dropdown-toggle وجود دارد */
+
+        if (toggle) {
+
+            toggle.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+
+                    /* بستن سایر Dropdownها */
+
+                    dropdowns.forEach(function (item) {
+
+                        if (item !== dropdown) {
+
+                            item.classList.remove("active");
+
+                            item.classList.remove("open");
+
+                        }
+
+                    });
+
+
+                    /* باز و بسته کردن */
+
+                    dropdown.classList.toggle("active");
+
+                    dropdown.classList.toggle("open");
+
+                }
+            );
+
         }
 
+    });
+
+
+    /*==================================
+NORMAL LINKS
+==================================*/
+
+    var links =
+        navbar.querySelectorAll("a");
+
+
+    links.forEach(function (link) {
 
         link.addEventListener("click", function (event) {
 
-            /* فقط در موبایل */
-            if (window.innerWidth > 992) {
+            var parentDropdown =
+                link.closest(".dropdown");
+
+
+            /* اگر لینک مربوط به باز کردن Dropdown باشد،
+               اجازه ناوبری نده */
+
+            if (
+                link.classList.contains("dropdown-toggle") ||
+                link.parentElement.classList.contains("dropdown-toggle")
+            ) {
+
+                event.preventDefault();
+
                 return;
+
             }
 
 
-            event.preventDefault();
+            /* لینک‌های معمولی باید کاملاً طبیعی کار کنند */
 
-            event.stopPropagation();
-
-
-            /* بستن سایر زیرمنوها */
-
-            dropdownItems.forEach(function (otherItem) {
-
-                if (otherItem !== item) {
-
-                    otherItem.classList.remove("active");
-
-                }
-
-            });
-
-
-            /* باز و بسته کردن */
-
-            item.classList.toggle("active");
-
-        });
-
-    });
-
-
-    /* ==========================
-       NORMAL MENU LINKS
-    ========================== */
-
-    var normalLinks =
-        navbar.querySelectorAll(
-            "li:not(.has-dropdown) > a"
-        );
-
-
-    normalLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            if (window.innerWidth <= 992) {
+            if (
+                link.getAttribute("href") &&
+                link.getAttribute("href") !== "#"
+            ) {
 
                 closeMenu();
 
@@ -213,44 +271,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* ==========================
-       DROPDOWN LINKS
-    ========================== */
+    /*==================================
+ESC KEY
+==================================*/
 
-    var subLinks =
-        navbar.querySelectorAll(".dropdown a");
+    document.addEventListener("keydown", function (event) {
 
+        if (event.key === "Escape") {
 
-    subLinks.forEach(function (link) {
+            closeMenu();
 
-        link.addEventListener("click", function () {
-
-            if (window.innerWidth <= 992) {
-
-                closeMenu();
-
-            }
-
-        });
+        }
 
     });
 
 
-    /* ==========================
-       RESET ON DESKTOP
-    ========================== */
+    /*==================================
+DESKTOP RESET
+==================================*/
 
     window.addEventListener("resize", function () {
 
         if (window.innerWidth > 992) {
 
             closeMenu();
-
-            dropdownItems.forEach(function (item) {
-
-                item.classList.remove("active");
-
-            });
 
         }
 
