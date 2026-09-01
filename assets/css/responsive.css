@@ -2793,3 +2793,78 @@ MOBILE SMALL
     }
 
 }
+
+/*==================================================
+MOBILE MENU - CLICK & DROPDOWN FIX
+==================================================*/
+
+@media (max-width:992px){
+
+    /* منوی باز شده باید بالاتر از Overlay باشد */
+
+    .navbar{
+        z-index:10002 !important;
+        pointer-events:auto !important;
+    }
+
+    .navbar.active{
+        right:0 !important;
+        pointer-events:auto !important;
+    }
+
+    /* دکمه سه خط */
+
+    .menu-btn{
+        z-index:10003 !important;
+        pointer-events:auto !important;
+    }
+
+    /* Overlay پشت منو */
+
+    .header-overlay{
+        z-index:10000 !important;
+    }
+
+    .header-overlay:not(.active){
+        pointer-events:none !important;
+    }
+
+
+    /* تمام آیتم‌های منو قابل کلیک */
+
+    .navbar a,
+    .navbar button,
+    .navbar li{
+        pointer-events:auto !important;
+    }
+
+
+    /* Dropdown */
+
+    .dropdown-menu{
+        display:none !important;
+        position:static !important;
+        opacity:1 !important;
+        visibility:visible !important;
+        height:auto !important;
+        overflow:visible !important;
+    }
+
+    .dropdown.active > .dropdown-menu{
+        display:block !important;
+    }
+
+
+    /* اگر منوی مجله یا محصولات کلاس دیگری داشته باشد */
+
+    .dropdown.open > .dropdown-menu{
+        display:block !important;
+    }
+
+
+    .dropdown-toggle{
+        cursor:pointer !important;
+        pointer-events:auto !important;
+    }
+
+}

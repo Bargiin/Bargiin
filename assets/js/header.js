@@ -53,10 +53,10 @@ MOBILE MENU
 ==============================*/
 /*==================================================
 BARGIIN
-MOBILE MENU
+MOBILE HEADER MENU
 ==================================================*/
 
-(function(){
+document.addEventListener("DOMContentLoaded", function () {
 
     "use strict";
 
@@ -73,7 +73,9 @@ MOBILE MENU
         document.getElementById("headerOverlay");
 
 
-    if(!menuBtn || !navbar){
+    /* اگر IDها وجود نداشتند */
+
+    if (!menuBtn || !navbar) {
 
         return;
 
@@ -81,189 +83,224 @@ MOBILE MENU
 
 
     /*==================================
-OPEN / CLOSE MENU
+OPEN MENU
 ==================================*/
 
-    function openMenu(){
-
-        menuBtn.classList.add("active");
+    function openMenu() {
 
         navbar.classList.add("active");
+
+        menuBtn.classList.add("active");
 
         document.body.classList.add("menu-open");
 
 
-        if(overlay){
+        if (overlay) {
 
             overlay.classList.add("active");
 
         }
 
-
-        menuBtn.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
     }
 
 
-    function closeMenu(){
+    /*==================================
+CLOSE MENU
+==================================*/
 
-        menuBtn.classList.remove("active");
+    function closeMenu() {
 
         navbar.classList.remove("active");
+
+        menuBtn.classList.remove("active");
 
         document.body.classList.remove("menu-open");
 
 
-        if(overlay){
+        if (overlay) {
 
             overlay.classList.remove("active");
 
         }
 
-
-        menuBtn.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
     }
 
 
-    menuBtn.addEventListener(
-        "click",
-        function(){
-
-            if(navbar.classList.contains("active")){
-
-                closeMenu();
-
-            }else{
-
-                openMenu();
-
-            }
-
-        }
-    );
-
-
     /*==================================
-OVERLAY CLOSE
+MENU BUTTON
 ==================================*/
 
-    if(overlay){
+    menuBtn.addEventListener("click", function (event) {
 
-        overlay.addEventListener(
-            "click",
-            closeMenu
-        );
+        event.preventDefault();
+
+        event.stopPropagation();
+
+
+        if (navbar.classList.contains("active")) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
+
+    });
+
+
+    /*==================================
+OVERLAY
+==================================*/
+
+    if (overlay) {
+
+        overlay.addEventListener("click", function () {
+
+            closeMenu();
+
+        });
 
     }
 
 
     /*==================================
-DROPDOWN
+DROPDOWN MENU
 ==================================*/
 
     var dropdowns =
         navbar.querySelectorAll(".dropdown");
 
 
-    for(
-        var i = 0;
-        i < dropdowns.length;
-        i++
-    ){
+    dropdowns.forEach(function (dropdown) {
 
-        (function(dropdown){
-
-            var toggle =
-                dropdown.querySelector(
-                    ".dropdown-toggle"
-                );
+        var toggle =
+            dropdown.querySelector(
+                ".dropdown-toggle"
+            );
 
 
-            if(!toggle){
+        /* حالت اول:
+           اگر dropdown-toggle وجود دارد */
+
+        if (toggle) {
+
+            toggle.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+
+                    /* بستن سایر Dropdownها */
+
+                    dropdowns.forEach(function (item) {
+
+                        if (item !== dropdown) {
+
+                            item.classList.remove("active");
+
+                            item.classList.remove("open");
+
+                        }
+
+                    });
+
+
+                    /* باز و بسته کردن */
+
+                    dropdown.classList.toggle("active");
+
+                    dropdown.classList.toggle("open");
+
+                }
+            );
+
+        }
+
+    });
+
+
+    /*==================================
+NORMAL LINKS
+==================================*/
+
+    var links =
+        navbar.querySelectorAll("a");
+
+
+    links.forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            var parentDropdown =
+                link.closest(".dropdown");
+
+
+            /* اگر لینک مربوط به باز کردن Dropdown باشد،
+               اجازه ناوبری نده */
+
+            if (
+                link.classList.contains("dropdown-toggle") ||
+                link.parentElement.classList.contains("dropdown-toggle")
+            ) {
+
+                event.preventDefault();
 
                 return;
 
             }
 
 
-            toggle.addEventListener(
-                "click",
-                function(event){
+            /* لینک‌های معمولی باید کاملاً طبیعی کار کنند */
 
-                    event.preventDefault();
-
-                    dropdown.classList.toggle(
-                        "active"
-                    );
-
-                }
-            );
-
-        })(dropdowns[i]);
-
-    }
-
-
-    /*==================================
-CLOSE MENU AFTER CLICK
-==================================*/
-
-    var links =
-        navbar.querySelectorAll(
-            "a:not(.dropdown-toggle)"
-        );
-
-
-    for(
-        var j = 0;
-        j < links.length;
-        j++
-    ){
-
-        links[j].addEventListener(
-            "click",
-            function(){
-
-                if(
-                    window.innerWidth <= 992
-                ){
-
-                    closeMenu();
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /*==================================
-WINDOW RESIZE
-==================================*/
-
-    window.addEventListener(
-        "resize",
-        function(){
-
-            if(window.innerWidth > 992){
+            if (
+                link.getAttribute("href") &&
+                link.getAttribute("href") !== "#"
+            ) {
 
                 closeMenu();
 
             }
 
+        });
+
+    });
+
+
+    /*==================================
+ESC KEY
+==================================*/
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            closeMenu();
+
         }
-    );
+
+    });
 
 
-})();
+    /*==================================
+DESKTOP RESET
+==================================*/
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 992) {
+
+            closeMenu();
+
+        }
+
+    });
+
+});
 
 /*==================================================
 HEADER.JS
