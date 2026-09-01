@@ -51,155 +51,217 @@ header.classList.remove('scrolled');
 /*==============================
 MOBILE MENU
 ==============================*/
+/*==================================================
+BARGIIN
+MOBILE MENU
+==================================================*/
 
-function openMenu(){
+(function(){
 
-if(!navbar)return;
+    "use strict";
 
-navbar.classList.add('active');
 
-menuBtn.classList.add('active');
+    var menuBtn =
+        document.getElementById("menuBtn");
 
-if(overlay){
 
-overlay.classList.add('active');
+    var navbar =
+        document.getElementById("mainNavbar");
 
-}
 
-document.body.style.overflow='hidden';
+    var overlay =
+        document.getElementById("headerOverlay");
 
-}
 
-function closeMenu(){
+    if(!menuBtn || !navbar){
 
-if(!navbar)return;
+        return;
 
-navbar.classList.remove('active');
+    }
 
-menuBtn.classList.remove('active');
 
-if(overlay){
+    /*==================================
+OPEN / CLOSE MENU
+==================================*/
 
-overlay.classList.remove('active');
+    function openMenu(){
 
-}
+        menuBtn.classList.add("active");
 
-document.body.style.overflow='';
+        navbar.classList.add("active");
 
-}
+        document.body.classList.add("menu-open");
 
-if(menuBtn){
 
-menuBtn.addEventListener('click',function(){
+        if(overlay){
 
-if(navbar.classList.contains('active')){
+            overlay.classList.add("active");
 
-closeMenu();
+        }
 
-}else{
 
-openMenu();
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "true"
+        );
 
-}
+    }
 
-});
 
-}
+    function closeMenu(){
 
+        menuBtn.classList.remove("active");
 
-/*==============================
-OVERLAY
-==============================*/
+        navbar.classList.remove("active");
 
-if(overlay){
+        document.body.classList.remove("menu-open");
 
-overlay.addEventListener('click',function(){
 
-closeMenu();
+        if(overlay){
 
-closeSearch();
+            overlay.classList.remove("active");
 
-});
+        }
 
-}
 
-/*==============================
-ESC
-==============================*/
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+        );
 
-document.addEventListener('keydown',function(e){
+    }
 
-if(e.key==="Escape"){
 
-closeMenu();
+    menuBtn.addEventListener(
+        "click",
+        function(){
 
-closeSearch();
+            if(navbar.classList.contains("active")){
 
-}
+                closeMenu();
 
-});
+            }else{
 
-/*==============================
-ACTIVE LINK
-==============================*/
+                openMenu();
 
-const current=window.location.pathname.split('/').pop()||'index.html';
+            }
 
-document.querySelectorAll('.navbar a').forEach(function(link){
+        }
+    );
 
-const href=link.getAttribute('href');
 
-if(href===current){
+    /*==================================
+OVERLAY CLOSE
+==================================*/
 
-link.classList.add('active');
+    if(overlay){
 
-}
+        overlay.addEventListener(
+            "click",
+            closeMenu
+        );
 
-});
+    }
 
-/*==============================
-DROPDOWN MOBILE
-==============================*/
 
-dropdowns.forEach(function(item){
+    /*==================================
+DROPDOWN
+==================================*/
 
-const link=item.querySelector('a');
+    var dropdowns =
+        navbar.querySelectorAll(".dropdown");
 
-if(!link)return;
 
-link.addEventListener('click',function(e){
+    for(
+        var i = 0;
+        i < dropdowns.length;
+        i++
+    ){
 
-if(window.innerWidth>991)return;
+        (function(dropdown){
 
-e.preventDefault();
+            var toggle =
+                dropdown.querySelector(
+                    ".dropdown-toggle"
+                );
 
-item.classList.toggle('open');
 
-});
+            if(!toggle){
 
-});
+                return;
 
-/*==============================
-RESIZE
-==============================*/
+            }
 
-window.addEventListener('resize',function(){
 
-if(window.innerWidth>991){
+            toggle.addEventListener(
+                "click",
+                function(event){
 
-closeMenu();
+                    event.preventDefault();
 
-}
+                    dropdown.classList.toggle(
+                        "active"
+                    );
 
-});
+                }
+            );
 
-/*==============================
-SCROLL
-==============================*/
+        })(dropdowns[i]);
 
-window.addEventListener('scroll',stickyHeader);
+    }
 
-stickyHeader();
+
+    /*==================================
+CLOSE MENU AFTER CLICK
+==================================*/
+
+    var links =
+        navbar.querySelectorAll(
+            "a:not(.dropdown-toggle)"
+        );
+
+
+    for(
+        var j = 0;
+        j < links.length;
+        j++
+    ){
+
+        links[j].addEventListener(
+            "click",
+            function(){
+
+                if(
+                    window.innerWidth <= 992
+                ){
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /*==================================
+WINDOW RESIZE
+==================================*/
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            if(window.innerWidth > 992){
+
+                closeMenu();
+
+            }
+
+        }
+    );
+
 
 })();
 
@@ -516,219 +578,5 @@ document.body.style.overflow="";
 /*==============================
 END
 ==============================*/
-
-})();
-
-/*==================================================
-BARGIIN
-MOBILE MENU
-==================================================*/
-
-(function(){
-
-    "use strict";
-
-
-    var menuBtn =
-        document.getElementById("menuBtn");
-
-
-    var navbar =
-        document.getElementById("mainNavbar");
-
-
-    var overlay =
-        document.getElementById("headerOverlay");
-
-
-    if(!menuBtn || !navbar){
-
-        return;
-
-    }
-
-
-    /*==================================
-OPEN / CLOSE MENU
-==================================*/
-
-    function openMenu(){
-
-        menuBtn.classList.add("active");
-
-        navbar.classList.add("active");
-
-        document.body.classList.add("menu-open");
-
-
-        if(overlay){
-
-            overlay.classList.add("active");
-
-        }
-
-
-        menuBtn.setAttribute(
-            "aria-expanded",
-            "true"
-        );
-
-    }
-
-
-    function closeMenu(){
-
-        menuBtn.classList.remove("active");
-
-        navbar.classList.remove("active");
-
-        document.body.classList.remove("menu-open");
-
-
-        if(overlay){
-
-            overlay.classList.remove("active");
-
-        }
-
-
-        menuBtn.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-    }
-
-
-    menuBtn.addEventListener(
-        "click",
-        function(){
-
-            if(navbar.classList.contains("active")){
-
-                closeMenu();
-
-            }else{
-
-                openMenu();
-
-            }
-
-        }
-    );
-
-
-    /*==================================
-OVERLAY CLOSE
-==================================*/
-
-    if(overlay){
-
-        overlay.addEventListener(
-            "click",
-            closeMenu
-        );
-
-    }
-
-
-    /*==================================
-DROPDOWN
-==================================*/
-
-    var dropdowns =
-        navbar.querySelectorAll(".dropdown");
-
-
-    for(
-        var i = 0;
-        i < dropdowns.length;
-        i++
-    ){
-
-        (function(dropdown){
-
-            var toggle =
-                dropdown.querySelector(
-                    ".dropdown-toggle"
-                );
-
-
-            if(!toggle){
-
-                return;
-
-            }
-
-
-            toggle.addEventListener(
-                "click",
-                function(event){
-
-                    event.preventDefault();
-
-                    dropdown.classList.toggle(
-                        "active"
-                    );
-
-                }
-            );
-
-        })(dropdowns[i]);
-
-    }
-
-
-    /*==================================
-CLOSE MENU AFTER CLICK
-==================================*/
-
-    var links =
-        navbar.querySelectorAll(
-            "a:not(.dropdown-toggle)"
-        );
-
-
-    for(
-        var j = 0;
-        j < links.length;
-        j++
-    ){
-
-        links[j].addEventListener(
-            "click",
-            function(){
-
-                if(
-                    window.innerWidth <= 992
-                ){
-
-                    closeMenu();
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /*==================================
-WINDOW RESIZE
-==================================*/
-
-    window.addEventListener(
-        "resize",
-        function(){
-
-            if(window.innerWidth > 992){
-
-                closeMenu();
-
-            }
-
-        }
-    );
-
 
 })();
