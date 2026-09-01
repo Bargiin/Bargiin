@@ -51,218 +51,160 @@ header.classList.remove('scrolled');
 /*==============================
 MOBILE MENU
 ==============================*/
-/*==================================================
-BARGIIN
-MOBILE HEADER MENU
-==================================================*/
+/* ==========================================
+   BARGIIN MOBILE MENU
+========================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    "use strict";
-
-
-    var menuBtn =
-        document.getElementById("menuBtn");
-
-
-    var navbar =
-        document.getElementById("mainNavbar");
-
-
-    var overlay =
-        document.getElementById("headerOverlay");
-
-
-    /* اگر IDها وجود نداشتند */
+    const menuBtn = document.getElementById("menuBtn");
+    const navbar = document.querySelector(".navbar");
+    const overlay = document.querySelector(".header-overlay");
 
     if (!menuBtn || !navbar) {
-
         return;
-
     }
 
 
-    /*==================================
-OPEN MENU
-==================================*/
+    /* =========================
+       OPEN / CLOSE MENU
+    ========================= */
 
-    function openMenu() {
+    menuBtn.addEventListener("click", function (e) {
 
-        navbar.classList.add("active");
+        e.preventDefault();
+        e.stopPropagation();
 
-        menuBtn.classList.add("active");
-
-        document.body.classList.add("menu-open");
-
+        navbar.classList.toggle("active");
 
         if (overlay) {
-
-            overlay.classList.add("active");
-
+            overlay.classList.toggle("active");
         }
 
-    }
+        const isOpen = navbar.classList.contains("active");
 
+        menuBtn.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
 
-    /*==================================
-CLOSE MENU
-==================================*/
-
-    function closeMenu() {
-
-        navbar.classList.remove("active");
-
-        menuBtn.classList.remove("active");
-
-        document.body.classList.remove("menu-open");
-
-
-        if (overlay) {
-
-            overlay.classList.remove("active");
-
-        }
-
-    }
-
-
-    /*==================================
-MENU BUTTON
-==================================*/
-
-    menuBtn.addEventListener("click", function (event) {
-
-        event.preventDefault();
-
-        event.stopPropagation();
-
-
-        if (navbar.classList.contains("active")) {
-
-            closeMenu();
-
-        } else {
-
-            openMenu();
-
-        }
+        document.body.classList.toggle(
+            "menu-open",
+            isOpen
+        );
 
     });
 
 
-    /*==================================
-OVERLAY
-==================================*/
+    /* =========================
+       CLOSE WITH OVERLAY
+    ========================= */
 
     if (overlay) {
 
         overlay.addEventListener("click", function () {
 
-            closeMenu();
+            navbar.classList.remove("active");
+
+            overlay.classList.remove("active");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove("menu-open");
 
         });
 
     }
 
 
-    /*==================================
-DROPDOWN MENU
-==================================*/
+    /* =========================
+       MOBILE DROPDOWNS
+    ========================= */
 
-    var dropdowns =
-        navbar.querySelectorAll(".dropdown");
-
-
-    dropdowns.forEach(function (dropdown) {
-
-        var toggle =
-            dropdown.querySelector(
-                ".dropdown-toggle"
-            );
+    const dropdownItems =
+        document.querySelectorAll(
+            ".navbar .has-dropdown"
+        );
 
 
-        /* حالت اول:
-           اگر dropdown-toggle وجود دارد */
+    dropdownItems.forEach(function (item) {
 
-        if (toggle) {
+        const link =
+            item.querySelector(":scope > a");
 
-            toggle.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-                    event.stopPropagation();
+        const dropdown =
+            item.querySelector(":scope > .dropdown");
 
 
-                    /* بستن سایر Dropdownها */
-
-                    dropdowns.forEach(function (item) {
-
-                        if (item !== dropdown) {
-
-                            item.classList.remove("active");
-
-                            item.classList.remove("open");
-
-                        }
-
-                    });
+        if (!link || !dropdown) {
+            return;
+        }
 
 
-                    /* باز و بسته کردن */
+        link.addEventListener("click", function (e) {
 
-                    dropdown.classList.toggle("active");
+            if (window.innerWidth > 992) {
+                return;
+            }
 
-                    dropdown.classList.toggle("open");
+            e.preventDefault();
+
+            e.stopPropagation();
+
+
+            /* بستن سایر زیرمنوها */
+
+            dropdownItems.forEach(function (otherItem) {
+
+                if (otherItem !== item) {
+
+                    otherItem.classList.remove("active");
 
                 }
-            );
 
-        }
+            });
+
+
+            /* باز و بسته شدن */
+
+            item.classList.toggle("active");
+
+        });
 
     });
 
 
-    /*==================================
-NORMAL LINKS
-==================================*/
+    /* =========================
+       CLOSE MENU ON NORMAL LINK
+    ========================= */
 
-    var links =
-        navbar.querySelectorAll("a");
-
-
-    links.forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            var parentDropdown =
-                link.closest(".dropdown");
+    const normalLinks =
+        document.querySelectorAll(
+            ".navbar a:not(.has-dropdown > a)"
+        );
 
 
-            /* اگر لینک مربوط به باز کردن Dropdown باشد،
-               اجازه ناوبری نده */
+    normalLinks.forEach(function (link) {
 
-            if (
-                link.classList.contains("dropdown-toggle") ||
-                link.parentElement.classList.contains("dropdown-toggle")
-            ) {
+        link.addEventListener("click", function () {
 
-                event.preventDefault();
+            if (window.innerWidth <= 992) {
 
-                return;
+                navbar.classList.remove("active");
 
-            }
+                if (overlay) {
+                    overlay.classList.remove("active");
+                }
 
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-            /* لینک‌های معمولی باید کاملاً طبیعی کار کنند */
-
-            if (
-                link.getAttribute("href") &&
-                link.getAttribute("href") !== "#"
-            ) {
-
-                closeMenu();
+                document.body.classList.remove("menu-open");
 
             }
 
@@ -271,37 +213,7 @@ NORMAL LINKS
     });
 
 
-    /*==================================
-ESC KEY
-==================================*/
-
-    document.addEventListener("keydown", function (event) {
-
-        if (event.key === "Escape") {
-
-            closeMenu();
-
-        }
-
-    });
-
-
-    /*==================================
-DESKTOP RESET
-==================================*/
-
-    window.addEventListener("resize", function () {
-
-        if (window.innerWidth > 992) {
-
-            closeMenu();
-
-        }
-
-    });
-
 });
-
 /*==================================================
 HEADER.JS
 Part 2

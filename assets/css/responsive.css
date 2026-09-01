@@ -1743,192 +1743,263 @@ BARGIIN
 FINAL MOBILE FIXES
 HEADER + SEARCH + PRODUCT GALLERY
 ==================================================*/
+/* ==========================================
+HEADER - MOBILE
+========================================== */
 
-
-/*==================================
-MOBILE HEADER
-==================================*/
-
-@media (max-width: 992px){
+@media (max-width:992px){
 
     .header{
         height:80px;
-        position:relative;
+        position:fixed;
+        top:0;
+        right:0;
+        width:100%;
         z-index:10000;
     }
 
+
     .header .container{
         height:80px;
-        width:94%;
         display:flex;
         align-items:center;
         justify-content:space-between;
-        position:relative;
-    }
-
-    /* لوگو */
-    .logo{
-        display:flex;
-        align-items:center;
-        flex-shrink:0;
-    }
-
-    .logo img{
-        display:block;
-        width:auto;
-        height:52px;
-        max-width:150px;
     }
 
 
-    /* دکمه منو */
+    /* =========================
+       MENU BUTTON
+    ========================= */
+
     .menu-btn{
-        display:flex !important;
-        width:44px;
-        height:44px;
+        display:flex;
+        flex-direction:column;
         align-items:center;
         justify-content:center;
-        flex-direction:column;
-        gap:5px;
-        flex-shrink:0;
+
+        gap:6px;
+
+        width:48px;
+        height:48px;
+
+        padding:0;
+
+        border:none;
+        background:transparent;
+
         cursor:pointer;
+
         z-index:10002;
     }
 
+
     .menu-btn span{
         display:block;
-        width:27px;
+
+        width:30px;
         height:3px;
-        border-radius:3px;
+
+        background:#243b2d;
+
+        border-radius:5px;
+
+        transition:.3s ease;
     }
 
 
-    /* منوی اصلی */
+    /* =========================
+       NAVBAR
+    ========================= */
+
     .navbar{
-        position:fixed !important;
-        top:80px !important;
-        right:-100% !important;
-        left:auto !important;
 
-        width:300px !important;
-        max-width:85vw !important;
-        height:calc(100vh - 80px) !important;
+        position:fixed;
 
-        display:block !important;
+        top:80px;
+        right:-100%;
 
-        background:#fff;
-        overflow-x:hidden;
+        width:320px;
+        max-width:88vw;
+
+        height:calc(100vh - 80px);
+
+        background:#ffffff;
+
         overflow-y:auto;
+
+        transition:right .35s ease;
 
         z-index:10001;
 
-        transition:right .35s ease;
+        box-shadow:
+            -10px 0 30px rgba(0,0,0,.12);
+
     }
+
 
     .navbar.active{
-        right:0 !important;
+        right:0;
     }
 
-    .navbar > ul{
+
+    .navbar ul{
+
+        display:flex;
+
+        flex-direction:column;
+
         width:100%;
+
         margin:0;
-        padding:15px 0 30px;
+        padding:15px 0;
 
-        display:flex !important;
-        flex-direction:column !important;
-        align-items:stretch !important;
-        gap:0 !important;
+        list-style:none;
+
     }
 
-    .navbar > ul > li{
+
+    .navbar li{
         width:100%;
-        display:block;
     }
+
 
     .navbar > ul > li > a{
-        width:100%;
-        min-height:52px;
 
-        display:flex !important;
+        display:flex;
+
         align-items:center;
         justify-content:space-between;
 
-        padding:14px 22px;
-
-        white-space:nowrap;
-    }
-
-
-    /* زیرمنو */
-    .navbar .dropdown-menu{
-        position:static !important;
-
-        width:100% !important;
-        min-width:0 !important;
-
-        display:none !important;
-
-        opacity:1 !important;
-        visibility:visible !important;
-        transform:none !important;
-
-        padding:0 !important;
-        margin:0 !important;
-
-        background:#f6f7f4;
-        box-shadow:none !important;
-    }
-
-    .navbar .dropdown.active > .dropdown-menu{
-        display:block !important;
-    }
-
-    .navbar .dropdown-menu li{
         width:100%;
+
+        padding:17px 25px;
+
+        color:#243b2d;
+
+        text-decoration:none;
+
+        border-bottom:
+            1px solid rgba(0,0,0,.07);
+
     }
 
-    .navbar .dropdown-menu a{
+
+    /* =========================
+       DROPDOWN
+    ========================= */
+
+    .navbar .dropdown{
+
+        position:static;
+
+        display:none;
+
+        width:100%;
+
+        margin:0;
+        padding:0;
+
+        background:#f5f7f4;
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:none;
+
+        box-shadow:none;
+
+    }
+
+
+    .navbar .has-dropdown.active > .dropdown{
         display:block;
+    }
+
+
+    .navbar .dropdown li{
         width:100%;
-        padding:12px 38px;
-        white-space:normal;
     }
 
 
-    /* آیکون های شبکه اجتماعی */
+    .navbar .dropdown li a{
+
+        display:block;
+
+        padding:14px 45px;
+
+        color:#506056;
+
+        text-decoration:none;
+
+        border-bottom:
+            1px solid rgba(0,0,0,.05);
+
+    }
+
+
+    /* فلش */
+
+    .navbar .has-dropdown > a i{
+
+        transition:.3s ease;
+
+    }
+
+
+    .navbar .has-dropdown.active > a i{
+
+        transform:rotate(180deg);
+
+    }
+
+
+    /* =========================
+       SOCIAL
+    ========================= */
+
     .header-social{
-        display:flex !important;
-        flex-direction:row !important;
-        align-items:center !important;
-        justify-content:center !important;
-        gap:8px !important;
-
-        flex-shrink:0;
-        white-space:nowrap;
+        display:none;
     }
 
-    .header-social a{
-        display:flex !important;
-        align-items:center !important;
-        justify-content:center !important;
 
-        width:34px !important;
-        height:34px !important;
+    /* =========================
+       OVERLAY
+    ========================= */
 
-        flex-shrink:0 !important;
+    .header-overlay{
+
+        position:fixed;
+
+        inset:0;
+
+        background:rgba(0,0,0,.35);
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transition:.3s ease;
+
+        z-index:9999;
+
     }
 
-    .header-social img,
-    .header-social i{
-        display:block !important;
-        width:22px;
-        height:22px;
-        max-width:22px;
-        object-fit:contain;
+
+    .header-overlay.active{
+
+        opacity:1;
+
+        visibility:visible;
+
+    }
+
+
+    body.menu-open{
+        overflow:hidden;
     }
 
 }
-
 
 /*==================================
 MOBILE HEADER - SMALL
@@ -1942,47 +2013,18 @@ MOBILE HEADER - SMALL
 
     .header .container{
         height:72px;
-        width:94%;
-    }
-
-    .logo img{
-        height:46px;
-        max-width:125px;
-    }
-
-    .menu-btn{
-        width:42px;
-        height:42px;
-    }
-
-    .menu-btn span{
-        width:26px;
-        height:3px;
-    }
-
-    .header-social{
-        gap:5px !important;
-    }
-
-    .header-social a{
-        width:30px !important;
-        height:30px !important;
-    }
-
-    .header-social img,
-    .header-social i{
-        width:19px;
-        height:19px;
-        max-width:19px;
     }
 
     .navbar{
-        top:72px !important;
-        height:calc(100vh - 72px) !important;
+        top:72px;
+
+        width:100%;
+        max-width:100%;
+
+        height:calc(100vh - 72px);
     }
 
 }
-
 
 /*==================================
 SEARCH - MOBILE
