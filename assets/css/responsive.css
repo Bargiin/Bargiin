@@ -2906,3 +2906,180 @@ MOBILE MENU - CLICK & DROPDOWN FIX
     }
 
 }
+
+/* ==========================================
+FINAL MOBILE MENU FIX
+========================================== */
+
+@media (max-width:992px){
+
+    .menu-btn{
+        display:flex !important;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:6px;
+        cursor:pointer;
+        position:relative;
+        z-index:10005;
+    }
+
+    .menu-btn span{
+        display:block !important;
+        width:28px;
+        height:3px;
+        background:#243b2d;
+        border-radius:10px;
+    }
+
+
+    .navbar{
+
+        display:block !important;
+
+        position:fixed !important;
+
+        top:80px !important;
+        right:-100% !important;
+
+        width:320px !important;
+        max-width:88vw !important;
+
+        height:calc(100vh - 80px) !important;
+
+        background:#fff !important;
+
+        z-index:10004 !important;
+
+        overflow-y:auto !important;
+
+        transition:right .35s ease !important;
+
+    }
+
+
+    .navbar.active{
+
+        right:0 !important;
+
+    }
+
+
+    .navbar > ul{
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        width:100% !important;
+
+        margin:0 !important;
+
+        padding:15px 0 !important;
+
+    }
+
+
+    .navbar > ul > li{
+
+        width:100% !important;
+
+    }
+
+
+    .navbar > ul > li > a{
+
+        display:flex !important;
+
+        align-items:center !important;
+
+        justify-content:space-between !important;
+
+        width:100% !important;
+
+        padding:17px 25px !important;
+
+    }
+
+
+    .navbar .dropdown{
+
+        display:none !important;
+
+        position:static !important;
+
+        width:100% !important;
+
+        opacity:1 !important;
+
+        visibility:visible !important;
+
+        transform:none !important;
+
+        background:#f4f6f2 !important;
+
+    }
+
+
+    .navbar .has-dropdown.active > .dropdown{
+
+        display:block !important;
+
+    }
+
+
+    .navbar .dropdown li a{
+
+        display:block !important;
+
+        padding:14px 45px !important;
+
+    }
+
+
+    .header-overlay{
+
+        position:fixed !important;
+
+        inset:0 !important;
+
+        display:none !important;
+
+        background:rgba(0,0,0,.35) !important;
+
+        z-index:10003 !important;
+
+    }
+
+
+    .header-overlay.active{
+
+        display:block !important;
+
+    }
+
+
+    body.menu-open{
+
+        overflow:hidden !important;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .navbar{
+
+        top:72px !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        height:calc(100vh - 72px) !important;
+
+    }
+
+}
