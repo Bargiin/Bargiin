@@ -143,9 +143,12 @@ HEADER
             <a href="../articles/lifestyle.html">سبک زندگی</a>
         </li>
 
+<!--
         <li>
-            <a href="../articles/news.html">اخبار برگین</a>
+            <a href="articles/news.html">اخبار برگین</a>
         </li>
+-->
+
 
     </ul>
 					
@@ -254,19 +257,31 @@ HEADER
 
 </div>
 			
-            <button class="menu-btn" aria-label="منوی موبایل">
+<button
+            type="button"
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="باز کردن منو"
+            aria-expanded="false"
+        >
 
-                <span></span>
-                <span></span>
-                <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
 
-            </button>
+        </button>
 
         </div>
 
     </div>
 
 </header>
+	
+	
+<div
+    class="header-overlay"
+    id="headerOverlay"
+></div>
 	
 <!--==================================
 PRODUCT PAGE
@@ -455,11 +470,9 @@ FOOTER
 
         <div class="footer-grid">
 
-
-
             <div class="footer-brand">
 
-
+<!--
                 <a href="index.html" class="footer-logo">
 
                     <img
@@ -469,11 +482,11 @@ FOOTER
 
                 </a>
 
-
+-->
 
                 <p>
 
-                    برگین؛ همراه طبیعت در مسیر
+                    <strong>برگین</strong>؛ همراه طبیعت در مسیر
                     آرامش، سلامتی و طعم‌های اصیل گیاهی.
 
                 </p>
@@ -541,10 +554,10 @@ FOOTER
                         </a>
                     </li>
 
-
+				
                     <li>
-                        <a href="articles.html">
-                            مقالات
+                        <a href="../articles/herbs.html">
+                            مجله برگین
                         </a>
                     </li>
 
@@ -713,6 +726,168 @@ FOOTER
 <script src="../assets/js/app.js"></script>
 	
 <script src="../assets/js/product.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navbar = document.querySelector(".navbar");
+    const overlay = document.querySelector(".header-overlay");
+
+    console.log("Bargiin Mobile Menu Loaded");
+
+    if (!menuBtn || !navbar) {
+
+        console.log("Menu elements not found");
+
+        return;
+
+    }
+
+
+    /* باز و بسته شدن منوی اصلی */
+
+    menuBtn.onclick = function () {
+
+        navbar.classList.toggle("active");
+
+        if (overlay) {
+            overlay.classList.toggle("active");
+        }
+
+        document.body.classList.toggle("menu-open");
+
+        const expanded =
+            navbar.classList.contains("active");
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            expanded
+        );
+
+    };
+
+
+    /* کلیک روی پس زمینه */
+
+    if (overlay) {
+
+        overlay.onclick = function () {
+
+            navbar.classList.remove("active");
+
+            overlay.classList.remove("active");
+
+            document.body.classList.remove("menu-open");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        };
+
+    }
+
+
+    /* زیرمنوها */
+
+    const dropdownItems =
+        navbar.querySelectorAll(".has-dropdown");
+
+
+    dropdownItems.forEach(function (item) {
+
+        const link =
+            item.querySelector(":scope > a");
+
+        const dropdown =
+            item.querySelector(":scope > .dropdown");
+
+
+        if (!link || !dropdown) {
+
+            return;
+
+        }
+
+
+        link.onclick = function (event) {
+
+            if (window.innerWidth > 992) {
+
+                return;
+
+            }
+
+            event.preventDefault();
+
+
+            dropdownItems.forEach(function (otherItem) {
+
+                if (otherItem !== item) {
+
+                    otherItem.classList.remove("active");
+
+                }
+
+            });
+
+
+            item.classList.toggle("active");
+
+        };
+
+    });
+
+
+    /* لینک‌های معمولی */
+
+    const links =
+        navbar.querySelectorAll("a");
+
+
+    links.forEach(function (link) {
+
+        const parent =
+            link.parentElement;
+
+
+        if (
+            parent &&
+            parent.classList.contains("has-dropdown")
+        ) {
+
+            return;
+
+        }
+
+
+        link.onclick = function () {
+
+            if (window.innerWidth <= 992) {
+
+                navbar.classList.remove("active");
+
+                if (overlay) {
+
+                    overlay.classList.remove("active");
+
+                }
+
+                document.body.classList.remove("menu-open");
+
+            }
+
+        };
+
+    });
+
+});
+
+</script>
+
 
 </body>
 
