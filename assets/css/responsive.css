@@ -1743,263 +1743,192 @@ BARGIIN
 FINAL MOBILE FIXES
 HEADER + SEARCH + PRODUCT GALLERY
 ==================================================*/
-/* ==========================================
-HEADER - MOBILE
-========================================== */
 
-@media (max-width:992px){
+
+/*==================================
+MOBILE HEADER
+==================================*/
+
+@media (max-width: 992px){
 
     .header{
         height:80px;
-        position:fixed;
-        top:0;
-        right:0;
-        width:100%;
+        position:relative;
         z-index:10000;
     }
 
-
     .header .container{
         height:80px;
+        width:94%;
         display:flex;
         align-items:center;
         justify-content:space-between;
+        position:relative;
+    }
+
+    /* لوگو */
+    .logo{
+        display:flex;
+        align-items:center;
+        flex-shrink:0;
+    }
+
+    .logo img{
+        display:block;
+        width:auto;
+        height:52px;
+        max-width:150px;
     }
 
 
-    /* =========================
-       MENU BUTTON
-    ========================= */
-
+    /* دکمه منو */
     .menu-btn{
-        display:flex;
-        flex-direction:column;
+        display:flex !important;
+        width:44px;
+        height:44px;
         align-items:center;
         justify-content:center;
-
-        gap:6px;
-
-        width:48px;
-        height:48px;
-
-        padding:0;
-
-        border:none;
-        background:transparent;
-
+        flex-direction:column;
+        gap:5px;
+        flex-shrink:0;
         cursor:pointer;
-
         z-index:10002;
     }
 
-
     .menu-btn span{
         display:block;
-
-        width:30px;
+        width:27px;
         height:3px;
-
-        background:#243b2d;
-
-        border-radius:5px;
-
-        transition:.3s ease;
+        border-radius:3px;
     }
 
 
-    /* =========================
-       NAVBAR
-    ========================= */
-
+    /* منوی اصلی */
     .navbar{
+        position:fixed !important;
+        top:80px !important;
+        right:-100% !important;
+        left:auto !important;
 
-        position:fixed;
+        width:300px !important;
+        max-width:85vw !important;
+        height:calc(100vh - 80px) !important;
 
-        top:80px;
-        right:-100%;
+        display:block !important;
 
-        width:320px;
-        max-width:88vw;
-
-        height:calc(100vh - 80px);
-
-        background:#ffffff;
-
+        background:#fff;
+        overflow-x:hidden;
         overflow-y:auto;
-
-        transition:right .35s ease;
 
         z-index:10001;
 
-        box-shadow:
-            -10px 0 30px rgba(0,0,0,.12);
-
+        transition:right .35s ease;
     }
-
 
     .navbar.active{
-        right:0;
+        right:0 !important;
     }
 
-
-    .navbar ul{
-
-        display:flex;
-
-        flex-direction:column;
-
+    .navbar > ul{
         width:100%;
-
         margin:0;
-        padding:15px 0;
+        padding:15px 0 30px;
 
-        list-style:none;
-
+        display:flex !important;
+        flex-direction:column !important;
+        align-items:stretch !important;
+        gap:0 !important;
     }
 
-
-    .navbar li{
+    .navbar > ul > li{
         width:100%;
+        display:block;
     }
-
 
     .navbar > ul > li > a{
+        width:100%;
+        min-height:52px;
 
-        display:flex;
-
+        display:flex !important;
         align-items:center;
         justify-content:space-between;
 
-        width:100%;
+        padding:14px 22px;
 
-        padding:17px 25px;
-
-        color:#243b2d;
-
-        text-decoration:none;
-
-        border-bottom:
-            1px solid rgba(0,0,0,.07);
-
+        white-space:nowrap;
     }
 
 
-    /* =========================
-       DROPDOWN
-    ========================= */
+    /* زیرمنو */
+    .navbar .dropdown-menu{
+        position:static !important;
 
-    .navbar .dropdown{
+        width:100% !important;
+        min-width:0 !important;
 
-        position:static;
+        display:none !important;
 
-        display:none;
+        opacity:1 !important;
+        visibility:visible !important;
+        transform:none !important;
 
-        width:100%;
+        padding:0 !important;
+        margin:0 !important;
 
-        margin:0;
-        padding:0;
-
-        background:#f5f7f4;
-
-        opacity:1;
-
-        visibility:visible;
-
-        transform:none;
-
-        box-shadow:none;
-
+        background:#f6f7f4;
+        box-shadow:none !important;
     }
 
+    .navbar .dropdown.active > .dropdown-menu{
+        display:block !important;
+    }
 
-    .navbar .has-dropdown.active > .dropdown{
+    .navbar .dropdown-menu li{
+        width:100%;
+    }
+
+    .navbar .dropdown-menu a{
         display:block;
-    }
-
-
-    .navbar .dropdown li{
         width:100%;
+        padding:12px 38px;
+        white-space:normal;
     }
 
 
-    .navbar .dropdown li a{
-
-        display:block;
-
-        padding:14px 45px;
-
-        color:#506056;
-
-        text-decoration:none;
-
-        border-bottom:
-            1px solid rgba(0,0,0,.05);
-
-    }
-
-
-    /* فلش */
-
-    .navbar .has-dropdown > a i{
-
-        transition:.3s ease;
-
-    }
-
-
-    .navbar .has-dropdown.active > a i{
-
-        transform:rotate(180deg);
-
-    }
-
-
-    /* =========================
-       SOCIAL
-    ========================= */
-
+    /* آیکون های شبکه اجتماعی */
     .header-social{
-        display:none;
+        display:flex !important;
+        flex-direction:row !important;
+        align-items:center !important;
+        justify-content:center !important;
+        gap:8px !important;
+
+        flex-shrink:0;
+        white-space:nowrap;
     }
 
+    .header-social a{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
 
-    /* =========================
-       OVERLAY
-    ========================= */
+        width:34px !important;
+        height:34px !important;
 
-    .header-overlay{
-
-        position:fixed;
-
-        inset:0;
-
-        background:rgba(0,0,0,.35);
-
-        opacity:0;
-
-        visibility:hidden;
-
-        transition:.3s ease;
-
-        z-index:9999;
-
+        flex-shrink:0 !important;
     }
 
-
-    .header-overlay.active{
-
-        opacity:1;
-
-        visibility:visible;
-
-    }
-
-
-    body.menu-open{
-        overflow:hidden;
+    .header-social img,
+    .header-social i{
+        display:block !important;
+        width:22px;
+        height:22px;
+        max-width:22px;
+        object-fit:contain;
     }
 
 }
+
 
 /*==================================
 MOBILE HEADER - SMALL
@@ -2013,18 +1942,47 @@ MOBILE HEADER - SMALL
 
     .header .container{
         height:72px;
+        width:94%;
+    }
+
+    .logo img{
+        height:46px;
+        max-width:125px;
+    }
+
+    .menu-btn{
+        width:42px;
+        height:42px;
+    }
+
+    .menu-btn span{
+        width:26px;
+        height:3px;
+    }
+
+    .header-social{
+        gap:5px !important;
+    }
+
+    .header-social a{
+        width:30px !important;
+        height:30px !important;
+    }
+
+    .header-social img,
+    .header-social i{
+        width:19px;
+        height:19px;
+        max-width:19px;
     }
 
     .navbar{
-        top:72px;
-
-        width:100%;
-        max-width:100%;
-
-        height:calc(100vh - 72px);
+        top:72px !important;
+        height:calc(100vh - 72px) !important;
     }
 
 }
+
 
 /*==================================
 SEARCH - MOBILE
@@ -2263,6 +2221,10 @@ SMALL MOBILE GALLERY
 
 }
 
+/*==================================================
+BARGIIN
+MOBILE HEADER MENU
+==================================================*/
 
 
 /*==================================
@@ -2903,183 +2865,6 @@ MOBILE MENU - CLICK & DROPDOWN FIX
     .dropdown-toggle{
         cursor:pointer !important;
         pointer-events:auto !important;
-    }
-
-}
-
-/* ==========================================
-FINAL MOBILE MENU FIX
-========================================== */
-
-@media (max-width:992px){
-
-    .menu-btn{
-        display:flex !important;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        gap:6px;
-        cursor:pointer;
-        position:relative;
-        z-index:10005;
-    }
-
-    .menu-btn span{
-        display:block !important;
-        width:28px;
-        height:3px;
-        background:#243b2d;
-        border-radius:10px;
-    }
-
-
-    .navbar{
-
-        display:block !important;
-
-        position:fixed !important;
-
-        top:80px !important;
-        right:-100% !important;
-
-        width:320px !important;
-        max-width:88vw !important;
-
-        height:calc(100vh - 80px) !important;
-
-        background:#fff !important;
-
-        z-index:10004 !important;
-
-        overflow-y:auto !important;
-
-        transition:right .35s ease !important;
-
-    }
-
-
-    .navbar.active{
-
-        right:0 !important;
-
-    }
-
-
-    .navbar > ul{
-
-        display:flex !important;
-
-        flex-direction:column !important;
-
-        width:100% !important;
-
-        margin:0 !important;
-
-        padding:15px 0 !important;
-
-    }
-
-
-    .navbar > ul > li{
-
-        width:100% !important;
-
-    }
-
-
-    .navbar > ul > li > a{
-
-        display:flex !important;
-
-        align-items:center !important;
-
-        justify-content:space-between !important;
-
-        width:100% !important;
-
-        padding:17px 25px !important;
-
-    }
-
-
-    .navbar .dropdown{
-
-        display:none !important;
-
-        position:static !important;
-
-        width:100% !important;
-
-        opacity:1 !important;
-
-        visibility:visible !important;
-
-        transform:none !important;
-
-        background:#f4f6f2 !important;
-
-    }
-
-
-    .navbar .has-dropdown.active > .dropdown{
-
-        display:block !important;
-
-    }
-
-
-    .navbar .dropdown li a{
-
-        display:block !important;
-
-        padding:14px 45px !important;
-
-    }
-
-
-    .header-overlay{
-
-        position:fixed !important;
-
-        inset:0 !important;
-
-        display:none !important;
-
-        background:rgba(0,0,0,.35) !important;
-
-        z-index:10003 !important;
-
-    }
-
-
-    .header-overlay.active{
-
-        display:block !important;
-
-    }
-
-
-    body.menu-open{
-
-        overflow:hidden !important;
-
-    }
-
-}
-
-
-@media(max-width:768px){
-
-    .navbar{
-
-        top:72px !important;
-
-        width:100% !important;
-
-        max-width:100% !important;
-
-        height:calc(100vh - 72px) !important;
-
     }
 
 }
