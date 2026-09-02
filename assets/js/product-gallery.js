@@ -1,10 +1,9 @@
 /*==================================================
 BARGIIN
 PRODUCT GALLERY
-FULL WIDTH HORIZONTAL SLIDER
 ==================================================*/
 
-(function () {
+(function(){
 
     "use strict";
 
@@ -12,7 +11,8 @@ FULL WIDTH HORIZONTAL SLIDER
     var gallery =
         document.getElementById("productGallery");
 
-    if (!gallery) {
+
+    if(!gallery){
         return;
     }
 
@@ -22,20 +22,24 @@ FULL WIDTH HORIZONTAL SLIDER
             ".product-gallery-track"
         );
 
+
     var slides =
         gallery.querySelectorAll(
             ".product-gallery-slide"
         );
+
 
     var dots =
         gallery.querySelectorAll(
             ".product-gallery-dots button"
         );
 
+
     var prev =
         gallery.querySelector(
             ".product-gallery-prev"
         );
+
 
     var next =
         gallery.querySelector(
@@ -43,7 +47,7 @@ FULL WIDTH HORIZONTAL SLIDER
         );
 
 
-    if (!track || !slides.length) {
+    if(!track || slides.length === 0){
         return;
     }
 
@@ -52,54 +56,57 @@ FULL WIDTH HORIZONTAL SLIDER
 
     var timer = null;
 
-    var delay = 3000;
+    var delay = 4000;
 
     var startX = 0;
 
-    var endX = 0;
-
 
     /*==================================
-    UPDATE
+    UPDATE SLIDER
     ==================================*/
 
-    function updateSlider() {
+function updateSlider() {
 
-        track.style.transform =
-            "translateX(-" +
-            (current * 100) +
-            "%)";
+    var slideWidth =
+        gallery.clientWidth;
 
-
-        for (var i = 0; i < dots.length; i++) {
-
-            dots[i].classList.remove("active");
-
-        }
+    track.style.transform =
+        "translateX(" +
+        (-current * slideWidth) +
+        "px)";
 
 
-        if (dots[current]) {
+    for (var i = 0; i < dots.length; i++) {
 
-            dots[current].classList.add("active");
-
-        }
+        dots[i].classList.remove("active");
 
     }
+
+
+    if (dots[current]) {
+
+        dots[current].classList.add("active");
+
+    }
+
+}
 
 
     /*==================================
     NEXT
     ==================================*/
 
-    function nextSlide() {
+    function nextSlide(){
 
         current++;
 
-        if (current >= slides.length) {
+
+        if(current >= slides.length){
 
             current = 0;
 
         }
+
 
         updateSlider();
 
@@ -110,15 +117,18 @@ FULL WIDTH HORIZONTAL SLIDER
     PREVIOUS
     ==================================*/
 
-    function previousSlide() {
+    function previousSlide(){
 
         current--;
 
-        if (current < 0) {
 
-            current = slides.length - 1;
+        if(current < 0){
+
+            current =
+                slides.length - 1;
 
         }
+
 
         updateSlider();
 
@@ -126,14 +136,14 @@ FULL WIDTH HORIZONTAL SLIDER
 
 
     /*==================================
-    BUTTONS
+    NEXT BUTTON
     ==================================*/
 
-    if (next) {
+    if(next){
 
         next.addEventListener(
             "click",
-            function () {
+            function(){
 
                 nextSlide();
 
@@ -145,11 +155,15 @@ FULL WIDTH HORIZONTAL SLIDER
     }
 
 
-    if (prev) {
+    /*==================================
+    PREVIOUS BUTTON
+    ==================================*/
+
+    if(prev){
 
         prev.addEventListener(
             "click",
-            function () {
+            function(){
 
                 previousSlide();
 
@@ -165,13 +179,13 @@ FULL WIDTH HORIZONTAL SLIDER
     DOTS
     ==================================*/
 
-    for (var i = 0; i < dots.length; i++) {
+    for(var i = 0; i < dots.length; i++){
 
-        (function (index) {
+        (function(index){
 
             dots[index].addEventListener(
                 "click",
-                function () {
+                function(){
 
                     current = index;
 
@@ -188,36 +202,42 @@ FULL WIDTH HORIZONTAL SLIDER
 
 
     /*==================================
-    TOUCH SWIPE
+    TOUCH START
     ==================================*/
 
     gallery.addEventListener(
         "touchstart",
-        function (event) {
+        function(event){
 
-            if (!event.touches.length) {
+            if(!event.touches.length){
                 return;
             }
+
 
             startX =
                 event.touches[0].clientX;
 
         },
         {
-            passive: true
+            passive:true
         }
     );
 
 
+    /*==================================
+    TOUCH END
+    ==================================*/
+
     gallery.addEventListener(
         "touchend",
-        function (event) {
+        function(event){
 
-            if (!event.changedTouches.length) {
+            if(!event.changedTouches.length){
                 return;
             }
 
-            endX =
+
+            var endX =
                 event.changedTouches[0].clientX;
 
 
@@ -225,16 +245,16 @@ FULL WIDTH HORIZONTAL SLIDER
                 endX - startX;
 
 
-            if (Math.abs(distance) < 50) {
+            if(Math.abs(distance) < 50){
                 return;
             }
 
 
-            if (distance < 0) {
+            if(distance < 0){
 
                 nextSlide();
 
-            } else {
+            }else{
 
                 previousSlide();
 
@@ -245,34 +265,36 @@ FULL WIDTH HORIZONTAL SLIDER
 
         },
         {
-            passive: true
+            passive:true
         }
     );
 
 
     /*==================================
-    AUTO PLAY
+    AUTOPLAY
     ==================================*/
 
-    function startAutoPlay() {
+    function startAutoPlay(){
 
         stopAutoPlay();
 
-        timer = setInterval(
-            function () {
 
-                nextSlide();
+        timer =
+            setInterval(
+                function(){
 
-            },
-            delay
-        );
+                    nextSlide();
+
+                },
+                delay
+            );
 
     }
 
 
-    function stopAutoPlay() {
+    function stopAutoPlay(){
 
-        if (timer !== null) {
+        if(timer !== null){
 
             clearInterval(timer);
 
@@ -283,13 +305,39 @@ FULL WIDTH HORIZONTAL SLIDER
     }
 
 
-    function restartAutoPlay() {
+    function restartAutoPlay(){
 
         startAutoPlay();
 
     }
 
 
+    /*==================================
+    RESIZE
+    ==================================*/
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            updateSlider();
+
+        }
+    );
+
+
+	/*================================*/
+	
+	window.addEventListener(
+    "resize",
+    function(){
+
+        updateSlider();
+
+    }
+);
+	
+	
     /*==================================
     INITIALIZE
     ==================================*/
