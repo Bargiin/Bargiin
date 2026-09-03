@@ -1,0 +1,369 @@
+/*==================================================
+BARGIIN SHOWCASE
+FINAL VERSION
+==================================================*/
+
+.bargiin-showcase{
+
+    position:relative;
+
+    width:100%;
+
+    height:600px;
+
+    margin-top:90px;
+
+    overflow:hidden;
+
+    background:#f4f1e8;
+
+}
+
+
+/*==================================
+TRACK
+==================================*/
+
+.bargiin-showcase-track{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+/*==================================
+SLIDES
+==================================*/
+
+.bargiin-showcase-slide{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateX(40px);
+
+    transition:
+
+        opacity .55s ease,
+        transform .55s ease,
+        visibility .55s ease;
+
+}
+
+
+.bargiin-showcase-slide.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateX(0);
+
+    z-index:2;
+
+}
+
+
+/*==================================
+IMAGE
+==================================*/
+
+.bargiin-showcase-slide img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+
+/*==================================
+NAVIGATION BUTTONS
+==================================*/
+
+.bargiin-showcase-prev,
+.bargiin-showcase-next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:0;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.92);
+
+    color:#1f3d2b;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,.12);
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+
+.bargiin-showcase-prev{
+
+    right:20px;
+
+}
+
+
+.bargiin-showcase-next{
+
+    left:20px;
+
+}
+
+
+.bargiin-showcase-prev:hover,
+.bargiin-showcase-next:hover{
+
+    background:#1f3d2b;
+
+    color:#fff;
+
+}
+
+
+/*==================================
+DOTS
+==================================*/
+
+.bargiin-showcase-dots{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    z-index:20;
+
+}
+
+
+.bargiin-showcase-dots button{
+
+    width:9px;
+
+    height:9px;
+
+    padding:0;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(31,61,43,.35);
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+.bargiin-showcase-dots button.active{
+
+    width:26px;
+
+    border-radius:10px;
+
+    background:#1f3d2b;
+
+}
+
+
+/*==================================
+TABLET
+==================================*/
+
+@media(max-width:992px){
+
+    .bargiin-showcase{
+
+        height:500px;
+
+        margin-top:80px;
+
+    }
+
+}
+
+
+/*==================================
+MOBILE
+==================================*/
+
+@media(max-width:768px){
+
+    .bargiin-showcase{
+
+        width:100%;
+
+        height:auto;
+
+        aspect-ratio:16 / 9;
+
+        margin-top:72px;
+
+        background:#f4f1e8;
+
+    }
+
+
+    .bargiin-showcase-slide{
+
+        padding:12px 20px 38px;
+
+    }
+
+
+    .bargiin-showcase-slide img{
+
+        width:100%;
+
+        height:100%;
+
+        object-fit:contain;
+
+        object-position:center;
+
+    }
+
+
+    .bargiin-showcase-prev,
+    .bargiin-showcase-next{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+
+    .bargiin-showcase-prev{
+
+        right:12px;
+
+    }
+
+
+    .bargiin-showcase-next{
+
+        left:12px;
+
+    }
+
+
+    .bargiin-showcase-dots{
+
+        bottom:12px;
+
+    }
+
+}
+
+
+/*==================================
+SMALL MOBILE
+==================================*/
+
+@media(max-width:480px){
+
+    .bargiin-showcase{
+
+        margin-top:68px;
+
+    }
+
+
+    .bargiin-showcase-slide{
+
+        padding:10px 16px 34px;
+
+    }
+
+
+    .bargiin-showcase-prev,
+    .bargiin-showcase-next{
+
+        width:34px;
+
+        height:34px;
+
+        font-size:12px;
+
+    }
+
+
+    .bargiin-showcase-dots{
+
+        bottom:10px;
+
+    }
+
+}
