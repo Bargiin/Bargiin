@@ -533,12 +533,6 @@ TABLE OF CONTENTS
     background:#fafbf8;
 }
 
-.article-toc-box.active 
-
-.article-toc-box.active .article-toc-arrow{
-    transform:rotate(180deg);
-}
-
 
 /* لیست */
 
@@ -886,9 +880,87 @@ ANCHOR OFFSET
     display:none;
 }
 
-.article-toc-box.active 
-
+.article-toc-box.active .article-toc-content{
+    display:block;
+}
 
 .article-toc-box.active .article-toc-arrow{
     transform:rotate(180deg);
+}
+
+
+/*==================================
+MOBILE ARTICLE SPACING FIX
+==================================*/
+
+@media(max-width:768px){
+
+    /* فاصله بین بخش‌های اصلی مقاله */
+
+    .herb-content-section{
+        margin-bottom:28px !important;
+    }
+
+    .herb-content-section + .herb-content-section{
+        margin-top:0 !important;
+    }
+
+
+    /* فاصله بین کارت‌های خواص */
+
+    .herb-property{
+        margin-bottom:20px !important;
+        padding:20px 18px;
+    }
+
+
+    /* حذف فاصله اضافی پاراگراف آخر */
+
+    .herb-property p:last-child,
+    .herb-content-section p:last-child{
+        margin-bottom:0;
+    }
+
+
+    /* فاصله تیترها */
+
+    .article-detail-content h2{
+        margin-bottom:12px;
+    }
+
+    .article-detail-content h3{
+        margin-bottom:8px;
+    }
+
+
+    /* فاصله پاراگراف‌ها */
+
+    .article-detail-content p{
+        margin-bottom:16px;
+        line-height:2.1;
+    }
+
+}
+
+
+/*==================================
+SMALL MOBILE ARTICLE SPACING
+==================================*/
+
+@media(max-width:480px){
+
+    .herb-content-section{
+        margin-bottom:24px !important;
+    }
+
+    .herb-property{
+        margin-bottom:16px !important;
+        padding:18px 16px;
+    }
+
+    .article-detail-content p{
+        margin-bottom:14px;
+        line-height:2.05;
+    }
+
 }
