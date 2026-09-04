@@ -288,17 +288,17 @@ FOOTER MOBILE SOCIAL
 
         align-items:center;
 
-        gap:16px;
+        gap:12px;
 
-        margin-top:25px;
+        margin-top:20px;
 
     }
 
 
     .footer-mobile-social a{
 
-        width:48px;
-        height:48px;
+        width:38px;
+        height:38px;
 
         display:flex;
 
@@ -310,7 +310,7 @@ FOOTER MOBILE SOCIAL
         background:#fff;
 
         box-shadow:
-            0 5px 18px rgba(0,0,0,.10);
+            0 4px 12px rgba(0,0,0,.08);
 
         transition:.25s ease;
 
@@ -319,8 +319,8 @@ FOOTER MOBILE SOCIAL
 
     .footer-mobile-social img{
 
-        width:26px;
-        height:26px;
+        width:20px;
+        height:20px;
 
         object-fit:contain;
 
