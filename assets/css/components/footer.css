@@ -264,3 +264,75 @@ FOOTER
     transform:scale(1.15);
 
 }
+
+/* ==========================================
+FOOTER MOBILE SOCIAL
+========================================== */
+
+/* در دسکتاپ مخفی */
+
+.footer-mobile-social{
+    display:none;
+}
+
+
+/* فقط موبایل */
+
+@media(max-width:768px){
+
+    .footer-mobile-social{
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:16px;
+
+        margin-top:25px;
+
+    }
+
+
+    .footer-mobile-social a{
+
+        width:48px;
+        height:48px;
+
+        display:flex;
+
+        align-items:center;
+        justify-content:center;
+
+        border-radius:50%;
+
+        background:#fff;
+
+        box-shadow:
+            0 5px 18px rgba(0,0,0,.10);
+
+        transition:.25s ease;
+
+    }
+
+
+    .footer-mobile-social img{
+
+        width:26px;
+        height:26px;
+
+        object-fit:contain;
+
+        display:block;
+
+    }
+
+
+    .footer-mobile-social a:active{
+
+        transform:scale(.92);
+
+    }
+
+}
