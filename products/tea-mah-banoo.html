@@ -52,180 +52,79 @@
 
 	<!--  New New   -->
 	
-	    <style>
+<style>
 
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
-        :root {
-            --green: #315c45;
-            --dark-green: #234332;
-            --light-green: #edf3ee;
-            --lilac: #f2edf7;
-            --soft-lilac: #e9e0f0;
-            --gold: #b99a5b;
-            --cream: #faf8f2;
-            --text: #333333;
-            --muted: #707070;
-            --white: #ffffff;
-            --border: #e5e1d7;
-            --warning-bg: #f8f4e9;
-            --warning-border: #e4d9bb;
-            --shadow: 0 12px 35px rgba(35, 67, 50, 0.10);
-            --radius: 18px;
-        }
+:root {
+    --green: #294f2e;
+    --dark-green: #183c24;
+    --purple: #76518d;
+    --light-purple: #f1e8f6;
+    --cream: #fffdf8;
+    --gold: #b9954a;
+    --text: #29332c;
+    --muted: #6b756d;
+    --border: #e5dac9;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            line-height: 2;
-        }
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #fbf8f2, #f1e9f5);
+    color: var(--text);
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    line-height: 2;
+}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
 
-        .container {
-            width: min(1120px, calc(100% - 32px));
-            margin: 0 auto;
-        }
+/* هدر */
 
-        .section {
-            padding: 80px 0;
-        }
+.hero {
+    padding: 40px 0 25px;
+	padding-top: 140px;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
+	
+@media (max-width: 800px) {
+    .hero {
+        padding-top: 110px;
+    }
+}
+.hero-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    padding: 35px;
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    box-shadow: 0 18px 45px rgba(66, 45, 70, 0.10);
+}
 
-        .section-title .eyebrow {
-            display: inline-block;
-            color: var(--gold);
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .section-title h2 {
-            color: var(--dark-green);
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            max-width: 750px;
-            margin: 0 auto;
-            color: var(--muted);
-        }
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            background:
-                radial-gradient(circle at 10% 20%, rgba(185,154,91,.13), transparent 28%),
-                radial-gradient(circle at 90% 80%, rgba(190,170,205,.20), transparent 30%),
-                linear-gradient(135deg, #fbf8f1 0%, #f1ebf5 100%);
-            padding: 75px 0;
-            overflow: hidden;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.05fr .95fr;
-            align-items: center;
-            gap: 55px;
-        }
-
-        .hero-content {
-            order: 1;
-        }
-
-        .hero-image {
-            order: 2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 430px;
-        }
-
-        .product-image {
-            width: min(500px, 100%);
-            border-radius: 28px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(185,154,91,.25);
-            background: rgba(255,255,255,.55);
-        }
-
-        .product-placeholder {
-            width: min(430px, 90%);
-            min-height: 430px;
-            border: 2px dashed rgba(49,92,69,.25);
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--muted);
-            padding: 30px;
-            background: rgba(255,255,255,.45);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: var(--white);
-            color: var(--green);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            padding: 5px 18px;
-            font-size: 13px;
-            margin-bottom: 18px;
-            box-shadow: 0 5px 18px rgba(0,0,0,.04);
-        }
-
-        .hero h1 {
-            color: var(--dark-green);
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1.2;
-            margin-bottom: 5px;
-        }
-
-        .hero h2 {
-            color: var(--gold);
-            font-size: clamp(22px, 3vw, 32px);
-            margin-bottom: 20px;
-        }
-
-        .hero-description {
-            font-size: 18px;
-            color: #555;
-            max-width: 650px;
-            margin-bottom: 22px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-
-        .btn {
+.kicker {
+    color: var(--purple);
+    font-weight: 800;
+    font-size: 1rem;
+}
+	 .btn {
             display: inline-block;
             padding: 10px 25px;
             border-radius: 50px;
@@ -233,10 +132,10 @@
             transition: .25s;
             cursor: pointer;
         }
-
-        .btn-primary {
+	 .btn-primary {
             background: var(--green);
             color: var(--white);
+		    color: #fff;
         }
 
         .btn-primary:hover {
@@ -244,711 +143,512 @@
             transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            border: 1px solid var(--green);
-            color: var(--green);
-            background: transparent;
-        }
-
-        .btn-secondary:hover {
-            background: var(--light-green);
-        }
-
-        .hero-features {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .hero-feature {
-            background: rgba(255,255,255,.75);
-            border: 1px solid var(--border);
-            padding: 5px 14px;
-            border-radius: 50px;
-            font-size: 13px;
-        }
-
-        /* =========================
-           INTRO
-        ========================== */
-
-        .intro-box {
-            max-width: 900px;
-            margin: auto;
-            background: var(--white);
-            padding: 45px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .intro-box p {
-            font-size: 17px;
-            margin-bottom: 15px;
-        }
-
-        .highlight {
-            color: var(--green);
-            font-weight: bold;
-        }
-
-        /* =========================
-           INGREDIENTS
-        ========================== */
-
-        .ingredients {
-            background: var(--white);
-        }
-
-        .ingredient-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .ingredient-card {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px 20px;
-            text-align: center;
-            transition: .25s;
-        }
-
-        .ingredient-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .ingredient-icon {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 14px;
-            border-radius: 50%;
-            background: var(--lilac);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 31px;
-        }
-
-        .ingredient-card h3 {
-            color: var(--dark-green);
-            font-size: 19px;
-            margin-bottom: 5px;
-        }
-
-        .ingredient-percent {
-            color: var(--gold);
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
-
-        .ingredient-card p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.9;
-        }
-
-        /* =========================
-           FORMULA
-        ========================== */
-
-        .formula-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: stretch;
-        }
-
-        .formula-card,
-        .philosophy-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 35px;
-            box-shadow: var(--shadow);
-        }
-
-        .formula-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        .formula-table th,
-        .formula-table td {
-            padding: 12px 8px;
-            border-bottom: 1px solid var(--border);
-            text-align: right;
-        }
-
-        .formula-table th {
-            color: var(--dark-green);
-            font-size: 14px;
-        }
-
-        .formula-table td:last-child,
-        .formula-table th:last-child {
-            text-align: left;
-        }
-
-        .formula-note {
-            margin-top: 20px;
-            color: var(--green);
-            font-weight: bold;
-        }
-
-        .philosophy-card h3 {
-            color: var(--dark-green);
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
-
-        .philosophy-card ul {
-            list-style: none;
-        }
-
-        .philosophy-card li {
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--border);
-        }
-
-        .philosophy-card li:last-child {
-            border-bottom: 0;
-        }
-
-        /* =========================
-           TASTE
-        ========================== */
-
-        .taste {
-            background: var(--lilac);
-        }
-
-        .taste-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .taste-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: var(--radius);
-            text-align: center;
-        }
-
-        .taste-card h3 {
-            color: var(--dark-green);
-            margin-bottom: 5px;
-        }
-
-        .dots {
-            letter-spacing: 4px;
-            color: var(--gold);
-            direction: ltr;
-            margin-top: 8px;
-        }
-
-        /* =========================
-           BENEFITS
-        ========================== */
-
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .benefit-item {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 22px 15px;
-            text-align: center;
-        }
-
-        .benefit-item .benefit-icon {
-            font-size: 28px;
-            margin-bottom: 7px;
-        }
-
-        .benefit-item strong {
-            display: block;
-            color: var(--green);
-            margin-bottom: 6px;
-        }
-
-        .benefit-item span {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        /* =========================
-           SCIENCE
-        ========================== */
-
-        .science {
-            background: var(--white);
-        }
-
-        .science-card {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-            margin-bottom: 14px;
-        }
-
-        .science-card h3 {
-            color: var(--dark-green);
-            margin-bottom: 7px;
-        }
-
-        .science-card p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .evidence-note {
-            max-width: 900px;
-            margin: 25px auto 0;
-            padding: 18px 22px;
-            background: var(--light-green);
-            border-radius: 14px;
-            color: var(--green);
-            text-align: center;
-            font-size: 14px;
-        }
-
-        /* =========================
-           PREPARATION
-        ========================== */
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .step {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 25px;
-            text-align: center;
-        }
-
-        .step-number {
-            width: 45px;
-            height: 45px;
-            margin: 0 auto 12px;
-            border-radius: 50%;
-            background: var(--green);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .tip {
-            max-width: 750px;
-            margin: 30px auto 0;
-            padding: 18px 25px;
-            background: var(--light-green);
-            border-radius: 14px;
-            text-align: center;
-            color: var(--green);
-        }
-
-        /* =========================
-           USAGE
-        ========================== */
-
-        .usage-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .usage-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 28px;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .usage-card h3 {
-            color: var(--dark-green);
-            margin-bottom: 7px;
-        }
-
-        .usage-card p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        /* =========================
-           SAFETY / PRESSURE / INTERACTIONS
-        ========================== */
-
-        .safety-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .safety-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 25px;
-        }
-
-        .safety-card h3 {
-            color: var(--dark-green);
-            margin-bottom: 10px;
-        }
-
-        .safety-card p,
-        .safety-card li {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .safety-card ul {
-            padding-right: 18px;
-        }
-
-        .warning {
-            background: var(--warning-bg);
-        }
-
-        .warning-box {
-            max-width: 900px;
-            margin: auto;
-            background: var(--white);
-            border: 1px solid var(--warning-border);
-            border-radius: var(--radius);
-            padding: 35px;
-        }
-
-        .warning-box h2 {
-            color: #735d2c;
-            margin-bottom: 15px;
-        }
-
-        .warning-box ul {
-            padding-right: 20px;
-        }
-
-        .warning-box li {
-            margin-bottom: 9px;
-        }
-
-        /* =========================
-           PRODUCT SPECS
-        ========================== */
-
-        .specs-card {
-            max-width: 900px;
-            margin: auto;
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .spec-row {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .spec-row:last-child {
-            border-bottom: 0;
-        }
-
-        .spec-label,
-        .spec-value {
-            padding: 13px 20px;
-        }
-
-        .spec-label {
-            background: var(--lilac);
-            color: var(--dark-green);
-            font-weight: bold;
-        }
-
-        /* =========================
-           BRAND / NOTE
-        ========================== */
-
-        .path-section {
-            background: var(--lilac);
-        }
-
-        .path-box {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .path-box h2 {
-            color: var(--dark-green);
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .path-box p {
-            margin-bottom: 8px;
-        }
-
-        .path-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 35px 0;
-        }
-
-        .path-step {
-            background: var(--white);
-            border-radius: 14px;
-            padding: 18px 10px;
-            font-weight: bold;
-            color: var(--green);
-        }
-
-        .big-quote {
-            color: var(--gold);
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 25px;
-        }
-
-        .note {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .note h2 {
-            color: var(--dark-green);
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-
-        .note p {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .note-signature {
-            margin-top: 25px;
-            color: var(--green);
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        /* =========================
-           FAQ
-        ========================== */
-
-        .faq {
-            background: var(--white);
-        }
-
-        .faq-list {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        details {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        summary {
-            cursor: pointer;
-            padding: 17px 22px;
-            color: var(--dark-green);
-            font-weight: bold;
-            list-style: none;
-            position: relative;
-            padding-left: 50px;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        summary::before {
-            content: '+';
-            position: absolute;
-            left: 20px;
-            top: 13px;
-            font-size: 24px;
-            color: var(--gold);
-        }
-
-        details[open] summary::before {
-            content: '−';
-        }
-
-        .faq-answer {
-            padding: 0 22px 20px;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        /* =========================
-           CTA
-        ========================== */
-
-        .cta {
-            background:
-                radial-gradient(circle at 90% 10%, rgba(185,154,91,.18), transparent 25%),
-                var(--dark-green);
-            color: var(--white);
-            text-align: center;
-            padding: 85px 20px;
-        }
-
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .cta p {
-            color: rgba(255,255,255,.9);
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-
-        .cta .btn-primary {
-            background: var(--gold);
-            color: #fff;
-        }
-
-        .brand-signature {
-            margin-top: 35px;
-            color: #e2c98f;
-            font-size: 15px;
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================== */
-
-        @media (max-width: 900px) {
-            .hero-grid,
-            .formula-wrap {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                order: 2;
-                text-align: center;
-            }
-
-            .hero-image {
-                order: 1;
-                min-height: 330px;
-            }
-
-            .buttons,
-            .hero-features {
-                justify-content: center;
-            }
-
-            .ingredient-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .taste-grid,
-            .steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .benefit-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .safety-grid,
-            .usage-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .path-steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .section {
-                padding: 55px 0;
-            }
-
-            .hero {
-                padding: 45px 0;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero h2 {
-                font-size: 24px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .intro-box,
-            .formula-card,
-            .philosophy-card,
-            .warning-box {
-                padding: 25px 20px;
-            }
-
-            .section-title h2 {
-                font-size: 27px;
-            }
-
-            .ingredient-grid,
-            .taste-grid,
-            .steps,
-            .benefit-grid,
-            .path-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .spec-row {
-                grid-template-columns: 1fr;
-            }
-
-            .spec-label {
-                padding-bottom: 5px;
-            }
-
-            .spec-value {
-                padding-top: 5px;
-            }
-
-            .cta h2 {
-                font-size: 29px;
-            }
-        }
-    </style>
+
+/* =========================================
+   گالری حرفه‌ای دمنوش ماه بانو
+   Bargiin - Mah-banoo Gallery
+========================================= */
+
+.product-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 14px;
+    border: 1px solid #dccce5;
+    border-radius: 24px;
+    background: #f8f2fa;
+    box-sizing: border-box;
+}
+
+/* قاب تصویر اصلی */
+
+.gallery-main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+/* نوار تصاویر */
+
+.gallery-track {
+    display: flex;
+    width: 100%;
+    direction: ltr;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.gallery-slide img {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* دکمه‌های قبلی و بعدی */
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(41, 79, 46, 0.9);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.25s ease;
+}
+
+.gallery-btn:hover {
+    background: #76518d;
+}
+
+.gallery-prev {
+    right: 12px;
+}
+
+.gallery-next {
+    left: 12px;
+}
+
+/* تصاویر کوچک */
+
+.gallery-thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 4px 8px;
+    overflow-x: auto;
+    direction: rtl;
+    scrollbar-width: thin;
+}
+
+.gallery-thumbnail {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    padding: 3px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.gallery-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.gallery-thumbnail:hover {
+    transform: translateY(-2px);
+}
+
+.gallery-thumbnail.active {
+    border-color: #76518d;
+    box-shadow: 0 0 0 1px #76518d;
+}
+
+/* نشانگر تصاویر */
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 0 2px;
+    direction: rtl;
+}
+
+.gallery-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #cbb8d5;
+    cursor: pointer;
+}
+
+.gallery-dot.active {
+    background: #76518d;
+    transform: scale(1.2);
+}
+
+/* موبایل */
+
+@media (max-width: 600px) {
+
+    .product-gallery {
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .gallery-slide img {
+        height: 290px;
+    }
+
+    .gallery-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+
+    .gallery-prev {
+        right: 8px;
+    }
+
+    .gallery-next {
+        left: 8px;
+    }
+
+    .gallery-thumbnail {
+        flex-basis: 58px;
+        width: 58px;
+        height: 58px;
+    }
+
+    .gallery-thumbnails {
+        gap: 7px;
+    }
+
+}
 	
+h1, h2, h3 {
+    line-height: 1.6;
+    color: var(--green);
+}
 
+h1 {
+    margin: 5px 0 12px;
+    color: var(--purple);
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 800;
+}
+
+h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfd3bd;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+h3 {
+    font-size: 1.08rem;
+    margin-bottom: 6px;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+.lead {
+    font-size: 1.08rem;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 18px 0;
+}
+
+.badge {
+    padding: 4px 13px;
+    background: var(--light-purple);
+    color: #573b6e;
+    border: 1px solid #d9c7e2;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.hero-art {
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #dbc9e5;
+    border-radius: 24px;
+    background: radial-gradient(circle at 50% 40%, #fff9ff, #e5d6ed);
+}
+
+.hero-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.art-placeholder {
+    padding: 25px;
+    text-align: center;
+    color: #684b79;
+}
+
+/* شبکه محتوا */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 22px 0;
+}
+
+.card {
+    padding: 25px;
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(49, 42, 35, 0.05);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+ul {
+    margin: 8px 0;
+    padding-right: 22px;
+}
+
+li {
+    margin: 4px 0;
+}
+
+/* جدول ترکیبات */
+
+.formula {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #fff;
+}
+
+.formula th,
+.formula td {
+    padding: 10px;
+    border: 1px solid #e3d8c9;
+    text-align: right;
+}
+
+.formula th {
+    background: #eee4f3;
+    color: #4d3560;
+}
+
+/* باکس‌های هشدار */
+
+.note {
+    margin-top: 15px;
+    padding: 13px 16px;
+    background: #fff6e5;
+    border-right: 4px solid var(--gold);
+    border-radius: 12px;
+}
+
+.warning {
+    padding: 13px 16px;
+    background: #fff0f0;
+    border-right: 4px solid #ad5c5c;
+    border-radius: 12px;
+}
+
+/* روش دم کردن */
+
+.steps {
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.steps li {
+    position: relative;
+    padding: 10px 48px 10px 0;
+    counter-increment: step;
+}
+
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--purple);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+/* دل‌نوشته */
+
+.quote {
+    padding: 30px;
+    background: linear-gradient(135deg, #6f477f, #8e68a2);
+    color: #fff;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.quote h2,
+.quote p {
+    color: #fff;
+}
+
+/* متن کوچک */
+
+.small {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+	
+	.faq-item {
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid #e1d5e7;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.faq-question {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+    border: none;
+    background: #f5edf8;
+    color: #294f2e;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: right;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background: #eadcf0;
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    font-size: 22px;
+    color: #76518d;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px 20px;
+    background: #fff;
+    color: #29332c;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* فوتر */
+
+footer {
+    margin-top: 30px;
+    padding: 28px 0;
+    background: var(--dark-green);
+    color: #fff;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer a {
+    color: #ead9f3;
+}
+
+/* نمایشگرهای کوچک */
+
+@media (max-width: 800px) {
+
+    .hero-card,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .hero-card {
+        padding: 22px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+}
+
+/* چاپ */
+
+@media print {
+
+    body {
+        background: #fff;
+    }
+
+    .hero-card,
+    .card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    a {
+        color: #000;
+    }
+
+}
+
+</style>
 </head>
 <button class="back-to-top" aria-label="بازگشت به بالا">
 
@@ -1021,6 +721,7 @@ HEADER
         </li>
 
     </ul>
+
 
 </li>
 
@@ -1183,86 +884,201 @@ HEADER
     id="headerOverlay"
 ></div>
 	
-<!--==================================
-PRODUCT PAGE
-==================================-->
+<header class="hero">
 
-<main class="product-page">
+<div class="container">
 
-	
-	   <!-- =========================
-         HERO
-    ========================== -->
-    <header class="hero">
-        <div class="container hero-grid">
+<div class="hero-card">
 
-            <div class="hero-content">
-                <span class="hero-badge">دمنوش گیاهی ترکیبی برگین</span>
+<div>
 
-                <h1>ماه بانو</h1>
-                <h2>همراهی گرم برای روزهای خاص بانوان</h2>
+<h1>ماه بانو</h1>
 
-                <p class="hero-description">
-                    ماه بانو ترکیبی متعادل از گیاهان منتخب است که با هدف ایجاد
-                    یک نوشیدنی گرم، خوش‌عطر و دلنشین برای روزهای قاعدگی طراحی شده است.
-                </p>
+<p class="lead">
+ماه بانو ترکیبی متعادل از گیاهان منتخب است که با هدف ایجاد
+                    یک نوشیدنی گرم، خوش‌عطر و دلنشین برای روزهای قاعدگی طراحی شده است
+</p>
 
-                <p class="hero-description">
+
+<div class="badges">
+
+<span class="badge">
+بدون شکر افزوده
+</span>
+
+<span class="badge">
+طعم گرم و ملایم
+</span>
+
+<span class="badge">
+قابل تهیه به‌صورت تی‌بگ و فله‌ای
+</span>
+
+</div>
+
+<p class="lead">
                     بابونه، رازیانه، گل محمدی، زنجبیل، دارچین و نعنا در کنار هم،
                     طعمی گرم و ملایم با رایحه‌ای طبیعی و شخصیت مشخص می‌سازند.
-                </p>
+</p>
 
-                <div class="buttons">
-                    <a href="#ingredients" class="btn btn-primary">مشاهده ترکیبات</a>
-                    <a href="#product-info" class="btn btn-secondary">اطلاعات محصول</a>
-                </div>
+<a href="https://eitaa.com/Bargiin" class="btn btn-primary">خرید دمنوش ماه بانو</a>
+	
+</div>
 
-                <div class="hero-features">
-                    <span class="hero-feature">گیاهی</span>
-                    <span class="hero-feature">بدون اسانس افزوده</span>
-                    <span class="hero-feature">طعم گرم و ملایم</span>
-                    <span class="hero-feature">بدون شکر افزوده</span>
-                </div>
+
+<div class="product-gallery" id="aramisGallery">
+
+    <!-- تصویر اصلی -->
+
+    <div class="gallery-main" id="galleryMain">
+
+        <div class="gallery-track" id="galleryTrack">
+
+            <div class="gallery-slide">
+                <img src="../assets/images/products/mah-banoo.webp"
+                     alt="تصویر اصلی دمنوش ماه بانو">
             </div>
 
-            <div class="hero-image">
-                <!--
-                    مسیر تصویر محصول را در صورت نیاز تغییر دهید.
-                    نمونه:
-                    ../assets/images/products/mah-bano.png
-                -->
-                <img
-                    class="product-image"
-                    src="../assets/images/products/mah-banoo3.webp"
-                    alt="دمنوش ماه بانو برگین"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
-                >
+            <div class="gallery-slide">
+                <img src="../assets/images/products/mah-banoo3.webp"
+                     alt="ترکیبات دمنوش ماه بانو">
+            </div>
 
-                <div class="product-placeholder" style="display:none;">
-                    <div>
-                        <strong>تصویر محصول ماه بانو</strong>
-                        <br>
-                        <small>مسیر تصویر محصول را در بخش src قرار دهید.</small>
-                    </div>
-                </div>
+            <div class="gallery-slide">
+                <img src="../assets/images/products/mah-banoo4.jpg"
+                     alt="بسته‌بندی دمنوش ماه بانو">
+            </div>
+
+            <div class="gallery-slide">
+                <img src="../assets/images/products/Mah-Banoo6.webp"
+                     alt="نمای نزدیک دمنوش ماه بانو">
             </div>
 
         </div>
-    </header>
+
+        <!-- دکمه قبلی -->
+
+        <button class="gallery-btn gallery-prev"
+                id="galleryPrev"
+                type="button"
+                aria-label="تصویر قبلی">
+
+            &#10094;
+
+        </button>
+
+        <!-- دکمه بعدی -->
+
+        <button class="gallery-btn gallery-next"
+                id="galleryNext"
+                type="button"
+                aria-label="تصویر بعدی">
+
+            &#10095;
+
+        </button>
+
+    </div>
 
 
-   <!-- =========================
-         INTRO
-    ========================== -->
-    <section class="section">
-        <div class="container">
+    <!-- تصاویر کوچک -->
 
-            <div class="section-title">
-                <span class="eyebrow">معرفی محصول</span>
-                <h2>ماه بانو چیست؟</h2>
-            </div>
+    <div class="gallery-thumbnails"
+         id="galleryThumbnails">
 
-            <div class="intro-box">
+        <button class="gallery-thumbnail active"
+                type="button"
+                data-index="0"
+                aria-label="نمایش تصویر ۱">
+
+            <img src="../assets/images/products/mah-banoo.webp"
+                 alt="تصویر کوچک ۱">
+
+        </button>
+
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="1"
+                aria-label="نمایش تصویر ۲">
+
+            <img src="../assets/images/products/mah-banoo3.webp"
+                 alt="تصویر کوچک ۲">
+
+        </button>
+
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="2"
+                aria-label="نمایش تصویر ۳">
+
+            <img src="../assets/images/products/mah-banoo4.jpg"
+                 alt="تصویر کوچک ۳">
+
+        </button>
+
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="3"
+                aria-label="نمایش تصویر ۴">
+
+            <img src="../assets/images/products/Mah-Banoo6.webp"
+                 alt="تصویر کوچک ۴">
+
+        </button>
+
+    </div>
+
+
+    <!-- نقاط راهنمای تصاویر -->
+
+    <div class="gallery-dots" id="galleryDots">
+
+        <button class="gallery-dot active"
+                type="button"
+                data-index="0"
+                aria-label="تصویر ۱"></button>
+
+        <button class="gallery-dot"
+                type="button"
+                data-index="1"
+                aria-label="تصویر ۲"></button>
+
+        <button class="gallery-dot"
+                type="button"
+                data-index="2"
+                aria-label="تصویر ۳"></button>
+
+        <button class="gallery-dot"
+                type="button"
+                data-index="3"
+                aria-label="تصویر ۴"></button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+<div class="grid">
+
+
+<!-- =========================
+     معرفی ماه بانو
+========================= -->
+
+<section class="card">
+
+<h2>
+معرفی ماه بانو
+</h2>
+
                 <p>
                     بعضی روزهای ماه، بدن به کمی آرامش و مراقبت بیشتر نیاز دارد.
                 </p>
@@ -1275,546 +1091,338 @@ PRODUCT PAGE
 
                 <p>
                     در این فرمول تلاش کرده‌ایم میان
-                    <span class="highlight">طعم، عطر و کاربرد گیاهان</span>
+                    <span>طعم، عطر و کاربرد گیاهان</span>
                     تعادل برقرار کنیم؛ بدون اینکه طعم یک گیاه، شخصیت سایر ترکیبات را پنهان کند.
                 </p>
 
-                <p>
+      <p>
                     ماه بانو دارو نیست؛ یک دمنوش گیاهی است که می‌تواند در کنار
                     مراقبت‌های معمول و سبک زندگی سالم، همراه خوشایندی برای شما باشد.
-                </p>
-            </div>
+      </p>
 
-        </div>
-    </section>
+</section>
 
 
-    <!-- =========================
-         INGREDIENTS
-    ========================== -->
-    <section class="section ingredients" id="ingredients">
-        <div class="container">
+<!-- =========================
+     اطلاعات محصول
+========================= -->
 
-            <div class="section-title">
-                <span class="eyebrow">ترکیبات طبیعی</span>
-                <h2>در ماه بانو چه چیزی هست؟</h2>
-                <h2>
-                    شش گیاه با نقش‌های متفاوت که برای ساختن یک فنجان گرم، متعادل و خوش‌عطر کنار هم قرار گرفته‌اند.
-                </h2>
-            </div>
+<section class="card">
 
-            <div class="ingredient-grid">
+<h2>
+اطلاعات محصول
+</h2>
 
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🌼</div>
-                    <h3>بابونه</h3>
-                    
-                    <p>
-                        پایه اصلی فرمول؛ با رایحه‌ای گلی و ملایم و نقشی مهم در ایجاد حس آرامش.
-                    </p>
-                </article>
+<ul>
 
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🌿</div>
-                    <h3>رازیانه</h3>
-                   
-                    <p>
+<li>
+<strong>نام محصول:</strong>
+ماه بانو
+</li>
+
+<li>
+<strong>&nbsp;برند:</strong>
+برگین | BARGIIN </li>
+
+<li>
+<strong>نوع:</strong>
+دمنوش گیاهی
+</li>
+
+<li>
+<strong>شکل مصرف:</strong>
+تی‌بگ و فله‌ای
+</li>
+
+<li>
+<strong> تعداد / وزن خالص : </strong>
+۱۵ عدد تی‌بگ به وزن کلی 40 گرم | قوطی به وزن 30 گرم
+</li>
+	
+</ul>
+
+</section>
+
+
+<!-- =========================
+     ترکیبات
+========================= -->
+
+<section class="card full">
+
+<h2>
+ترکیبات و ویژگی گیاهان
+</h2>
+
+<table class="formula">
+
+<thead>
+
+<tr>
+
+<th>
+گیاه
+</th>
+
+<th>
+ویژگی حسی و نقش در ترکیب
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+بابونه
+</td>
+
+
+<td>
+پایه اصلی فرمول؛ با رایحه‌ای گلی و ملایم و نقشی مهم در ایجاد حس آرامش.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+رازیانه
+</td>
+
+
+<td>
                         با رایحه‌ای شیرین و گیاهی؛ برای تکمیل طعم و همراهی با ناراحتی‌های گوارشی و نفخ.
-                    </p>
-                </article>
+</td>
 
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🌹</div>
-                    <h3>گل محمدی</h3>
-                   
-                    <p>
+</tr>
+
+<tr>
+
+<td>
+گل محمدی
+</td>
+
+
+<td>
                         برای لطافت عطر و طعم و افزودن یک نت گلی و ظریف به ترکیب.
-                    </p>
-                </article>
 
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🫚</div>
-                    <h3>زنجبیل</h3>
-                    
-                    <p>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+زنجبیل
+</td>
+
+
+<td>
                         ایجاد گرمای دلنشین و یکی از ترکیباتی که برای کمک به کاهش درد قاعدگی مطالعه شده است.
-                    </p>
-                </article>
 
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🌰</div>
-                    <h3>دارچین</h3>
-                   
-                    <p>
+</td>
+
+</tr>
+	
+<tr>
+
+<td>
+دارچین
+</td>
+
+
+<td>
                         ایجاد رایحه گرم و ادویه‌ای و تکمیل‌کننده شخصیت طعمی ماه بانو.
-                    </p>
-                </article>
 
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🍃</div>
-                    <h3>نعنا</h3>
-                   
-                    <p>
+	</td>
+
+</tr>
+
+<tr>
+
+<td>
+نعنا
+</td>
+
+
+<td>
                         مقدار کم و هدفمند برای ایجاد طراوت و کمک به متعادل شدن پایان طعم.
-                    </p>
-                </article>
 
-            </div>
-        </div>
-    </section>
+	</td>
 
-    <!-- =========================
-         TASTE
-    ========================== -->
-    <section class="section taste">
-        <div class="container">
+</tr>
+	
 
-            <div class="section-title">
-                <span class="eyebrow">تجربه نوشیدن</span>
-                <h2>طعم ماه بانو چطور است؟</h2>
-                <h2>
-                    ترکیبی گرم و ملایم که در آن بابونه پایه طعم را می‌سازد و نت‌های ادویه‌ای و گلی به آن شخصیت می‌دهند.
-                </h2>
-            </div>
+</tbody>
 
-            <div class="taste-grid">
+</table>
 
-                <div class="taste-card">
-                    <h3>شروع</h3>
-                    <p>ملایم و گلی</p>
-                    <div class="dots">●●●●○</div>
-                </div>
+<div class="note">
 
-                <div class="taste-card">
-                    <h3>میانه</h3>
-                    <p>گرم و کمی ادویه‌ای</p>
-                    <div class="dots">●●●●○</div>
-                </div>
+شدت عطر و طعم به کیفیت مواد اولیه،
+تازگی، میزان خردشدگی، شرایط نگهداری
+و زمان دم‌کشیدن وابسته است.
 
-                <div class="taste-card">
-                    <h3>پایان</h3>
-                    <p>لطیف و کمی تازه</p>
-                    <div class="dots">●●●●○</div>
-                </div>
+</div>
 
-                <div class="taste-card">
-                    <h3>عطر</h3>
-                    <p>گلی، گرم و گیاهی</p>
-                    <div class="dots">●●●●○</div>
-                </div>
-
-            </div>
-
-            <div class="intro-box" style="margin-top:30px;">
-                <p>
-                    <strong>پیشنهاد برگین:</strong>
-                    ماه بانو را ابتدا بدون شیرین‌کننده امتحان کنید تا رایحه و طعم طبیعی ترکیبات را بهتر احساس کنید.
-                </p>
-            </div>
-
-        </div>
-    </section>
+</section>
 
 
-    <!-- =========================
-         BENEFITS
-    ========================== -->
-    <section class="section">
-        <div class="container">
+<!-- =========================
+     بهترین زمان مصرف
+========================= -->
 
-            <div class="section-title">
-                <span class="eyebrow">کارایی مورد انتظار</span>
-                <h2>ماه بانو برای چه ساخته شده است؟</h2>
-                <h2>
-                    هدف فرمول، همراهی با روزهای قاعدگی و ایجاد یک تجربه گرم و آرامش‌بخش است؛ نه جایگزین درمان پزشکی.
-                </h2>
-            </div>
+<section class="card">
 
-            <div class="benefit-grid">
+<h2>
+بهترین زمان مصرف
+</h2>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌼</div>
-                    <strong>آرامش</strong>
-                    <span>کمک به ایجاد حس آرامش و آسودگی</span>
-                </div>
+<ul>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">💜</div>
-                    <strong>درد قاعدگی</strong>
-                    <span>کمک به کاهش شدت برخی ناراحتی‌ها و گرفتگی‌ها</span>
-                </div>
+<li>
+روزهای پیش از قاعدگی؛ در صورت سازگاری فردی، می‌توانید از چند روز پیش از شروع قاعدگی مصرف را آغاز کنید.
+</li>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌿</div>
-                    <strong>گوارش</strong>
-                    <span>کمک به کاهش احساس نفخ و سنگینی</span>
-                </div>
+<li>
+روزهای قاعدگی؛ در روزهای ابتدایی قاعدگی، یک فنجان گرم می‌تواند همراهی دلنشین برای زمان استراحت باشد.
+</li>
 
-                <div class="benefit-item">
-                    <div class="benefit-icon">🔥</div>
-                    <strong>گرمای مطبوع</strong>
-                    <span>حس گرم و دلنشین زنجبیل و دارچین</span>
-                </div>
+</ul>
 
-            </div>
+<p class="small">
 
-        </div>
-    </section>
+واکنش افراد به گیاهان متفاوت است؛
+ابتدا با مقدار کم شروع کنید.
 
+</p>
 
-    <!-- =========================
-         SCIENTIFIC BASIS
-    ========================== -->
-    <section class="section science">
-        <div class="container">
+</section>
 
-            <div class="section-title">
-                <span class="eyebrow">پشتوانه علمی ترکیبات</span>
-                <h2>چرا این گیاهان انتخاب شده‌اند؟</h2>
-                <h2>
-                    شواهد علمی درباره گیاهان یکسان نیست؛ بعضی ترکیبات برای علائم قاعدگی بیشتر مطالعه شده‌اند و بعضی بیشتر نقش طعم، عطر یا آرامش دارند.
-                </h2>
-            </div>
+<!-- =========================
+     شرایط نگهداری
+========================= -->
+<section class="card">
 
-            <div class="science-card">
-                <h3>🌼 بابونه</h3>
-                <p>
-                    بابونه به دلیل ترکیبات زیست‌فعال خود برای آرامش و اسپاسم‌های عضلانی مورد مطالعه قرار گرفته است.
-                    برخی مطالعات انسانی نیز کاهش شدت درد قاعدگی را گزارش کرده‌اند؛ با این حال میزان اثر در افراد مختلف متفاوت است.
-                </p>
-            </div>
+<h2>
+شرایط نگهداری
+</h2>
 
-            <div class="science-card">
-                <h3>🌿 رازیانه</h3>
-                <p>
-                    رازیانه به‌طور سنتی برای ناراحتی‌های گوارشی و نفخ استفاده می‌شود و در برخی مطالعات انسانی
-                    برای کاهش شدت درد و گرفتگی‌های قاعدگی نیز بررسی شده است.
-                </p>
-            </div>
+<ul>
 
-            <div class="science-card">
-                <h3>🫚 زنجبیل</h3>
-                <p>
-                    زنجبیل از ترکیبات گیاهی است که شواهد انسانی نسبتاً بیشتری برای کمک به کاهش درد قاعدگی دارد.
-                    اثر آن در پژوهش‌ها بیشتر در روزهای ابتدایی قاعدگی بررسی شده است.
-                </p>
-            </div>
+<li>
+در جای خشک، خنک و دور از نور مستقیم نگهداری شود.
+</li>
 
-            <div class="science-card">
-                <h3>🌰 دارچین</h3>
-                <p>
-                    دارچین به‌دلیل ترکیبات معطر و زیست‌فعال خود برای علائم قاعدگی در برخی مطالعات انسانی بررسی شده است.
-                    در ماه بانو علاوه بر این نقش احتمالی، برای ایجاد گرما و عمق طعمی استفاده شده است.
-                </p>
-            </div>
+<li>
+پس از هر بار مصرف، بسته را کاملاً ببندید.
+</li>
 
-            <div class="science-card">
-                <h3>🌹 گل محمدی</h3>
-                <p>
-                    گل محمدی سرشار از ترکیبات معطر و آنتی‌اکسیدانی است و در پژوهش‌ها اثرات احتمالی آن بر
-                    آرامش، خلق‌وخو و برخی علائم قاعدگی بررسی شده است. نقش مهم آن در این فرمول، لطافت عطر و طعم نیز هست.
-                </p>
-            </div>
+<li>
+دور از رطوبت، حرارت و مواد غذایی با بوی تند قرار گیرد.
+</li>
 
-            <div class="science-card">
-                <h3>🍃 نعنا</h3>
-                <p>
-                    نعنا بیشتر برای ایجاد طراوت و کمک به هضم و احساس سبک‌تر پس از نوشیدن انتخاب شده است.
-                    مقدار آن در فرمول عمداً پایین نگه داشته شده تا تندی آن بر طعم ماه بانو غلبه نکند.
-                </p>
-            </div>
+</ul>
 
-            <div class="evidence-note">
-                <strong>نکته علمی:</strong>
-                شواهد موجود درباره دمنوش‌های گیاهی، جایگزین کارآزمایی‌های پزشکی یا درمان استاندارد نیستند.
-                ماه بانو برای حمایت از تجربه مصرف و کمک به برخی علائم طراحی شده و ادعای درمان بیماری ندارد.
-            </div>
+</section>
 
-        </div>
-    </section>
+<!-- =========================
+     روش دم کردن
+========================= -->
+
+<section class="card full">
+
+<h2>
+روش دم کردن
+</h2>
+
+<h3>
+روش مصرف به‌صورت فله‌ای
+</h3>
+
+<ol class="steps">
+
+<li>
+یک قاشق مرباخوری از مخلوط را
+در ۲۰۰ تا ۲۵۰ میلی‌لیتر آب داغ قرار دهید.
+</li>
+
+<li>
+از آب با دمای حدود ۸۵ تا ۹۵ درجه سانتی‌گراد
+استفاده کنید.
+</li>
+
+<li>
+درپوش ظرف را بگذارید و حدود ۵ تا ۷ دقیقه
+دم کنید.
+</li>
+
+<li>
+سپس صاف کرده و گرم بنوشید.
+</li>
+
+</ol>
+
+<div class="note">
+
+<strong>
+روش مصرف تی‌بگ:
+</strong>
+
+یک عدد تی‌بگ را در یک فنجان آب داغ
+قرار دهید و پس از ۵ تا ۷ دقیقه خارج کنید.
+
+</div>
+
+</section>
 
 
-    <!-- =========================
-         PREPARATION
-    ========================== -->
-    <section class="section" style="background:#fff;">
-        <div class="container">
+<!-- =========================
+     موارد احتیاط
+========================= -->
 
-            <div class="section-title">
-                <span class="eyebrow">روش آماده‌سازی</span>
-                <h2>یک فنجان ماه بانو چطور آماده می‌شود؟</h2>
-            </div>
+<section class="card">
 
-            <div class="steps">
+<h2>
+موارد احتیاط
+</h2>
 
-                <div class="step">
-                    <div class="step-number">۱</div>
-                    <h3>یک تی‌بگ</h3>
-                    <p>یک تی‌بگ ماه بانو را داخل فنجان قرار دهید.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">۲</div>
-                    <h3>آب داغ</h3>
-                    <p>۲۰۰ تا ۲۵۰ میلی‌لیتر آب داغ با دمای حدود ۹۰ تا ۹۵ درجه سانتی‌گراد اضافه کنید.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">۳</div>
-                    <h3>دم‌آوری</h3>
-                    <p>حدود ۵ تا ۷ دقیقه اجازه دهید تی‌بگ دم بکشد.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">۴</div>
-                    <h3>نوش جان</h3>
-                    <p>تی‌بگ را خارج کنید و دمنوش را گرم میل نمایید.</p>
-                </div>
-
-            </div>
-
-            <div class="tip">
-                <strong>پیشنهاد برگین:</strong>
-                برای حفظ لطافت طعم، ابتدا ماه بانو را بدون شکر یا شیرین‌کننده امتحان کنید.
-            </div>
-
-        </div>
-    </section>
+<ul>
 
 
-    <!-- =========================
-         WHEN TO DRINK
-    ========================== -->
-    <section class="section">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">پیشنهاد مصرف</span>
-                <h2>چه زمانی ماه بانو بنوشیم؟</h2>
-            </div>
-
-            <div class="usage-grid">
-
-                <div class="usage-card">
-                    <div class="ingredient-icon">🌙</div>
-                    <h3>روزهای پیش از قاعدگی</h3>
-                    <p>
-                        در صورت سازگاری فردی، می‌توانید از چند روز پیش از شروع قاعدگی مصرف را آغاز کنید.
-                    </p>
-                </div>
-
-                <div class="usage-card">
-                    <div class="ingredient-icon">💜</div>
-                    <h3>روزهای قاعدگی</h3>
-                    <p>
-                        در روزهای ابتدایی قاعدگی، یک فنجان گرم می‌تواند همراهی دلنشین برای زمان استراحت باشد.
-                    </p>
-                </div>
-
-                <div class="usage-card">
-                    <div class="ingredient-icon">☕</div>
-                    <h3>مقدار پیشنهادی</h3>
-                    <p>
-                        برای بزرگسالان سالم، روزانه ۱ تا ۲ فنجان پیشنهاد می‌شود.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         SAFETY OVERVIEW
-    ========================== -->
-    <section class="section warning">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">ایمنی مصرف</span>
-                <h2>ماه بانو و نکات مهم سلامتی</h2>
-                <h2>
-                    طبیعی بودن یک ماده به معنی مناسب بودن آن برای همه افراد و همه شرایط نیست.
-                </h2>
-            </div>
-
-            <div class="safety-grid">
-
-                <div class="safety-card">
-                    <h3>فشار خون</h3>
-                    <p>
-                        در مقدار معمول مصرف، انتظار نمی‌رود این دمنوش در افراد سالم تغییر قابل توجهی در فشار خون ایجاد کند.
-                        با این حال زنجبیل و دارچین ممکن است در برخی افراد اثر کاهنده خفیفی داشته باشند.
-                    </p>
-                </div>
-
-                <div class="safety-card">
-                    <h3>داروها</h3>
-                    <p>
-                        اگر داروهای رقیق‌کننده یا ضدانعقاد خون، داروهای فشار خون، داروهای دیابت یا داروهای آرام‌بخش مصرف می‌کنید،
+<li>
+اگر داروهای رقیق‌کننده یا ضدانعقاد خون، داروهای فشار خون، داروهای دیابت یا داروهای آرام‌بخش مصرف می‌کنید،
                         پیش از مصرف منظم با پزشک یا داروساز مشورت کنید.
-                    </p>
-                </div>
+</li>
 
-                <div class="safety-card">
-                    <h3>مصرف روزانه</h3>
-                    <p>
-                        مقدار پیشنهادی برای بزرگسالان سالم ۱ تا ۲ فنجان در روز است.
-                        مصرف بیشتر یا طولانی‌مدت، به‌ویژه در صورت بیماری زمینه‌ای یا مصرف دارو، بهتر است با نظر متخصص انجام شود.
-                    </p>
-                </div>
+<li>
+مقدار پیشنهادی برای بزرگسالان سالم ۱ تا ۲ فنجان در روز است.
+</li>
+<li>
+به دلیل وجود چند گیاه فعال در فرمول، مصرف ماه بانو در دوران بارداری و شیردهی بدون تأیید پزشک توصیه نمی‌شود.</li>
 
-            </div>
+</ul>
 
-        </div>
-    </section>
+</section>
 
 
-    <!-- =========================
-         SPECIAL PRECAUTIONS
-    ========================== -->
-    <section class="section">
-        <div class="container">
 
-            <div class="warning-box">
+<!-- =========================
+     داستان آرامیس
+========================= -->
 
-                <h2>موارد احتیاط</h2>
+<section class="card">
 
-                <ul>
-                    <li>
-                        <strong>بارداری:</strong>
-                        به دلیل وجود چند گیاه فعال در فرمول، مصرف ماه بانو در دوران بارداری بدون تأیید پزشک توصیه نمی‌شود.
-                    </li>
-
-                    <li>
-                        <strong>شیردهی:</strong>
-                        اطلاعات کافی درباره مصرف ترکیب کامل ماه بانو در دوران شیردهی وجود ندارد؛
-                        برای مصرف منظم با پزشک یا داروساز مشورت کنید.
-                    </li>
-
-                    <li>
-                        <strong>کودکان:</strong>
-                        ماه بانو برای بزرگسالان طراحی شده است و مصرف منظم آن برای کودکان بدون نظر پزشک توصیه نمی‌شود.
-                    </li>
-
-                    <li>
-                        <strong>داروها:</strong>
-                        در صورت مصرف داروهای رقیق‌کننده/ضدانعقاد خون، داروهای فشار خون، داروهای کنترل قند خون
-                        یا داروهای آرام‌بخش، پیش از مصرف منظم مشورت پزشکی داشته باشید.
-                    </li>
-
-                    <li>
-                        <strong>حساسیت:</strong>
-                        در صورت حساسیت به بابونه یا سایر گیاهان خانواده کاسنی، یا حساسیت به هر یک از ترکیبات،
-                        از مصرف خودداری کنید.
-                    </li>
-
-                    <li>
-                        در صورت بروز واکنش غیرمعمول، مصرف را متوقف کنید و در صورت تداوم علائم با متخصص سلامت مشورت نمایید.
-                    </li>
-
-                    <li>
-                        درد شدید، جدید، غیرمعمول یا مداوم قاعدگی نیازمند بررسی پزشکی است و نباید صرفاً با دمنوش مدیریت شود.
-                    </li>
-                </ul>
-
-                <p style="margin-top:20px;">
-                    <strong>ماه بانو دارو نیست و جایگزین تشخیص یا درمان پزشکی محسوب نمی‌شود.</strong>
-                </p>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         PRODUCT INFO
-    ========================== -->
-    <section class="section" id="product-info" style="background:#fff;">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">مشخصات محصول</span>
-                <h2>اطلاعات ماه بانو</h2>
-            </div>
-
-            <div class="specs-card">
-
-                <div class="spec-row">
-                    <div class="spec-label">نام محصول</div>
-                    <div class="spec-value">ماه بانو</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">برند</div>
-                    <div class="spec-value">برگین | BARGIIN</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">نوع</div>
-                    <div class="spec-value">دمنوش گیاهی ترکیبی ویژه بانوان</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">فرم محصول</div>
-                    <div class="spec-value">تی‌بگ | قوطی</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">تعداد / وزن خالص</div>
-                    <div class="spec-value">۱۵ عدد تی‌بگ به وزن کلی 30 گرم | قوطی به وزن 50 گرم</div>
-                </div>
-<!--
-                <div class="spec-row">
-                    <div class="spec-label">وزن خالص</div>
-                    <div class="spec-value">… گرم</div>
-                </div>
--->
-                <div class="spec-row">
-                    <div class="spec-label">ترکیبات</div>
-                    <div class="spec-value">
-                        بابونه، رازیانه، گل محمدی، زنجبیل، دارچین و نعنا
-                    </div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">شکر افزوده</div>
-                    <div class="spec-value">ندارد</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">اسانس افزوده</div>
-                    <div class="spec-value">ندارد</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">شرایط نگهداری</div>
-                    <div class="spec-value">
-                        در جای خشک و خنک، دور از نور مستقیم خورشید، گرما و رطوبت نگهداری شود.
-                        پس از باز شدن بسته‌بندی، آن را به‌خوبی بسته نگه دارید.
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         PRODUCT PHILOSOPHY
-    ========================== -->
-    <section class="section path-section">
-        <div class="container">
-
-            <div class="path-box">
-
-                <span class="eyebrow">فلسفه برگین</span>
-
-                <h2>مراقبت، گاهی از یک فنجان شروع می‌شود.</h2>
-
+<h2>
+داستان ماه بانو
+</h2>
+  <p>
+                    مراقبت، گاهی از یک فنجان شروع می‌شود.
+      </p>
                 <p>
                     چند دقیقه از شلوغی روز فاصله بگیر.
                 </p>
@@ -1830,186 +1438,299 @@ PRODUCT PAGE
                 <p>
                     و کمی بیشتر به خودت فرصت بده.
                 </p>
+<p>
+در ماه بانو؛ برای لحظه‌هایی که نوبت مراقبت از خودت است.
+</p>
 
-                <div class="path-steps">
-                    <div class="path-step">یک مکث کوتاه</div>
-                    <div class="path-step">یک فنجان گرم</div>
-                    <div class="path-step">یک حال بهتر</div>
-                    <div class="path-step">یک مراقبت ساده</div>
-                </div>
-
-                <div class="big-quote">
-                    ماه بانو؛ برای لحظه‌هایی که نوبت مراقبت از خودت است. 🌸
-                </div>
-
-            </div>
-
-        </div>
-    </section>
+</section>
 
 
-    <!-- =========================
-         NOTE
-    ========================== -->
-    <section class="section">
-        <div class="container">
+<!-- =========================
+     دل نوشته برگین
+========================= -->
 
-            <div class="note">
+<section class="card full quote">
 
-                <h2>دل‌نوشته برگین</h2>
+<h2>
+دل نوشته برگین
+</h2>
 
-                <p>
-                    گاهی کافیست چند دقیقه از شلوغی روز فاصله بگیری...
-                </p>
+<p>
+گاهی کافیست چند دقیقه
+از شلوغی روز فاصله بگیری…
+</p>
 
-                <p>
-                    فنجانی ماه بانو دم کنی،
-                </p>
+<p>
+فنجانی ماه بانو دم کن،
+عطر گیاهان را نفس بکش
+و اجازه بده طبیعت،
+مهمان لحظه‌هایت شود.
+</p>
 
-                <p>
-                    عطر گیاهان را نفس بکشی
-                    و اجازه بدهی لحظه‌ای برای خودت آرام‌تر بگذرد.
-                </p>
-
-                <br>
-
-                <p>
-                    ما ماه بانو را برای همین لحظه‌های کوچک ساختیم؛
+<p>
+<strong>
+ما ماه بانو را برای همین لحظه‌های کوچک ساختیم؛
                     برای روزهایی که بیشتر از همیشه به کمی گرما، آرامش و مراقبت نیاز داری.
-                </p>
+</strong>
+</p>
 
-                <p class="note-signature">
-                    یک فنجان برای خودت،
-                    <br>
-                    یک لحظه برای آرامش. 🌸
-                </p>
-
-            </div>
-
-        </div>
-    </section>
+</section>
 
 
-    <!-- =========================
-         FAQ
-    ========================== -->
-    <section class="section faq">
-        <div class="container">
+<!-- =========================
+     پرسش‌های متداول
+========================= -->
 
-            <div class="section-title">
-                <span class="eyebrow">سؤالات متداول</span>
-                <h2>قبل از انتخاب ماه بانو</h2>
-            </div>
+<section class="card full">
 
-            <div class="faq-list">
+    <h2>
+        پرسش‌های متداول
+    </h2>
 
-                <details>
-                    <summary>ماه بانو برای چه چیزی طراحی شده است؟</summary>
-                    <div class="faq-answer">
-                        ماه بانو یک دمنوش گیاهی ویژه بانوان است که با هدف همراهی با روزهای قاعدگی،
+    <div class="faq-list">
+
+        <!-- سؤال اول -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+ماه بانو برای چه چیزی طراحی شده است؟                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    ماه بانو یک دمنوش گیاهی ویژه بانوان است که با هدف همراهی با روزهای قاعدگی،
                         ایجاد حس آرامش و کمک به کاهش برخی ناراحتی‌ها مانند گرفتگی و نفخ طراحی شده است.
                         این محصول دارو نیست.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>ماه بانو برای کاهش درد قاعدگی مناسب است؟</summary>
-                    <div class="faq-answer">
-                        برخی ترکیبات ماه بانو، به‌ویژه زنجبیل، بابونه، رازیانه و دارچین،
-                        در مطالعات انسانی برای علائم قاعدگی از جمله درد یا گرفتگی بررسی شده‌اند.
-                        با این حال پاسخ افراد متفاوت است و ماه بانو جایگزین درمان پزشکی نیست.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>آیا ماه بانو کافئین دارد؟</summary>
-                    <div class="faq-answer">
-                        خیر. در فرمول ماه بانو چای سبز، چای سیاه یا سایر منابع معمول کافئین وجود ندارد.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>آیا می‌توان ماه بانو را هر روز نوشید؟</summary>
-                    <div class="faq-answer">
-                        مقدار پیشنهادی برای بزرگسالان سالم ۱ تا ۲ فنجان در روز است.
-                        برای مصرف بیشتر یا طولانی‌مدت، به‌خصوص در صورت بیماری زمینه‌ای یا مصرف دارو،
-                        با پزشک یا داروساز مشورت کنید.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>آیا ماه بانو روی فشار خون اثر دارد؟</summary>
-                    <div class="faq-answer">
-                        در مقدار معمول مصرف، انتظار نمی‌رود در افراد سالم تغییر قابل توجهی ایجاد کند.
-                        با این حال زنجبیل و دارچین ممکن است در برخی افراد اثر کاهنده خفیفی داشته باشند.
-                        اگر داروی فشار خون مصرف می‌کنید یا فشار خون پایینی دارید، پیش از مصرف منظم مشورت کنید.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>آیا در دوران بارداری می‌توان ماه بانو نوشید؟</summary>
-                    <div class="faq-answer">
-                        مصرف ماه بانو در دوران بارداری بدون تأیید پزشک توصیه نمی‌شود.
-                        در بارداری، ایمنی ترکیب و مقدار مصرف باید با توجه به شرایط فردی بررسی شود.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>آیا در دوران شیردهی می‌توان ماه بانو نوشید؟</summary>
-                    <div class="faq-answer">
-                        درباره مصرف منظم ترکیب کامل ماه بانو در دوران شیردهی اطلاعات کافی وجود ندارد.
-                        برای مصرف منظم بهتر است با پزشک یا داروساز مشورت شود.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>آیا کودکان می‌توانند ماه بانو مصرف کنند؟</summary>
-                    <div class="faq-answer">
-                        ماه بانو برای بزرگسالان طراحی شده است و مصرف منظم آن برای کودکان بدون نظر پزشک توصیه نمی‌شود.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>آیا ماه بانو شکر یا اسانس افزوده دارد؟</summary>
-                    <div class="faq-answer">
-                        در فرمول محصول شکر و اسانس افزوده در نظر گرفته نشده است.
-                        پیشنهاد برگین این است که ابتدا دمنوش را بدون شیرین‌کننده امتحان کنید.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>اگر درد قاعدگی خیلی شدید باشد چه کار کنم؟</summary>
-                    <div class="faq-answer">
-                        درد شدید، جدید، غیرمعمول یا مداوم قاعدگی نیازمند بررسی پزشکی است.
-                        دمنوش نباید جایگزین تشخیص و درمان علت درد شود.
-                    </div>
-                </details>
+                </p>
 
             </div>
 
         </div>
-    </section>
 
 
-    <!-- =========================
-         CTA
-    ========================== -->
-    <section class="cta">
+        <!-- سؤال دوم -->
 
-        <h2>وقتشه کمی بیشتر مراقب خودت باشی.</h2>
+        <div class="faq-item">
 
-        <p>
-            ماه بانو را دم کن، چند دقیقه از شلوغی فاصله بگیر و لحظه‌ات را آرام‌تر زندگی کن.
-        </p>
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
 
-        <!--
-            لینک خرید را در صورت آماده بودن، جایگزین # کنید.
-        -->
-        <a href="https://eitaa.com/Bargiin" class="btn btn-primary">خرید ماه بانو</a>
+                <span>
+                    ماه بانو برای کاهش درد قاعدگی مناسب است؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    برخی ترکیبات ماه بانو، به‌ویژه زنجبیل، بابونه، رازیانه و دارچین،
+                        در مطالعات انسانی برای علائم قاعدگی از جمله درد یا گرفتگی بررسی شده‌اند.
+                        با این حال پاسخ افراد متفاوت است و ماه بانو جایگزین درمان پزشکی نیست.
+                </p>
+
+            </div>
+
+        </div>
 
 
-    </section>
+        <!-- سؤال سوم -->
 
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+                    آیا ماه بانو کافئین دارد؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    خیر. در فرمول ماه بانو چای سبز، چای سیاه یا سایر منابع معمول کافئین وجود ندارد.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- سؤال چهارم -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+                    آیا می‌توان ماه بانو را هر روز نوشید؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    مقدار پیشنهادی برای بزرگسالان سالم ۱ تا ۲ فنجان در روز است.
+                        برای مصرف بیشتر یا طولانی‌مدت، به‌خصوص در صورت بیماری زمینه‌ای یا مصرف دارو،
+                        با پزشک یا داروساز مشورت کنید.
+                </p>
+
+            </div>
+
+        </div>
+
+		
+		        <!-- سؤال پنجم -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+                    آیا ماه بانو روی فشار خون اثر دارد؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+در مقدار معمول مصرف، انتظار نمی‌رود در افراد سالم تغییر قابل توجهی ایجاد کند.
+                        با این حال زنجبیل و دارچین ممکن است در برخی افراد اثر کاهنده خفیفی داشته باشند.
+                        اگر داروی فشار خون مصرف می‌کنید یا فشار خون پایینی دارید، پیش از مصرف منظم مشورت کنید.                </p>
+
+            </div>
+
+        </div>
+
+        <!-- سؤال ششم -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+                    آیا در دوران بارداری می‌توان ماه بانو نوشید؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+مصرف ماه بانو در دوران بارداری بدون تأیید پزشک توصیه نمی‌شود.
+                        در بارداری، ایمنی ترکیب و مقدار مصرف باید با توجه به شرایط فردی بررسی شود.                </p>
+
+            </div>
+
+        </div>
+
+        <!-- سؤال هفتم -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+                    آیا در دوران شیردهی می‌توان ماه بانو نوشید؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+درباره مصرف منظم ترکیب کامل ماه بانو در دوران شیردهی اطلاعات کافی وجود ندارد.
+                        برای مصرف منظم بهتر است با پزشک یا داروساز مشورت شود.
+				</p>
+
+            </div>
+
+        </div>
+
+        <!-- سؤال هشتم -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+                    اگر درد قاعدگی خیلی شدید باشد چه کار کنم؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+درد شدید، جدید، غیرمعمول یا مداوم قاعدگی نیازمند بررسی پزشکی است.
+                        دمنوش نباید جایگزین تشخیص و درمان علت درد شود.
+				</p>
+
+            </div>
+
+        </div>		
+		
+    </div>
+
+</section>
+
+	
+</div>
 
 </main>
 
@@ -2029,18 +1750,6 @@ FOOTER
 
 
             <div class="footer-brand">
-
-
-                <a href="index.html" class="footer-logo">
-
-                    <img
-                        src="assets/images/logo/logo-white.svg"
-						 alt="برگین"
-                    >
-
-                </a>
-
-
 
                 <p>
 
@@ -2289,6 +1998,51 @@ FOOTER
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    const track = document.getElementById("galleryTrack");
+    const slides = document.querySelectorAll(".gallery-slide");
+    const prevBtn = document.getElementById("galleryPrev");
+    const nextBtn = document.getElementById("galleryNext");
+    const dots = document.querySelectorAll(".gallery-dot");
+
+    let currentIndex = 0;
+
+    function updateGallery(index) {
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        track.style.transform =
+            "translateX(" + (currentIndex * 100) + "%)";
+
+        dots.forEach(function (dot, i) {
+            dot.classList.toggle("active", i === currentIndex);
+        });
+
+    }
+
+    nextBtn.addEventListener("click", function () {
+        updateGallery(currentIndex + 1);
+    });
+
+    prevBtn.addEventListener("click", function () {
+        updateGallery(currentIndex - 1);
+    });
+
+    dots.forEach(function (dot, i) {
+
+        dot.addEventListener("click", function () {
+            updateGallery(i);
+        });
+
+    });
+
+});
+
+</script>	
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
     const menuBtn = document.getElementById("menuBtn");
     const navbar = document.querySelector(".navbar");
     const overlay = document.querySelector(".header-overlay");
@@ -2445,6 +2199,183 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>	
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqQuestions =
+        document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach(function (question) {
+
+        question.addEventListener("click", function () {
+
+            const item = question.closest(".faq-item");
+            const isOpen = item.classList.contains("open");
+
+            // بستن سایر پاسخ‌ها
+
+            document.querySelectorAll(".faq-item").forEach(function (otherItem) {
+
+                otherItem.classList.remove("open");
+
+                const otherQuestion =
+                    otherItem.querySelector(".faq-question");
+
+                otherQuestion.setAttribute("aria-expanded", "false");
+
+                otherItem.querySelector(".faq-icon").textContent = "+";
+
+            });
+
+            // باز کردن سؤال انتخاب‌شده
+
+            if (!isOpen) {
+
+                item.classList.add("open");
+
+                question.setAttribute("aria-expanded", "true");
+
+                item.querySelector(".faq-icon").textContent = "×";
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+	
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const gallery = document.getElementById("aramisGallery");
+
+    if (!gallery) return;
+
+    const track = gallery.querySelector("#galleryTrack");
+    const slides = gallery.querySelectorAll(".gallery-slide");
+
+    const prevBtn = gallery.querySelector("#galleryPrev");
+    const nextBtn = gallery.querySelector("#galleryNext");
+
+    const thumbnails = gallery.querySelectorAll(".gallery-thumbnail");
+    const dots = gallery.querySelectorAll(".gallery-dot");
+
+    let currentIndex = 0;
+
+    /* تغییر تصویر اصلی */
+
+    function updateGallery(index) {
+
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+
+        if (index >= slides.length) {
+            index = 0;
+        }
+
+        currentIndex = index;
+
+        /*
+        جابه‌جایی نوار تصاویر
+        */
+
+        track.style.transform =
+            "translateX(-" + (currentIndex * 100) + "%)";
+
+
+        /*
+        فعال کردن تصویر کوچک
+        */
+
+        thumbnails.forEach(function (thumbnail, i) {
+
+            thumbnail.classList.toggle(
+                "active",
+                i === currentIndex
+            );
+
+        });
+
+
+        /*
+        فعال کردن نقاط راهنما
+        */
+
+        dots.forEach(function (dot, i) {
+
+            dot.classList.toggle(
+                "active",
+                i === currentIndex
+            );
+
+        });
+
+    }
+
+
+    /* کلیک روی تصاویر کوچک */
+
+    thumbnails.forEach(function (thumbnail, index) {
+
+        thumbnail.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            updateGallery(index);
+
+        });
+
+    });
+
+
+    /* کلیک روی نقاط */
+
+    dots.forEach(function (dot, index) {
+
+        dot.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            updateGallery(index);
+
+        });
+
+    });
+
+
+    /* تصویر قبلی */
+
+    prevBtn.addEventListener("click", function () {
+
+        updateGallery(currentIndex - 1);
+
+    });
+
+
+    /* تصویر بعدی */
+
+    nextBtn.addEventListener("click", function () {
+
+        updateGallery(currentIndex + 1);
+
+    });
+
+
+    /* مقدار اولیه */
+
+    updateGallery(0);
+
+});
+
+</script>
 
 </body>
 
