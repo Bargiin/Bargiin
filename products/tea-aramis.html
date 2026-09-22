@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 
 <head>
@@ -10,7 +11,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>دمنوش آرامیس | برگین</title>
+    <title>آرامیس | دمنوش گیاهی آرامش بخش | برگین</title>
 
     <meta
         name="description"
@@ -49,7 +50,605 @@
         href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
         rel="stylesheet">
 
+	<!--  New New   -->
+	
+<style>
 
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --green: #294f2e;
+    --dark-green: #183c24;
+    --purple: #76518d;
+    --light-purple: #f1e8f6;
+    --cream: #fffdf8;
+    --gold: #b9954a;
+    --text: #29332c;
+    --muted: #6b756d;
+    --border: #e5dac9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #fbf8f2, #f1e9f5);
+    color: var(--text);
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    line-height: 2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+/* هدر */
+
+.hero {
+    padding: 40px 0 25px;
+	padding-top: 140px;
+}
+
+	
+@media (max-width: 800px) {
+    .hero {
+        padding-top: 110px;
+    }
+}
+.hero-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    padding: 35px;
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    box-shadow: 0 18px 45px rgba(66, 45, 70, 0.10);
+}
+
+.kicker {
+    color: var(--purple);
+    font-weight: 800;
+    font-size: 1rem;
+}
+	 .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: .25s;
+            cursor: pointer;
+        }
+	 .btn-primary {
+            background: var(--green);
+            color: var(--white);
+		    color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-green);
+            transform: translateY(-2px);
+        }
+
+
+/* =========================================
+   گالری حرفه‌ای دمنوش آرامیس
+   Bargiin - Aramis Gallery
+========================================= */
+
+.product-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 14px;
+    border: 1px solid #dccce5;
+    border-radius: 24px;
+    background: #f8f2fa;
+    box-sizing: border-box;
+}
+
+/* قاب تصویر اصلی */
+
+.gallery-main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+/* نوار تصاویر */
+
+.gallery-track {
+    display: flex;
+    width: 100%;
+    direction: ltr;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.gallery-slide img {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* دکمه‌های قبلی و بعدی */
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(41, 79, 46, 0.9);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.25s ease;
+}
+
+.gallery-btn:hover {
+    background: #76518d;
+}
+
+.gallery-prev {
+    right: 12px;
+}
+
+.gallery-next {
+    left: 12px;
+}
+
+/* تصاویر کوچک */
+
+.gallery-thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 4px 8px;
+    overflow-x: auto;
+    direction: rtl;
+    scrollbar-width: thin;
+}
+
+.gallery-thumbnail {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    padding: 3px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.gallery-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.gallery-thumbnail:hover {
+    transform: translateY(-2px);
+}
+
+.gallery-thumbnail.active {
+    border-color: #76518d;
+    box-shadow: 0 0 0 1px #76518d;
+}
+
+/* نشانگر تصاویر */
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 0 2px;
+    direction: rtl;
+}
+
+.gallery-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #cbb8d5;
+    cursor: pointer;
+}
+
+.gallery-dot.active {
+    background: #76518d;
+    transform: scale(1.2);
+}
+
+/* موبایل */
+
+@media (max-width: 600px) {
+
+    .product-gallery {
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .gallery-slide img {
+        height: 290px;
+    }
+
+    .gallery-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+
+    .gallery-prev {
+        right: 8px;
+    }
+
+    .gallery-next {
+        left: 8px;
+    }
+
+    .gallery-thumbnail {
+        flex-basis: 58px;
+        width: 58px;
+        height: 58px;
+    }
+
+    .gallery-thumbnails {
+        gap: 7px;
+    }
+
+}
+	
+h1, h2, h3 {
+    line-height: 1.6;
+    color: var(--green);
+}
+
+h1 {
+    margin: 5px 0 12px;
+    color: var(--purple);
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 800;
+}
+
+h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfd3bd;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+h3 {
+    font-size: 1.08rem;
+    margin-bottom: 6px;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+.lead {
+    font-size: 1.08rem;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 18px 0;
+}
+
+.badge {
+    padding: 4px 13px;
+    background: var(--light-purple);
+    color: #573b6e;
+    border: 1px solid #d9c7e2;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.hero-art {
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #dbc9e5;
+    border-radius: 24px;
+    background: radial-gradient(circle at 50% 40%, #fff9ff, #e5d6ed);
+}
+
+.hero-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.art-placeholder {
+    padding: 25px;
+    text-align: center;
+    color: #684b79;
+}
+
+/* شبکه محتوا */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 22px 0;
+}
+
+.card {
+    padding: 25px;
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(49, 42, 35, 0.05);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+ul {
+    margin: 8px 0;
+    padding-right: 22px;
+}
+
+li {
+    margin: 4px 0;
+}
+
+/* جدول ترکیبات */
+
+.formula {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #fff;
+}
+
+.formula th,
+.formula td {
+    padding: 10px;
+    border: 1px solid #e3d8c9;
+    text-align: right;
+}
+
+.formula th {
+    background: #eee4f3;
+    color: #4d3560;
+}
+
+/* باکس‌های هشدار */
+
+.note {
+    margin-top: 15px;
+    padding: 13px 16px;
+    background: #fff6e5;
+    border-right: 4px solid var(--gold);
+    border-radius: 12px;
+}
+
+.warning {
+    padding: 13px 16px;
+    background: #fff0f0;
+    border-right: 4px solid #ad5c5c;
+    border-radius: 12px;
+}
+
+/* روش دم کردن */
+
+.steps {
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.steps li {
+    position: relative;
+    padding: 10px 48px 10px 0;
+    counter-increment: step;
+}
+
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--purple);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+/* دل‌نوشته */
+
+.quote {
+    padding: 30px;
+    background: linear-gradient(135deg, #6f477f, #8e68a2);
+    color: #fff;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.quote h2,
+.quote p {
+    color: #fff;
+}
+
+/* متن کوچک */
+
+.small {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+	
+	.faq-item {
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid #e1d5e7;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.faq-question {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+    border: none;
+    background: #f5edf8;
+    color: #294f2e;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: right;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background: #eadcf0;
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    font-size: 22px;
+    color: #76518d;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px 20px;
+    background: #fff;
+    color: #29332c;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* فوتر */
+
+footer {
+    margin-top: 30px;
+    padding: 28px 0;
+    background: var(--dark-green);
+    color: #fff;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer a {
+    color: #ead9f3;
+}
+
+/* نمایشگرهای کوچک */
+
+@media (max-width: 800px) {
+
+    .hero-card,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .hero-card {
+        padding: 22px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+}
+
+/* چاپ */
+
+@media print {
+
+    body {
+        background: #fff;
+    }
+
+    .hero-card,
+    .card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    a {
+        color: #000;
+    }
+
+}
+
+</style>
 </head>
 <button class="back-to-top" aria-label="بازگشت به بالا">
 
@@ -123,6 +722,7 @@ HEADER
 
     </ul>
 
+
 </li>
 
                 
@@ -146,11 +746,11 @@ HEADER
         <li>
             <a href="../articles/lifestyle.html">سبک زندگی</a>
         </li>
-
+<!--
         <li>
             <a href="../articles/news.html">اخبار برگین</a>
         </li>
-
+-->
     </ul>
 					
 
@@ -258,7 +858,7 @@ HEADER
 
 </div>
 			
-                    <button
+                   <button
             type="button"
             class="menu-btn"
             id="menuBtn"
@@ -284,340 +884,821 @@ HEADER
     id="headerOverlay"
 ></div>
 	
-<!--==================================
-PRODUCT PAGE
-==================================-->
+<header class="hero">
 
-<main class="product-page">
+<div class="container">
 
+<div class="hero-card">
 
-    <!--==================================
-    PRODUCT HERO
-    ==================================-->
+<div>
 
-    <section class="product-hero">
+<h1>آرامیس</h1>
 
-        <div class="container">
+<p class="lead">
+<strong>دمنوش گیاهی آرامش‌بخش</strong>؛
+ترکیبی معطر از گیاهان منتخب برای ساختن لحظه‌ای آرام،
+دور از شلوغی روز.
+</p>
 
-            <div class="product-hero-grid">
+<div class="badges">
 
+<span class="badge">
+بدون شکر افزوده
+</span>
 
-                <!-- IMAGE -->
+<span class="badge">
+مناسب زمان استراحت
+</span>
 
-                <div class="product-image-box">
+<span class="badge">
+قابل تهیه به‌صورت تی‌بگ و فله‌ای
+</span>
 
-                    <div class="product-image">
+</div>
 
-                        <img
-                            src="../assets/images/products/aramis.png"
-                            alt="دمنوش آرامیس برگین"
-                        >
+<p>
+آرامیس برای کسانی طراحی شده است که دوست دارند
+در پایان یک روز شلوغ، با عطری گیاهی و طعمی لطیف،
+زمانی را به استراحت اختصاص دهند.
+</p>
 
-                    </div>
-
-                </div>
-
-
-
-                <!-- CONTENT -->
-
-                <div class="product-content">
-
-                    <span class="product-category">
-
-                        دمنوش‌های گیاهی
-
-                    </span>
+<a href="https://eitaa.com/Bargiin" class="btn btn-primary">خرید دمنوش آرامیس</a>
+	
+</div>
 
 
-                    <h1>
+<div class="product-gallery" id="aramisGallery">
 
-                        دمنوش آرامیس
+    <!-- تصویر اصلی -->
 
-                    </h1>
+    <div class="gallery-main" id="galleryMain">
 
+        <div class="gallery-track" id="galleryTrack">
 
-                    <p class="product-intro">
+            <div class="gallery-slide">
+                <img src="../assets/images/products/Aramis4.webp"
+                     alt="تصویر اصلی دمنوش آرامیس">
+            </div>
 
-                        ترکیبی لطیف و خوش‌عطر از گیاهان منتخب
-                        برای لحظاتی آرام‌تر و دلنشین‌تر.
+            <div class="gallery-slide">
+                <img src="../assets/images/products/Aramis7.webp"
+                     alt="ترکیبات دمنوش آرامیس">
+            </div>
 
-                    </p>
+            <div class="gallery-slide">
+                <img src="../assets/images/products/aramis.webp"
+                     alt="بسته‌بندی دمنوش آرامیس">
+            </div>
 
-
-
-                    <!-- FEATURES -->
-
-                    <div class="product-features">
-
-                        <div class="product-feature">
-
-                            <i class="fa-solid fa-leaf"></i>
-
-                            <span>
-                                ترکیبات گیاهی
-                            </span>
-
-                        </div>
-
-
-                        <div class="product-feature">
-
-                            <i class="fa-solid fa-seedling"></i>
-
-                            <span>
-                                بدون مواد افزودنی
-                            </span>
-
-                        </div>
-
-
-                        <div class="product-feature">
-
-                            <i class="fa-solid fa-mug-hot"></i>
-
-                            <span>
-                                مناسب مصرف روزانه
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
+            <div class="gallery-slide">
+                <img src="../assets/images/products/Aramis6.webp"
+                     alt="نمای نزدیک دمنوش آرامیس">
             </div>
 
         </div>
 
-    </section>
+        <!-- دکمه قبلی -->
+
+        <button class="gallery-btn gallery-prev"
+                id="galleryPrev"
+                type="button"
+                aria-label="تصویر قبلی">
+
+            &#10094;
+
+        </button>
+
+        <!-- دکمه بعدی -->
+
+        <button class="gallery-btn gallery-next"
+                id="galleryNext"
+                type="button"
+                aria-label="تصویر بعدی">
+
+            &#10095;
+
+        </button>
+
+    </div>
+
+
+    <!-- تصاویر کوچک -->
+
+    <div class="gallery-thumbnails"
+         id="galleryThumbnails">
+
+        <button class="gallery-thumbnail active"
+                type="button"
+                data-index="0"
+                aria-label="نمایش تصویر ۱">
+
+            <img src="../assets/images/products/Aramis4.webp"
+                 alt="تصویر کوچک ۱">
+
+        </button>
+
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="1"
+                aria-label="نمایش تصویر ۲">
+
+            <img src="../assets/images/products/Aramis7.webp"
+                 alt="تصویر کوچک ۲">
+
+        </button>
+
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="2"
+                aria-label="نمایش تصویر ۳">
+
+            <img src="../assets/images/products/aramis.webp"
+                 alt="تصویر کوچک ۳">
+
+        </button>
+
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="3"
+                aria-label="نمایش تصویر ۴">
+
+            <img src="../assets/images/products/Aramis6.webp"
+                 alt="تصویر کوچک ۴">
+
+        </button>
+
+    </div>
+
+
+    <!-- نقاط راهنمای تصاویر -->
+
+    <div class="gallery-dots" id="galleryDots">
+
+        <button class="gallery-dot active"
+                type="button"
+                data-index="0"
+                aria-label="تصویر ۱"></button>
+
+        <button class="gallery-dot"
+                type="button"
+                data-index="1"
+                aria-label="تصویر ۲"></button>
+
+        <button class="gallery-dot"
+                type="button"
+                data-index="2"
+                aria-label="تصویر ۳"></button>
+
+        <button class="gallery-dot"
+                type="button"
+                data-index="3"
+                aria-label="تصویر ۴"></button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+<div class="grid">
+
+
+<!-- =========================
+     معرفی آرامیس
+========================= -->
+
+<section class="card">
+
+<h2>
+معرفی آرامیس
+</h2>
+
+<p>
+آرامیس ترکیبی گیاهی با رایحه‌ای تازه و گلی است
+که با محوریت به‌لیمو، گل گاوزبان،
+اسطوخودوس و بهارنارنج تهیه می‌شود.
+</p>
+
+<p>
+این ترکیب برای همراهی با زمان استراحت،
+مطالعه، گفت‌وگو و پایان روز طراحی شده است.
+</p>
+
+<p class="small">
+آرامیس یک نوشیدنی گیاهی است و جایگزین تشخیص
+یا درمان پزشکی محسوب نمی‌شود.
+</p>
+
+</section>
+
+
+<!-- =========================
+     اطلاعات محصول
+========================= -->
+
+<section class="card">
+
+<h2>
+اطلاعات محصول
+</h2>
+
+<ul>
+
+<li>
+<strong>نام محصول:</strong>
+آرامیس
+</li>
+
+<li>
+<strong>&nbsp;برند:</strong>
+برگین | BARGIIN </li>
+
+<li>
+<strong>نوع:</strong>
+دمنوش گیاهی
+</li>
+
+<li>
+<strong>شکل مصرف:</strong>
+تی‌بگ و فله‌ای
+</li>
+
+<li>
+<strong> تعداد / وزن خالص : </strong>
+۱۵ عدد تی‌بگ به وزن کلی 30 گرم | قوطی به وزن 30 گرم
+</li>
+	
+</ul>
+
+</section>
+
+
+<!-- =========================
+     ترکیبات
+========================= -->
+
+<section class="card full">
+
+<h2>
+ترکیبات و ویژگی گیاهان
+</h2>
+
+<table class="formula">
+
+<thead>
+
+<tr>
+
+<th>
+گیاه
+</th>
+
+<th>
+ویژگی حسی و نقش در ترکیب
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+به‌لیمو
+</td>
+
+
+<td>
+رایحه مرکباتی و تازه؛
+عنصر اصلی عطر دمنوش
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+گل گاوزبان
+</td>
+
+
+<td>
+ایجاد حس گیاهی و عمق در تجربه طعم
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+اسطوخودوس
+</td>
+
+
+<td>
+رایحه گلی و نافذ؛
+ایجاد شخصیت عطری ترکیب
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+بهارنارنج
+</td>
+
+
+<td>
+رایحه گلی و مرکباتی؛
+کمک به لطافت فضای عطری
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="note">
+
+شدت عطر و طعم به کیفیت مواد اولیه،
+تازگی، میزان خردشدگی، شرایط نگهداری
+و زمان دم‌کشیدن وابسته است.
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ویژگی‌های حسی
+========================= -->
+
+<section class="card">
+
+<h2>
+ویژگی‌های حسی دمنوش
+</h2>
+
+<ul>
+
+<li>
+رایحه تازه و مرکباتی به‌لیمو
+</li>
+
+<li>
+پس‌زمینه گلی اسطوخودوس و بهارنارنج
+</li>
+
+<li>
+حس گیاهی گل گاوزبان
+</li>
+
+<li>
+مناسب برای نوشیدن آهسته و گرم
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- =========================
+     بهترین زمان مصرف
+========================= -->
+
+<section class="card">
+
+<h2>
+بهترین زمان مصرف
+</h2>
+
+<ul>
+
+<li>
+عصرها، پس از پایان فعالیت‌های روزانه
+</li>
+
+<li>
+در زمان استراحت و مطالعه
+</li>
+
+<li>
+پیش از خواب، در صورت سازگاری فردی
+</li>
+
+</ul>
+
+<p class="small">
+
+واکنش افراد به گیاهان متفاوت است؛
+ابتدا با مقدار کم شروع کنید.
+
+</p>
+
+</section>
+
+
+<!-- =========================
+     روش دم کردن
+========================= -->
+
+<section class="card full">
+
+<h2>
+روش دم کردن
+</h2>
+
+<h3>
+روش مصرف به‌صورت فله‌ای
+</h3>
+
+<ol class="steps">
+
+<li>
+یک قاشق مرباخوری از مخلوط را
+در ۲۰۰ تا ۲۵۰ میلی‌لیتر آب داغ قرار دهید.
+</li>
+
+<li>
+از آب با دمای حدود ۸۵ تا ۹۵ درجه سانتی‌گراد
+استفاده کنید.
+</li>
+
+<li>
+درپوش ظرف را بگذارید و حدود ۵ تا ۷ دقیقه
+دم کنید.
+</li>
+
+<li>
+سپس صاف کرده و گرم بنوشید.
+</li>
+
+</ol>
+
+<div class="note">
+
+<strong>
+روش مصرف تی‌بگ:
+</strong>
+
+یک عدد تی‌بگ را در یک فنجان آب داغ
+قرار دهید و پس از ۵ تا ۷ دقیقه خارج کنید.
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     موارد احتیاط
+========================= -->
+
+<section class="card">
+
+<h2>
+موارد احتیاط
+</h2>
+
+<ul>
+
+<li>
+در دوران بارداری و شیردهی،
+پیش از مصرف منظم با پزشک یا ماما مشورت شود.
+</li>
+
+<li>
+افراد دارای بیماری زمینه‌ای یا حساسیت به گیاهان،
+احتیاط کنند.
+</li>
+
+<li>
+در صورت مصرف داروهای آرام‌بخش، خواب‌آور
+یا داروهای مزمن، پیش از مصرف منظم
+با پزشک یا داروساز مشورت شود.
+</li>
+
+<li>
+در صورت بروز حساسیت یا علائم غیرمعمول،
+مصرف را قطع کنید.
+</li>
+
+<li>
+برای کودکان، مصرف خودسرانه توصیه نمی‌شود.
+</li>
+
+</ul>
+
+</section>
+
+
+<!-- =========================
+     فشار خون و مقدار مصرف
+========================= -->
+
+<section class="card">
+
+<h2>
+فشار خون و مقدار مصرف
+</h2>
+
+<p>
+آرامیس برای درمان فشار خون یا جایگزینی داروهای
+مربوط به آن طراحی نشده است.
+</p>
+
+<p>
+افراد مبتلا به فشار خون، بیماری قلبی
+یا کسانی که داروی منظم مصرف می‌کنند،
+پیش از مصرف مداوم با پزشک مشورت کنند.
+</p>
+
+<p>
+مقدار و دفعات مصرف باید با توجه به شرایط فردی،
+کیفیت مواد اولیه و میزان تحمل بدن تعیین شود.
+</p>
+
+</section>
 
 
 
-    <!--==================================
-    INGREDIENTS
-    ==================================-->
 
-    <section class="product-section product-ingredients">
+<!-- =========================
+     داستان آرامیس
+========================= -->
 
-        <div class="container">
+<section class="card full">
 
-            <div class="product-section-header">
+<h2>
+داستان آرامیس
+</h2>
+
+<p>
+آرامیس از یک ایده ساده شکل گرفت:
+گاهی برای بهتر گذراندن روز،
+لازم نیست کار بزرگی انجام دهیم؛
+کافی است چند دقیقه مکث کنیم،
+فنجانی دمنوش آماده کنیم
+و به خودمان فرصت نفس کشیدن بدهیم.
+</p>
+
+<p>
+در برگین تلاش کرده‌ایم ترکیبی خوش‌عطر
+و لطیف بسازیم تا همراه لحظه‌های خلوت،
+گفت‌وگو، مطالعه و استراحت شما باشد.
+</p>
+
+</section>
+
+
+<!-- =========================
+     دل نوشته برگین
+========================= -->
+
+<section class="card full quote">
+
+<h2>
+دل نوشته برگین
+</h2>
+
+<p>
+گاهی کافیست چند دقیقه
+از شلوغی روز فاصله بگیری…
+</p>
+
+<p>
+فنجانی آرامیس دم کن،
+عطر گیاهان را نفس بکش
+و اجازه بده طبیعت،
+مهمان لحظه‌هایت شود.
+</p>
+
+<p>
+<strong>
+برگین؛ برای لحظه‌های آرام تو.
+</strong>
+</p>
+
+</section>
+
+<!-- =========================
+     پشتوانه علمی
+========================= -->
+
+<section class="card">
+
+<h2>
+پشتوانه علمی ترکیبات
+</h2>
+
+<p>
+برخی از گیاهان به‌کاررفته در آرامیس
+در مطالعات آزمایشگاهی و پژوهش‌های انسانی
+از جنبه‌های مختلف بررسی شده‌اند.
+</p>
+
+<p>
+بااین‌حال، شواهد علمی درباره اثر قطعی
+این فرمول مشخص بر خواب، اضطراب یا بیماری‌ها
+کافی و یکدست نیست.
+</p>
+
+<p>
+به همین دلیل، آرامیس به‌عنوان یک نوشیدنی گیاهی
+برای همراهی با لحظه‌های استراحت معرفی می‌شود،
+نه به‌عنوان داروی درمانی.
+</p>
+
+</section>
+
+<!-- =========================
+     شرایط نگهداری
+========================= -->
+<section class="card">
+
+<h2>
+شرایط نگهداری
+</h2>
+
+<ul>
+
+<li>
+در جای خشک، خنک و دور از نور مستقیم نگهداری شود.
+</li>
+
+<li>
+پس از هر بار مصرف، بسته را کاملاً ببندید.
+</li>
+
+<li>
+دور از رطوبت، حرارت و مواد غذایی با بوی تند قرار گیرد.
+</li>
+
+<li>
+برای حفظ عطر به‌لیمو و اسطوخودوس،
+از خردکردن بیش از اندازه و نگهداری طولانی
+پس از خردشدن پرهیز شود.
+</li>
+
+</ul>
+
+</section>
+	</codeblock>
+
+<!-- =========================
+     پرسش‌های متداول
+========================= -->
+
+<section class="card full">
+
+    <h2>
+        پرسش‌های متداول
+    </h2>
+
+    <div class="faq-list">
+
+        <!-- سؤال اول -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
 
                 <span>
-                <strong>ترکیبات</strong> </span>
+                    آیا آرامیس خواب‌آور است؟
+                </span>
 
-                <h2>
-                    آنچه در آرامیس است
-                </h2>
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
 
                 <p>
-                    ترکیبی متعادل از گیاهان معطر و خوش‌طعم.
+                    آرامیس برای همراهی با زمان استراحت طراحی شده است؛
+                    اما واکنش افراد به ترکیبات گیاهی متفاوت است
+                    و نباید به‌عنوان داروی خواب معرفی شود.
                 </p>
 
             </div>
 
-	
-            <div class="ingredients-grid">
-
-<a href="../articles/herbs/lemon-verbena.html">
-	
-                <div class="ingredient-card">
-
-                    <div class="ingredient-icon">
-
-                        <i class="fa-solid fa-leaf"></i>
-
-                    </div>
-
-                    <h3>
-                        به‌لیمو
-                    </h3>
+        </div>
 
 
-                </div>
-	
-</a>
-				
-<a href="../articles/herbs/Borage.html">				
+        <!-- سؤال دوم -->
 
-                <div class="ingredient-card">
+        <div class="faq-item">
 
-                    <div class="ingredient-icon">
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
 
-                        <i class="fa-solid fa-leaf"></i>
+                <span>
+                    آیا می‌توان آرامیس را با عسل مصرف کرد؟
+                </span>
 
-                    </div>
+                <span class="faq-icon">
+                    +
+                </span>
 
-                    <h3>
-                        گل گاوزبان
-                    </h3>
+            </button>
 
-                </div>
+            <div class="faq-answer">
 
-</a>
-				
-  <a href="../articles/herbs/lavender.html">
-	  
-				<div class="ingredient-card">
-
-                    <div class="ingredient-icon">
-
-                        <i class="fa-solid fa-leaf"></i>
-
-                    </div>
-
-                    <h3>
-                        اسطوخودوس
-                    </h3>
-
-                </div>
-</a>
-
-<a href="../articles/herbs/Bitter-orange-blossom.html">	
-	
-                <div class="ingredient-card">
-
-                    <div class="ingredient-icon">
-
-                        <i class="fa-solid fa-leaf"></i>
-
-                    </div>
-
-                    <h3>
-                        بهارنارنج
-                    </h3>
-
-
-                </div>
-</a>
+                <p>
+                    بله، در صورت تمایل می‌توان مقدار کمی عسل افزود.
+                    بااین‌حال، طعم اصلی ترکیب بدون شیرین‌کننده
+                    نیز قابل تجربه است.
+                </p>
 
             </div>
 
         </div>
 
-    </section>
 
+        <!-- سؤال سوم -->
 
+        <div class="faq-item">
 
-    <!--==================================
-    PRODUCT DESCRIPTION
-    ==================================-->
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
 
-    <section class="product-section product-description-section">
+                <span>
+                    آیا مصرف هم‌زمان با داروها مجاز است؟
+                </span>
 
-        <div class="container">
+                <span class="faq-icon">
+                    +
+                </span>
 
-            <div class="product-description-grid">
+            </button>
 
+            <div class="faq-answer">
 
-                <div>
-
-                    <span class="product-section-label">
-                        درباره محصول
-                    </span>
-
-                    <h2>
-                        آرامش را
-                        <span>جرعه‌جرعه</span>
-                        تجربه کن
-                    </h2>
-
-                </div>
-
-
-                <div>
-
-                    <p>
-                        آرامیس ترکیبی از به‌لیمو، بهارنارنج،
-                        گل گاوزبان و اسطوخودوس است؛ ترکیبی
-                        خوش‌عطر و دلنشین که برای ایجاد یک
-                        تجربه آرام و دلچسب طراحی شده است.
-                    </p>
-
-                    <p>
-                        عطر گیاهان معطر این ترکیب، هنگام دم
-                        کشیدن فضای دلنشینی ایجاد می‌کند و
-                        طعم ملایم آن، آرامیس را به انتخابی
-                        مناسب برای لحظات استراحت تبدیل می‌کند.
-                    </p>
-
-                </div>
+                <p>
+                    افرادی که داروهای منظم مصرف می‌کنند،
+                    به‌ویژه داروهای آرام‌بخش یا خواب‌آور،
+                    باید پیش از مصرف مداوم با پزشک یا داروساز
+                    مشورت کنند.
+                </p>
 
             </div>
 
         </div>
 
-    </section>
 
+        <!-- سؤال چهارم -->
 
+        <div class="faq-item">
 
-    <!--==================================
-    HOW TO USE
-    ==================================-->
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
 
-    <section class="product-section product-use">
+                <span>
+                    روش صحیح دم کردن آرامیس چیست؟
+                </span>
 
-        <div class="container">
+                <span class="faq-icon">
+                    +
+                </span>
 
-            <div class="product-use-box">
+            </button>
 
-                <div class="product-use-icon">
+            <div class="faq-answer">
 
-                    <i class="fa-solid fa-mug-hot"></i>
-
-                </div>
-
-
-                <div>
-
-                    <span class="product-section-label">
-                        روش مصرف
-                    </span>
-
-                    <h2>
-                        چطور دم کنیم؟
-                    </h2>
-
-                    <p>
-                      دو قاشق چای‌خوری از دمنوش یا یک عدد تی بگ محصول را در
-                        یک فنجان آب با دمای 90 درجه بریزید و اجازه دهید
-                      حدود 7 تا 10 دقیقه دم بکشد. نوش جان</p>
-
-                </div>
+                <p>
+                    یک قاشق مرباخوری از مخلوط فله‌ای را
+                    در ۲۰۰ تا ۲۵۰ میلی‌لیتر آب داغ بریزید.
+                    حدود ۵ تا ۷ دقیقه دم کنید و سپس صاف نمایید.
+                </p>
 
             </div>
 
         </div>
 
-    </section>
 
+    </div>
 
+</section>
 
-    <!--==================================
-    BACK TO PRODUCTS
-    ==================================-->
-
-    <section class="product-bottom">
-
-        <div class="container">
-
-            <a
-                href="../products.html"
-                class="product-back"
-            >
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-                بازگشت به محصولات
-
-            </a>
-
-        </div>
-
-    </section>
-
+	</codeblock>
+	
+</div>
 
 </main>
 
@@ -637,18 +1718,6 @@ FOOTER
 
 
             <div class="footer-brand">
-
-
-                <a href="index.html" class="footer-logo">
-
-                    <img
-                        src="assets/images/logo/logo-white.svg"
-						 alt="برگین"
-                    >
-
-                </a>
-
-
 
                 <p>
 
@@ -708,28 +1777,28 @@ FOOTER
                 <ul>
 
                     <li>
-                        <a href="index.html">
+                        <a href="../index.html">
                             صفحه اصلی
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="products.html">
+                        <a href="../products.html">
                             محصولات
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="articles.html">
-                            مقالات
+                        <a href="../articles/herbs.html">
+                            مجله برگین
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="about.html">
+                        <a href="../about.html">
                             درباره برگین
                         </a>
                     </li>
@@ -760,28 +1829,28 @@ FOOTER
 
 
                     <li>
-                        <a href="products/tea-aramis.html">
+                        <a href="../products/tea-aramis.html">
                             آرامیس
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="products/tea-mah-banoo.html">
+                        <a href="../products/tea-mah-banoo.html">
                             ماه بانو
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="products/tea-sabzgam.html">
+                        <a href="../products/tea-sabzgam.html">
                             سبزگام
                         </a>
                     </li>
 
 
                     <li>
-                        <a href="dried-herbs.html">
+                        <a href="../dried-herbs.html">
                             سبزیجات خشک
                         </a>
                     </li>
@@ -892,6 +1961,389 @@ FOOTER
 <script src="../assets/js/app.js"></script>
 	
 <script src="../assets/js/product.js"></script>
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const track = document.getElementById("galleryTrack");
+    const slides = document.querySelectorAll(".gallery-slide");
+    const prevBtn = document.getElementById("galleryPrev");
+    const nextBtn = document.getElementById("galleryNext");
+    const dots = document.querySelectorAll(".gallery-dot");
+
+    let currentIndex = 0;
+
+    function updateGallery(index) {
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        track.style.transform =
+            "translateX(" + (currentIndex * 100) + "%)";
+
+        dots.forEach(function (dot, i) {
+            dot.classList.toggle("active", i === currentIndex);
+        });
+
+    }
+
+    nextBtn.addEventListener("click", function () {
+        updateGallery(currentIndex + 1);
+    });
+
+    prevBtn.addEventListener("click", function () {
+        updateGallery(currentIndex - 1);
+    });
+
+    dots.forEach(function (dot, i) {
+
+        dot.addEventListener("click", function () {
+            updateGallery(i);
+        });
+
+    });
+
+});
+
+</script>	
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navbar = document.querySelector(".navbar");
+    const overlay = document.querySelector(".header-overlay");
+
+    console.log("Bargiin Mobile Menu Loaded");
+
+    if (!menuBtn || !navbar) {
+
+        console.log("Menu elements not found");
+
+        return;
+
+    }
+
+
+    /* باز و بسته شدن منوی اصلی */
+
+    menuBtn.onclick = function () {
+
+        navbar.classList.toggle("active");
+
+        if (overlay) {
+            overlay.classList.toggle("active");
+        }
+
+        document.body.classList.toggle("menu-open");
+
+        const expanded =
+            navbar.classList.contains("active");
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            expanded
+        );
+
+    };
+
+
+    /* کلیک روی پس زمینه */
+
+    if (overlay) {
+
+        overlay.onclick = function () {
+
+            navbar.classList.remove("active");
+
+            overlay.classList.remove("active");
+
+            document.body.classList.remove("menu-open");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        };
+
+    }
+
+
+    /* زیرمنوها */
+
+    const dropdownItems =
+        navbar.querySelectorAll(".has-dropdown");
+
+
+    dropdownItems.forEach(function (item) {
+
+        const link =
+            item.querySelector(":scope > a");
+
+        const dropdown =
+            item.querySelector(":scope > .dropdown");
+
+
+        if (!link || !dropdown) {
+
+            return;
+
+        }
+
+
+        link.onclick = function (event) {
+
+            if (window.innerWidth > 992) {
+
+                return;
+
+            }
+
+            event.preventDefault();
+
+
+            dropdownItems.forEach(function (otherItem) {
+
+                if (otherItem !== item) {
+
+                    otherItem.classList.remove("active");
+
+                }
+
+            });
+
+
+            item.classList.toggle("active");
+
+        };
+
+    });
+
+
+    /* لینک‌های معمولی */
+
+    const links =
+        navbar.querySelectorAll("a");
+
+
+    links.forEach(function (link) {
+
+        const parent =
+            link.parentElement;
+
+
+        if (
+            parent &&
+            parent.classList.contains("has-dropdown")
+        ) {
+
+            return;
+
+        }
+
+
+        link.onclick = function () {
+
+            if (window.innerWidth <= 992) {
+
+                navbar.classList.remove("active");
+
+                if (overlay) {
+
+                    overlay.classList.remove("active");
+
+                }
+
+                document.body.classList.remove("menu-open");
+
+            }
+
+        };
+
+    });
+
+});
+
+</script>	
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqQuestions =
+        document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach(function (question) {
+
+        question.addEventListener("click", function () {
+
+            const item = question.closest(".faq-item");
+            const isOpen = item.classList.contains("open");
+
+            // بستن سایر پاسخ‌ها
+
+            document.querySelectorAll(".faq-item").forEach(function (otherItem) {
+
+                otherItem.classList.remove("open");
+
+                const otherQuestion =
+                    otherItem.querySelector(".faq-question");
+
+                otherQuestion.setAttribute("aria-expanded", "false");
+
+                otherItem.querySelector(".faq-icon").textContent = "+";
+
+            });
+
+            // باز کردن سؤال انتخاب‌شده
+
+            if (!isOpen) {
+
+                item.classList.add("open");
+
+                question.setAttribute("aria-expanded", "true");
+
+                item.querySelector(".faq-icon").textContent = "×";
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+	
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const gallery = document.getElementById("aramisGallery");
+
+    if (!gallery) return;
+
+    const track = gallery.querySelector("#galleryTrack");
+    const slides = gallery.querySelectorAll(".gallery-slide");
+
+    const prevBtn = gallery.querySelector("#galleryPrev");
+    const nextBtn = gallery.querySelector("#galleryNext");
+
+    const thumbnails = gallery.querySelectorAll(".gallery-thumbnail");
+    const dots = gallery.querySelectorAll(".gallery-dot");
+
+    let currentIndex = 0;
+
+    /* تغییر تصویر اصلی */
+
+    function updateGallery(index) {
+
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+
+        if (index >= slides.length) {
+            index = 0;
+        }
+
+        currentIndex = index;
+
+        /*
+        جابه‌جایی نوار تصاویر
+        */
+
+        track.style.transform =
+            "translateX(-" + (currentIndex * 100) + "%)";
+
+
+        /*
+        فعال کردن تصویر کوچک
+        */
+
+        thumbnails.forEach(function (thumbnail, i) {
+
+            thumbnail.classList.toggle(
+                "active",
+                i === currentIndex
+            );
+
+        });
+
+
+        /*
+        فعال کردن نقاط راهنما
+        */
+
+        dots.forEach(function (dot, i) {
+
+            dot.classList.toggle(
+                "active",
+                i === currentIndex
+            );
+
+        });
+
+    }
+
+
+    /* کلیک روی تصاویر کوچک */
+
+    thumbnails.forEach(function (thumbnail, index) {
+
+        thumbnail.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            updateGallery(index);
+
+        });
+
+    });
+
+
+    /* کلیک روی نقاط */
+
+    dots.forEach(function (dot, index) {
+
+        dot.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            updateGallery(index);
+
+        });
+
+    });
+
+
+    /* تصویر قبلی */
+
+    prevBtn.addEventListener("click", function () {
+
+        updateGallery(currentIndex - 1);
+
+    });
+
+
+    /* تصویر بعدی */
+
+    nextBtn.addEventListener("click", function () {
+
+        updateGallery(currentIndex + 1);
+
+    });
+
+
+    /* مقدار اولیه */
+
+    updateGallery(0);
+
+});
+
+</script>
 
 </body>
 
