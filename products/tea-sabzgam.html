@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 
 <head>
@@ -49,166 +50,81 @@
         href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
         rel="stylesheet">
 
-<!--  New  New  -->
+	<!--  New New   -->
 	
-    <style>
+<style>
 
-        :root {
-            --green: #315c45;
-            --dark-green: #234332;
-            --light-green: #edf3ee;
-            --gold: #b99a5b;
-            --cream: #faf8f2;
-            --text: #333333;
-            --muted: #707070;
-            --white: #ffffff;
-            --border: #e5e1d7;
-            --shadow: 0 12px 35px rgba(35, 67, 50, 0.10);
-            --radius: 18px;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+:root {
+    --green: #294f2e;
+    --dark-green: #183c24;
+    --purple: #76518d;
+    --light-purple: #f1e8f6;
+    --cream: #fffdf8;
+    --gold: #b9954a;
+    --text: #29332c;
+    --muted: #6b756d;
+    --border: #e5dac9;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        body {
+html {
+    scroll-behavior: smooth;
+}
 
-            line-height: 2;
-        }
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #fbf8f2, #f1e9f5);
+    color: var(--text);
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    line-height: 2;
+}
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
 
-        .container {
-            width: min(1120px, calc(100% - 32px));
-            margin: 0 auto;
-        }
+/* هدر */
 
-        .section {
-            padding: 80px 0;
-        }
+.hero {
+    padding: 40px 0 25px;
+	padding-top: 140px;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
+	
+@media (max-width: 800px) {
+    .hero {
+        padding-top: 110px;
+    }
+}
+.hero-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    padding: 35px;
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    box-shadow: 0 18px 45px rgba(66, 45, 70, 0.10);
+}
 
-        .section-title .eyebrow {
-            display: inline-block;
-            color: var(--gold);
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .section-title h2 {
-            color: var(--dark-green);
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            max-width: 700px;
-            margin: 0 auto;
-            color: var(--muted);
-        }
-
-        /* Hero */
-        .hero {
-            background:
-                radial-gradient(circle at 10% 20%, rgba(185,154,91,.12), transparent 28%),
-                linear-gradient(135deg, #f7f5ed 0%, #edf3ee 100%);
-            padding: 75px 0;
-            overflow: hidden;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.05fr .95fr;
-            align-items: center;
-            gap: 55px;
-        }
-
-        .hero-content {
-            order: 1;
-        }
-
-        .hero-image {
-            order: 2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 430px;
-        }
-
-        .product-placeholder {
-            width: min(390px, 90%);
-            min-height: 430px;
-            border: 2px dashed rgba(49,92,69,.25);
-            border-radius: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--muted);
-            padding: 30px;
-            background: rgba(255,255,255,.45);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: var(--white);
-            color: var(--green);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            padding: 5px 18px;
-            font-size: 13px;
-            margin-bottom: 18px;
-            box-shadow: 0 5px 18px rgba(0,0,0,.04);
-        }
-
-        .hero h1 {
-            color: var(--dark-green);
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1.2;
-            margin-bottom: 5px;
-        }
-
-        .hero h2 {
-            color: var(--gold);
-            font-size: clamp(22px, 3vw, 32px);
-            margin-bottom: 20px;
-        }
-
-        .hero-description {
-            font-size: 18px;
-            color: #555;
-            max-width: 650px;
-            margin-bottom: 28px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-        }
-
-        .btn {
+.kicker {
+    color: var(--purple);
+    font-weight: 800;
+    font-size: 1rem;
+}
+	 .btn {
             display: inline-block;
             padding: 10px 25px;
             border-radius: 50px;
@@ -216,10 +132,10 @@
             transition: .25s;
             cursor: pointer;
         }
-
-        .btn-primary {
+	 .btn-primary {
             background: var(--green);
             color: var(--white);
+		    color: #fff;
         }
 
         .btn-primary:hover {
@@ -227,618 +143,512 @@
             transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            border: 1px solid var(--green);
-            color: var(--green);
-            background: transparent;
-        }
-
-        .btn-secondary:hover {
-            background: var(--light-green);
-        }
-
-        .hero-features {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .hero-feature {
-            background: rgba(255,255,255,.75);
-            border: 1px solid var(--border);
-            padding: 5px 14px;
-            border-radius: 50px;
-            font-size: 13px;
-        }
-
-        /* Intro */
-        .intro-box {
-            max-width: 900px;
-            margin: auto;
-            background: var(--white);
-            padding: 45px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .intro-box p {
-            font-size: 17px;
-            margin-bottom: 15px;
-        }
-
-        .highlight {
-            color: var(--green);
-            font-weight: bold;
-        }
-
-        /* Ingredients */
-        .ingredients {
-            background: var(--white);
-        }
-
-        .ingredient-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-        }
-
-        .ingredient-card {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 25px 18px;
-            text-align: center;
-            transition: .25s;
-        }
-
-        .ingredient-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .ingredient-icon {
-            width: 65px;
-            height: 65px;
-            margin: 0 auto 14px;
-            border-radius: 50%;
-            background: var(--light-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-        }
-
-        .ingredient-card h3 {
-            color: var(--dark-green);
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .ingredient-card p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.9;
-        }
-
-        /* Formula */
-        .formula-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: stretch;
-        }
-
-        .formula-card,
-        .philosophy-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 35px;
-            box-shadow: var(--shadow);
-        }
-
-        .formula-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-
-        .formula-table th,
-        .formula-table td {
-            padding: 12px 8px;
-            border-bottom: 1px solid var(--border);
-            text-align: right;
-        }
-
-        .formula-table th {
-            color: var(--dark-green);
-            font-size: 14px;
-        }
-
-        .formula-table td:last-child,
-        .formula-table th:last-child {
-            text-align: left;
-        }
-
-        .formula-note {
-            margin-top: 20px;
-            color: var(--green);
-            font-weight: bold;
-        }
-
-        .philosophy-card h3 {
-            color: var(--dark-green);
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
-
-        .philosophy-card ul {
-            list-style: none;
-        }
-
-        .philosophy-card li {
-            padding: 8px 0;
-            border-bottom: 1px dashed var(--border);
-        }
-
-        .philosophy-card li:last-child {
-            border-bottom: 0;
-        }
-
-        /* Taste */
-        .taste {
-            background: var(--light-green);
-        }
-
-        .taste-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .taste-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: var(--radius);
-            text-align: center;
-        }
-
-        .taste-card h3 {
-            color: var(--dark-green);
-            margin-bottom: 5px;
-        }
-
-        .dots {
-            letter-spacing: 4px;
-            color: var(--gold);
-            direction: ltr;
-            margin-top: 8px;
-        }
-
-        /* Lifestyle */
-        .lifestyle-content {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .lifestyle-content p {
-            margin-bottom: 20px;
-            font-size: 17px;
-        }
-
-        .lifestyle-list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-            margin-top: 30px;
-        }
-
-        .lifestyle-item {
-            padding: 20px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            color: var(--green);
-            font-weight: bold;
-        }
-
-        /* No sugar */
-        .sugar-box {
-            background: var(--dark-green);
-            color: var(--white);
-            border-radius: 25px;
-            padding: 55px;
-            text-align: center;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .sugar-box h2 {
-            color: var(--white);
-            margin-bottom: 15px;
-            font-size: 30px;
-        }
-
-        .sugar-box p {
-            max-width: 720px;
-            margin: 0 auto 15px;
-            color: rgba(255,255,255,.9);
-        }
-
-        .gold-quote {
-            color: #e2c98f;
-            font-weight: bold;
-            font-size: 18px;
-            margin-top: 20px;
-        }
-
-        /* Preparation */
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .step {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 25px;
-            text-align: center;
-        }
-
-        .step-number {
-            width: 45px;
-            height: 45px;
-            margin: 0 auto 12px;
-            border-radius: 50%;
-            background: var(--green);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .tip {
-            max-width: 750px;
-            margin: 30px auto 0;
-            padding: 18px 25px;
-            background: var(--light-green);
-            border-radius: 14px;
-            text-align: center;
-            color: var(--green);
-        }
-
-        /* Audience */
-        .audience {
-            background: var(--white);
-        }
-
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .audience-item {
-            background: var(--cream);
-            padding: 20px;
-            border-radius: 14px;
-            border-right: 4px solid var(--gold);
-        }
-
-        /* Warning */
-        .warning {
-            background: #f8f4e9;
-        }
-
-        .warning-box {
-            max-width: 900px;
-            margin: auto;
-            background: var(--white);
-            border: 1px solid #e4d9bb;
-            border-radius: var(--radius);
-            padding: 35px;
-        }
-
-        .warning-box h2 {
-            color: #735d2c;
-            margin-bottom: 15px;
-        }
-
-        .warning-box ul {
-            padding-right: 20px;
-
-        }
-
-        .warning-box li {
-            margin-bottom: 8px;
-        }
-
-        /* Specs */
-        .specs-card {
-            max-width: 900px;
-            margin: auto;
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-        }
-
-        .spec-row {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .spec-row:last-child {
-            border-bottom: 0;
-        }
-
-        .spec-label,
-        .spec-value {
-            padding: 13px 20px;
-        }
-
-        .spec-label {
-            background: var(--light-green);
-            color: var(--dark-green);
-            font-weight: bold;
-        }
-
-        /* Path */
-        .path-section {
-            background: var(--light-green);
-        }
-
-        .path-box {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .path-box h2 {
-            color: var(--dark-green);
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .path-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 35px 0;
-        }
-
-        .path-step {
-            background: var(--white);
-            border-radius: 14px;
-            padding: 18px 10px;
-            font-weight: bold;
-            color: var(--green);
-        }
-
-        .big-quote {
-            color: var(--gold);
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 25px;
-        }
-
-        /* Note */
-        .note {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .note h2 {
-            color: var(--dark-green);
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-
-        .note p {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .note-signature {
-            margin-top: 25px;
-            color: var(--green);
-            font-weight: bold;
-            font-size: 20px;
-        }
-
-        /* FAQ */
-        .faq {
-            background: var(--white);
-        }
-
-        .faq-list {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        details {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        summary {
-            cursor: pointer;
-            padding: 17px 22px;
-            color: var(--dark-green);
-            font-weight: bold;
-            list-style: none;
-            position: relative;
-            padding-left: 50px;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        summary::before {
-            content: '+';
-            position: absolute;
-            left: 20px;
-            top: 13px;
-            font-size: 24px;
-            color: var(--gold);
-        }
-
-        details[open] summary::before {
-            content: '−';
-        }
-
-        .faq-answer {
-            padding: 0 22px 20px;
-            color: var(--muted);
-        }
-
-        /* CTA */
-        .cta {
-            background:
-                radial-gradient(circle at 90% 10%, rgba(185,154,91,.18), transparent 25%),
-                var(--dark-green);
-            color: var(--white);
-            text-align: center;
-            padding: 85px 20px;
-        }
-
-        .cta h2 {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .cta p {
-            color: rgba(255,255,255,.9);
-            font-size: 18px;
-            margin-bottom: 25px;
-        }
-
-        .cta .btn-primary {
-            background: var(--gold);
-            color: #fff;
-        }
-
-        .brand-signature {
-            margin-top: 35px;
-            color: #e2c98f;
-            font-size: 15px;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero-grid,
-            .formula-wrap {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                order: 2;
-                text-align: center;
-            }
-
-            .hero-image {
-                order: 1;
-                min-height: 330px;
-            }
-
-            .buttons,
-            .hero-features {
-                justify-content: center;
-            }
-
-            .ingredient-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .taste-grid,
-            .steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .lifestyle-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .path-steps {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .section {
-                padding: 55px 0;
-            }
-
-            .hero {
-                padding: 45px 0;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero h2 {
-                font-size: 24px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .intro-box,
-            .formula-card,
-            .philosophy-card,
-            .sugar-box,
-            .warning-box {
-                padding: 25px 20px;
-            }
-
-            .section-title h2 {
-                font-size: 27px;
-            }
-
-            .ingredient-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .taste-grid,
-            .steps,
-            .audience-grid,
-            .lifestyle-list,
-            .path-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .spec-row {
-                grid-template-columns: 1fr;
-            }
-
-            .spec-label {
-                padding-bottom: 5px;
-            }
-
-            .spec-value {
-                padding-top: 5px;
-            }
-
-            .cta h2 {
-                font-size: 29px;
-            }
-        }
-    </style>	
 
+/* =========================================
+   گالری حرفه‌ای دمنوش ماه بانو
+   Bargiin - Mah-banoo Gallery
+========================================= */
+
+.product-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 14px;
+    border: 1px solid #dccce5;
+    border-radius: 24px;
+    background: #f8f2fa;
+    box-sizing: border-box;
+}
+
+/* قاب تصویر اصلی */
+
+.gallery-main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+/* نوار تصاویر */
+
+.gallery-track {
+    display: flex;
+    width: 100%;
+    direction: ltr;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.gallery-slide img {
+    display: block;
+    width: 100%;
+    height: 390px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* دکمه‌های قبلی و بعدی */
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(41, 79, 46, 0.9);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background 0.25s ease;
+}
+
+.gallery-btn:hover {
+    background: #76518d;
+}
+
+.gallery-prev {
+    right: 12px;
+}
+
+.gallery-next {
+    left: 12px;
+}
+
+/* تصاویر کوچک */
+
+.gallery-thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 4px 8px;
+    overflow-x: auto;
+    direction: rtl;
+    scrollbar-width: thin;
+}
+
+.gallery-thumbnail {
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    padding: 3px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.gallery-thumbnail img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.gallery-thumbnail:hover {
+    transform: translateY(-2px);
+}
+
+.gallery-thumbnail.active {
+    border-color: #76518d;
+    box-shadow: 0 0 0 1px #76518d;
+}
+
+/* نشانگر تصاویر */
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 0 2px;
+    direction: rtl;
+}
+
+.gallery-dot {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #cbb8d5;
+    cursor: pointer;
+}
+
+.gallery-dot.active {
+    background: #76518d;
+    transform: scale(1.2);
+}
+
+/* موبایل */
+
+@media (max-width: 600px) {
+
+    .product-gallery {
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .gallery-slide img {
+        height: 290px;
+    }
+
+    .gallery-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 20px;
+    }
+
+    .gallery-prev {
+        right: 8px;
+    }
+
+    .gallery-next {
+        left: 8px;
+    }
+
+    .gallery-thumbnail {
+        flex-basis: 58px;
+        width: 58px;
+        height: 58px;
+    }
+
+    .gallery-thumbnails {
+        gap: 7px;
+    }
+
+}
+	
+h1, h2, h3 {
+    line-height: 1.6;
+    color: var(--green);
+}
+
+h1 {
+    margin: 5px 0 12px;
+    color: var(--purple);
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 800;
+}
+
+h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dfd3bd;
+    font-size: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+h3 {
+    font-size: 1.08rem;
+    margin-bottom: 6px;
+}
+
+p {
+    margin: 0 0 12px;
+}
+
+.lead {
+    font-size: 1.08rem;
+}
+
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 18px 0;
+}
+
+.badge {
+    padding: 4px 13px;
+    background: var(--light-purple);
+    color: #573b6e;
+    border: 1px solid #d9c7e2;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.hero-art {
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #dbc9e5;
+    border-radius: 24px;
+    background: radial-gradient(circle at 50% 40%, #fff9ff, #e5d6ed);
+}
+
+.hero-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.art-placeholder {
+    padding: 25px;
+    text-align: center;
+    color: #684b79;
+}
+
+/* شبکه محتوا */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin: 22px 0;
+}
+
+.card {
+    padding: 25px;
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(49, 42, 35, 0.05);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+ul {
+    margin: 8px 0;
+    padding-right: 22px;
+}
+
+li {
+    margin: 4px 0;
+}
+
+/* جدول ترکیبات */
+
+.formula {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #fff;
+}
+
+.formula th,
+.formula td {
+    padding: 10px;
+    border: 1px solid #e3d8c9;
+    text-align: right;
+}
+
+.formula th {
+    background: #eee4f3;
+    color: #4d3560;
+}
+
+/* باکس‌های هشدار */
+
+.note {
+    margin-top: 15px;
+    padding: 13px 16px;
+    background: #fff6e5;
+    border-right: 4px solid var(--gold);
+    border-radius: 12px;
+}
+
+.warning {
+    padding: 13px 16px;
+    background: #fff0f0;
+    border-right: 4px solid #ad5c5c;
+    border-radius: 12px;
+}
+
+/* روش دم کردن */
+
+.steps {
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.steps li {
+    position: relative;
+    padding: 10px 48px 10px 0;
+    counter-increment: step;
+}
+
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    top: 10px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--purple);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+}
+
+/* دل‌نوشته */
+
+.quote {
+    padding: 30px;
+    background: linear-gradient(135deg, #6f477f, #8e68a2);
+    color: #fff;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.quote h2,
+.quote p {
+    color: #fff;
+}
+
+/* متن کوچک */
+
+.small {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+	
+	.faq-item {
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: 1px solid #e1d5e7;
+    border-radius: 14px;
+    background: #fff;
+}
+
+.faq-question {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+    border: none;
+    background: #f5edf8;
+    color: #294f2e;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: right;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background: #eadcf0;
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    font-size: 22px;
+    color: #76518d;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px 20px;
+    background: #fff;
+    color: #29332c;
+}
+
+.faq-item.open .faq-answer {
+    display: block;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* فوتر */
+
+footer {
+    margin-top: 30px;
+    padding: 28px 0;
+    background: var(--dark-green);
+    color: #fff;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer a {
+    color: #ead9f3;
+}
+
+/* نمایشگرهای کوچک */
+
+@media (max-width: 800px) {
+
+    .hero-card,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .hero-card {
+        padding: 22px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+}
+
+/* چاپ */
+
+@media print {
+
+    body {
+        background: #fff;
+    }
+
+    .hero-card,
+    .card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    a {
+        color: #000;
+    }
+
+}
+
+</style>
 </head>
 <button class="back-to-top" aria-label="بازگشت به بالا">
 
@@ -872,6 +682,7 @@ HEADER
             <ul>
 
                 <li>
+
                     <a href="../index.html" class="active">
                         خانه
                     </a>
@@ -911,6 +722,7 @@ HEADER
         </li>
 
     </ul>
+
 
 </li>
 
@@ -1073,79 +885,203 @@ HEADER
     id="headerOverlay"
 ></div>
 	
-<!--==================================
-PRODUCT PAGE
-==================================-->
+<header class="hero">
 
-<main class="product-page">
+<div class="container">
 
-    <!-- =========================
-         HERO
-    ========================== -->
-    <header class="hero">
-        <div class="container hero-grid">
+<div class="hero-card">
 
-            <div class="hero-content">
-                <span class="hero-badge">دمنوش گیاهی ترکیبی برگین</span>
+<div class="product-gallery" id="aramisGallery">
 
-                <h1>سبزگام</h1>
-                <h2>هر روز، یک گام سبز</h2>
+    <!-- تصویر اصلی -->
 
-                <p class="hero-description">
-                    ترکیبی خوش‌عطر و متعادل از چای سبز، دارچین، زیره سبز، نعنا و گل محمدی؛
-                    برای همراهی با روزهایی که می‌خواهی انتخاب‌های سالم‌تری داشته باشی.
-                </p>
+    <div class="gallery-main" id="galleryMain">
 
-                <p class="hero-description">
-                    سبزگام یک نوشیدنی گیاهی روزمره است؛ ساده، خوش‌طعم و ساخته‌شده
-                    برای همراهی با یک سبک زندگی متعادل.
-                </p>
+        <div class="gallery-track" id="galleryTrack">
 
-                <div class="buttons">
-                    <a href="#ingredients" class="btn btn-primary">مشاهده ترکیبات</a>
-                    <a href="#product-info" class="btn btn-secondary">اطلاعات محصول</a>
-                </div>
-
-                <div class="hero-features">
-                    <span class="hero-feature">گیاهی</span>
-                    <span class="hero-feature">طعم ملایم</span>
-                    <span class="hero-feature">مناسب استفاده روزمره</span>
-                    <span class="hero-feature">بدون شکر افزوده</span>
-                </div>
+            <div class="gallery-slide">
+                <img src="../assets/images/products/sabzgam.webp"
+                     alt="تصویر اصلی دمنوش سبزگام">
             </div>
 
-            <div class="hero-image">
-                <!--
-                    تصویر محصول را در این قسمت قرار دهید.
-                    مثال:
-                    <img src="../assets/images/products/green-gam.png"
-                         alt="دمنوش سبزگام برگین">
-                -->
-                <div class="product-placeholder">
-                    <div>
-                        <strong>تصویر محصول سبزگام</strong>
-                        <br>
-                        <small>مسیر تصویر محصول را در این بخش قرار دهید.</small>
-                    </div>
-                </div>
+            <div class="gallery-slide">
+                <img src="../assets/images/products/Sabzgam7.webp"
+                     alt="ترکیبات دمنوش سبزگام">
             </div>
 
+            <div class="gallery-slide">
+                <img src="../assets/images/products/sabzgam6.webp"
+                     alt="بسته‌بندی دمنوش سبزگام">
+            </div>
+<!--
+            <div class="gallery-slide">
+                <img src="../assets/images/products/Mah-Banoo6.webp"
+                     alt="نمای نزدیک دمنوش سبزگام">
+            </div>
+-->
         </div>
-    </header>
+
+        <!-- دکمه قبلی -->
+
+        <button class="gallery-btn gallery-prev"
+                id="galleryPrev"
+                type="button"
+                aria-label="تصویر قبلی">
+
+            &#10094;
+
+        </button>
+
+        <!-- دکمه بعدی -->
+
+        <button class="gallery-btn gallery-next"
+                id="galleryNext"
+                type="button"
+                aria-label="تصویر بعدی">
+
+            &#10095;
+
+        </button>
+
+    </div>
 
 
-    <!-- =========================
-         INTRO
-    ========================== -->
-    <section class="section">
-        <div class="container">
+    <!-- تصاویر کوچک -->
 
-            <div class="section-title">
-                <span class="eyebrow">معرفی محصول</span>
-                <h2>سبزگام چیست؟</h2>
-            </div>
+    <div class="gallery-thumbnails"
+         id="galleryThumbnails">
 
-            <div class="intro-box">
+        <button class="gallery-thumbnail active"
+                type="button"
+                data-index="0"
+                aria-label="نمایش تصویر ۱">
+
+            <img src="../assets/images/products/sabzgam.webp"
+                 alt="تصویر کوچک ۱">
+
+        </button>
+
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="1"
+                aria-label="نمایش تصویر ۲">
+
+            <img src="../assets/images/products/Sabzgam7.webp"
+                 alt="تصویر کوچک ۲">
+
+        </button>
+
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="2"
+                aria-label="نمایش تصویر ۳">
+
+            <img src="../assets/images/products/sabzgam6.webp"
+                 alt="تصویر کوچک ۳">
+
+        </button>
+<!--
+        <button class="gallery-thumbnail"
+                type="button"
+                data-index="3"
+                aria-label="نمایش تصویر ۴">
+
+            <img src="../assets/images/products/Mah-Banoo6.webp"
+                 alt="تصویر کوچک ۴">
+
+        </button>
+-->
+    </div>
+
+
+    <!-- نقاط راهنمای تصاویر -->
+
+    <div class="gallery-dots" id="galleryDots">
+
+        <button class="gallery-dot active"
+                type="button"
+                data-index="0"
+                aria-label="تصویر ۱"></button>
+
+        <button class="gallery-dot"
+                type="button"
+                data-index="1"
+                aria-label="تصویر ۲"></button>
+
+        <button class="gallery-dot"
+                type="button"
+                data-index="2"
+                aria-label="تصویر ۳"></button>
+<!--
+        <button class="gallery-dot"
+                type="button"
+                data-index="3"
+                aria-label="تصویر ۴"></button>
+-->
+    </div>
+
+</div>
+	
+<div>
+
+<h1>سبزگام</h1>
+<h2>هر روز، یک گام سبز</h2>
+<p class="lead">
+ترکیبی خوش‌عطر و متعادل از چای سبز، دارچین، زیره سبز و گل محمدی؛
+                    برای همراهی با روزهایی که می‌خواهی انتخاب‌های سالم‌تری داشته باشی.
+</p>
+
+
+<div class="badges">
+
+<span class="badge">
+بدون شکر افزوده
+</span>
+
+<span class="badge">
+طعم ملایم
+</span>
+
+<span class="badge">
+مناسب استفاده روزمره
+</span>
+
+</div>
+
+<p class="lead">
+ سبزگام یک نوشیدنی گیاهی روزمره است؛ ساده، خوش‌طعم و ساخته‌شده
+                    برای همراهی با یک سبک زندگی متعادل.
+                     
+</p>
+
+<a href="https://eitaa.com/Bargiin" class="btn btn-primary">خرید دمنوش سبزگام</a>
+	
+</div>
+
+
+
+</div>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+<div class="grid">
+
+
+<!-- =========================
+     معرفی سبزگام
+========================= -->
+
+<section class="card">
+
+<h2>
+معرفی سبزگام
+</h2>
+
                 <p>
                     گاهی تغییر از یک تصمیم بزرگ شروع نمی‌شود؛
                     از انتخاب‌های کوچک روزمره آغاز می‌شود.
@@ -1153,517 +1089,312 @@ PRODUCT PAGE
 
                 <p>
                     سبزگام ترکیبی از گیاهان و ادویه‌های خوش‌عطر است که با دقت کنار هم
-                    قرار گرفته‌اند تا نوشیدنی‌ای <span class="highlight">ملایم، خوش‌عطر و مناسب استفاده روزمره</span>
+                    قرار گرفته‌اند تا نوشیدنی‌ای <span>ملایم، خوش‌عطر و مناسب استفاده روزمره</span>
                     شکل بگیرد.
                 </p>
 
                 <p>
-                    طعم تازه چای سبز، گرمای دارچین، عطر خاص زیره، تازگی نعنا و لطافت
+                    طعم تازه چای سبز، گرمای دارچین، عطر خاص زیره و لطافت
                     گل محمدی، شخصیت متفاوت سبزگام را می‌سازند.
                 </p>
 
                 <p>
                     <strong>سبزگام قرار نیست معجزه کند؛ قرار است همراه یک انتخاب خوب باشد.</strong>
                 </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         INGREDIENTS
-    ========================== -->
-    <section class="section ingredients" id="ingredients">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">ترکیبات</span>
-                <h2>در هر فنجان سبزگام چه چیزی هست؟</h2>
-                <h2>
-                    پنج ترکیب با نقش‌های متفاوت، در کنار هم برای ساختن یک فنجان متعادل.
-                </h2>
-            </div>
-
-            <div class="ingredient-grid">
-
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🍃</div>
-                    <h3>چای سبز</h3>
-                    <p>
-                        پایه اصلی ترکیب و ایجادکننده طعم تازه و گیاهی.
-                    </p>
-                </article>
-
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🌿</div>
-                    <h3>دارچین</h3>
-                    <p>
-                        برای ایجاد عطر گرم و حس طعمی دلپذیر و متعادل.
-                    </p>
-                </article>
-
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🌱</div>
-                    <h3>زیره سبز</h3>
-                    <p>
-                        عنصری متفاوت که عمق و شخصیت خاصی به ترکیب می‌دهد.
-                    </p>
-                </article>
-
-                <article class="ingredient-card">
-                    <div class="ingredient-icon">🌹</div>
-                    <h3>گل محمدی</h3>
-                    <p>
-                        برای تکمیل رایحه و افزودن لطافت و عطر دلنشین گل‌ها.
-                    </p>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- =========================
-         TASTE
-    ========================== -->
-    <section class="section taste">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">تجربه نوشیدن</span>
-                <h2>طعم سبزگام چطور است؟</h2>
-                <h2>
-                    هر فنجان، چند لایه عطر و طعم را در کنار هم دارد.
-                </h2>
-            </div>
-
-            <div class="taste-grid">
-
-                <div class="taste-card">
-                    <h3>شروع</h3>
-                    <p>تازه و گیاهی</p>
-                    <div class="dots">●●●○○</div>
-                </div>
-
-                <div class="taste-card">
-                    <h3>میانه</h3>
-                    <p>گرم و کمی ادویه‌ای</p>
-                    <div class="dots">●●●○○</div>
-                </div>
-
-                <div class="taste-card">
-                    <h3>پایان</h3>
-                    <p>ملایم، معطر و تازه</p>
-                    <div class="dots">●●●●○</div>
-                </div>
-
-                <div class="taste-card">
-                    <h3>عطر</h3>
-                    <p>گیاهی، گرم و لطیف</p>
-                    <div class="dots">●●●●○</div>
-                </div>
-
-            </div>
-
-            <div class="intro-box" style="margin-top:30px;">
-                <p>
-                    سبزگام برای کسانی ساخته شده که طعم گیاهان را دوست دارند،
-                    اما نوشیدنی‌های بیش از حد تند یا سنگین را نمی‌پسندند.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         LIFESTYLE
-    ========================== -->
-    <section class="section">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow"><strong>راه سبز</strong></span>
-                <h2>سبزگام و سبک زندگی سالم</h2>
-          </div>
-
-            <div class="lifestyle-content">
-                <p>
-                    سبک زندگی سالم با یک محصول شروع و با یک محصول تمام نمی‌شود.
-                </p>
-
-                <p>
-                    غذای متعادل، فعالیت بدنی، خواب کافی و انتخاب‌های روزانه،
-                    همه در کنار هم معنا پیدا می‌کنند.
-                </p>
-
-                <p>
-                    سبزگام می‌تواند بخشی از همین انتخاب‌های کوچک باشد؛
-                    یک نوشیدنی گرم و خوش‌عطر برای زمانی که می‌خواهی کمی بیشتر
-                    مراقب خودت باشی.
-                </p>
-
-                <div class="lifestyle-list">
-                    <div class="lifestyle-item">تغذیه متعادل</div>
-                    <div class="lifestyle-item">تحرک روزانه</div>
-                    <div class="lifestyle-item">خواب کافی</div>
-                    <div class="lifestyle-item">انتخاب‌های بهتر</div>
-                </div>
-
-                <p style="margin-top:30px;">
-                    <strong>و در میان همه این‌ها، یک فنجان سبزگام.</strong>
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         NO ADDED SUGAR
-    ========================== -->
-    <section class="section">
-        <div class="container">
-
-            <div class="sugar-box">
-                <h2>شیرینی همیشه به معنی شکر نیست</h2>
-
-                <p>
-                    در سبزگام از شکر افزوده استفاده نشده است.
-                </p>
-
-                <p>
-                    عطر دارچین و گل محمدی در کنار ترکیبات گیاهی، به ایجاد یک
-                    تجربه طعمی دلپذیر کمک می‌کنند؛ بنابراین می‌توان آن را
-                    بدون افزودن شیرین‌کننده نیز نوشید.
-                </p>
-
-                <p class="gold-quote">
-                    ما طعم گیاهان را پنهان نکرده‌ایم؛
-                    گذاشته‌ایم خودشان حرف بزنند.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         WHEN TO DRINK
-    ========================== -->
-    <section class="section">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">پیشنهاد مصرف</span>
-                <h2>چه زمانی سبزگام بنوشیم؟</h2>
-                <h2>
-                    انتخاب زمان مصرف با شماست.
-                </h2>
-            </div>
-
-            <div class="taste-grid">
-
-                <div class="taste-card">
-                    <div class="ingredient-icon">☀️</div>
-                    <h3>صبح</h3>
-                    <p>برای شروع روز با یک نوشیدنی گرم و خوش‌عطر.</p>
-                </div>
-
-                <div class="taste-card">
-                    <div class="ingredient-icon">🌿</div>
-                    <h3>بین وعده‌ها</h3>
-                    <p>برای زمانی که یک نوشیدنی سبک و گیاهی می‌خواهید.</p>
-                </div>
-
-                <div class="taste-card">
-                    <div class="ingredient-icon">🏃</div>
-                    <h3>در طول روز</h3>
-                    <p>همراه لحظه‌های استراحت، کار یا فعالیت روزانه.</p>
-                </div>
-
-                <div class="taste-card">
-                    <div class="ingredient-icon">🌙</div>
-                    <h3>نزدیک خواب؟</h3>
-                    <p>اگر به کافئین حساس هستید، در ساعات نزدیک خواب مصرف نکنید.</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         PREPARATION
-    ========================== -->
-    <section class="section" style="background:#fff;">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">روش آماده‌سازی</span>
-                <h2>یک فنجان سبزگام چطور آماده می‌شود؟</h2>
-            </div>
-
-            <div class="steps">
-
-                <div class="step">
-                    <div class="step-number">۱</div>
-                    <h3>یک تی‌بگ</h3>
-                    <p>یک تی‌بگ سبزگام را داخل فنجان قرار دهید.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">۲</div>
-                    <h3>آب گرم</h3>
-                    <p>۲۰۰ تا ۲۵۰ میلی‌لیتر آب با دمای حدود ۸۰ تا ۸۵ درجه.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">۳</div>
-                    <h3>دم‌آوری</h3>
-                    <p>حدود ۳ تا ۴ دقیقه اجازه دهید دم بکشد.</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">۴</div>
-                    <h3>نوش جان</h3>
-                    <p>تی‌بگ را خارج کرده و نوشیدنی را میل کنید.</p>
-                </div>
-
-            </div>
-
-            <div class="tip">
-                <strong>پیشنهاد برگین:</strong>
-                برای تجربه بهتر طعم سبزگام، آن را ابتدا بدون شکر امتحان کنید.
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         SECOND STEEP
-    ========================== -->
-    <section class="section">
-        <div class="container">
-
-            <div class="intro-box">
-                <h2 style="color:var(--dark-green); margin-bottom:12px;">
-                    یک تی‌بگ، دو فنجان؟
-                </h2>
-
-                <p>
-                    تی‌بگ سبزگام را می‌توان برای بار دوم نیز دم کرد؛
-                    اما در دم دوم، شدت عطر، رنگ و طعم معمولاً کمتر خواهد بود.
-                </p>
-
-                <p>
-                    <strong>برای بهترین تجربه طعمی، دم اول پیشنهاد اصلی برگین است.</strong>
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         AUDIENCE
-    ========================== -->
-    <section class="section audience">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">انتخاب شما</span>
-                <h2>سبزگام برای چه کسانی مناسب است؟</h2>
-            </div>
-
-            <div class="audience-grid">
-
-                <div class="audience-item">علاقه‌مندان به نوشیدنی‌های گیاهی</div>
-                <div class="audience-item">طرفداران طعم‌های ملایم و متعادل</div>
-                <div class="audience-item">کسانی که نوشیدنی بدون شکر افزوده می‌خواهند</div>
-                <div class="audience-item">افرادی که طعم‌های بیش از حد دارویی را نمی‌پسندند</div>
-                <div class="audience-item">افرادی که به سبک زندگی سالم اهمیت می‌دهند</div>
-                <div class="audience-item">کسانی که یک نوشیدنی گیاهی روزمره می‌خواهند</div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         IMPORTANT NOTE
-    ========================== -->
-    <section class="section warning">
-        <div class="container">
-
-            <div class="warning-box">
-                <h2>یک نکته مهم</h2>
-
-                <p style="margin-bottom:15px;">
-                    سبزگام جایگزین سبک زندگی سالم نیست.
-                </p>
-
-                <p>
-                    سبزگام می‌تواند همراه خوبی برای یک رژیم غذایی متعادل و
-                    فعالیت روزانه باشد؛ اما به‌تنهایی باعث کاهش وزن نمی‌شود
-                    و جایگزین تغذیه متعادل و فعالیت بدنی نیست.
-                </p>
-
-                <p style="margin-top:15px;">
-                    هدف ما در برگین، ساخت محصولی است که بتواند به‌سادگی
-                    در کنار عادت‌های سالم روزانه شما قرار بگیرد.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         WARNINGS
-    ========================== -->
-    <section class="section">
-        <div class="container">
-
-            <div class="section-title">
-                <span class="eyebrow">ایمنی مصرف</span>
-                <h2>نکات مصرف و احتیاط</h2>
-            </div>
-
-            <div class="warning-box">
-
-                <p>
-                    سبزگام حاوی <strong>چای سبز و کافئین طبیعی</strong> است.
-                </p>
-
-                <ul>
-                    <li>
-                        افراد حساس به کافئین بهتر است در مصرف آن احتیاط کنند
+
+</section>
+
+
+<!-- =========================
+     اطلاعات محصول
+========================= -->
+
+<section class="card">
+
+<h2>
+اطلاعات محصول
+</h2>
+
+<ul>
+
+<li>
+<strong>نام محصول:</strong>
+سبزگام
+</li>
+
+<li>
+<strong>&nbsp;برند:</strong>
+برگین | BARGIIN </li>
+
+<li>
+<strong>نوع:</strong>
+دمنوش گیاهی
+</li>
+
+<li>
+<strong>شکل مصرف:</strong>
+تی‌بگ و قوطی
+</li>
+
+<li>
+<strong> تعداد / وزن خالص : </strong>
+۱۵ عدد تی‌بگ به وزن کلی 30 گرم | قوطی به وزن 80 گرم
+</li>
+	
+</ul>
+
+</section>
+
+
+<!-- =========================
+     ترکیبات
+========================= -->
+
+<section class="card full">
+
+<h2>
+ترکیبات و ویژگی گیاهان
+</h2>
+
+<table class="formula">
+
+<thead>
+
+<tr>
+
+<th>
+گیاه
+</th>
+
+<th>
+ویژگی حسی و نقش در ترکیب
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>
+چای سبز
+</td>
+
+
+<td>
+پایه اصلی ترکیب و ایجادکننده طعم تازه و گیاهی.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+دارچین
+</td>
+
+
+<td>
+برای ایجاد عطر گرم و حس طعمی دلپذیر و متعادل.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+زیره سبز
+</td>
+
+
+<td>
+عنصری متفاوت که عمق و شخصیت خاصی به ترکیب می‌دهد.
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+گل محمدی
+</td>
+
+
+<td>
+برای تکمیل رایحه و افزودن لطافت و عطر دلنشین گل‌ها.
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="note">
+
+شدت عطر و طعم به کیفیت مواد اولیه،
+تازگی، میزان خردشدگی، شرایط نگهداری
+و زمان دم‌کشیدن وابسته است.
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     بهترین زمان مصرف
+========================= -->
+
+<section class="card">
+
+<h2>
+بهترین زمان مصرف
+</h2>
+
+<ul>
+<li>
+انتخاب زمان مصرف با شماست.	
+</li>
+<li>
+صبح؛ برای شروع روز با یک نوشیدنی گرم و خوش‌عطر.
+</li>
+
+<li>
+بین وعده‌ها؛ برای زمانی که یک نوشیدنی سبک و گیاهی می‌خواهید.
+	</li>
+<li>
+در طول روز؛ همراه لحظه‌های استراحت، کار یا فعالیت روزانه.
+	</li>
+<li>
+نزدیک خواب؟؛ اگر به کافئین حساس هستید، در ساعات نزدیک خواب مصرف نکنید.
+	</li>
+</ul>
+
+</section>
+
+<!-- =========================
+     شرایط نگهداری
+========================= -->
+<section class="card">
+
+<h2>
+شرایط نگهداری
+</h2>
+
+<ul>
+
+<li>
+در جای خشک، خنک و دور از نور مستقیم نگهداری شود.
+</li>
+
+<li>
+پس از هر بار مصرف، بسته را کاملاً ببندید.
+</li>
+
+</ul>
+
+</section>
+
+<!-- =========================
+     روش دم کردن
+========================= -->
+
+<section class="card full">
+
+<h2>
+روش دم کردن
+</h2>
+
+<h3>
+روش مصرف به‌صورت قوطی
+</h3>
+
+<ol class="steps">
+
+<li>
+یک قاشق مرباخوری از مخلوط را
+در ۲۰۰ تا ۲۵۰ میلی‌لیتر آب داغ قرار دهید.
+</li>
+
+<li>
+از آب با دمای حدود 80 تا 85 درجه سانتی‌گراد
+استفاده کنید.(بعد از ریختن آب جوش در لیوان حدود دو دقیقه باید بگذرد تا به دمای مناسب برسد.)
+</li>
+
+<li>
+درپوش ظرف را بگذارید و حدود 4 تا 6 دقیقه
+دم کنید.
+</li>
+
+<li>
+سپس صاف کرده و گرم بنوشید.
+</li>
+
+</ol>
+
+<div class="note">
+
+<strong>
+روش مصرف تی‌بگ:
+</strong>
+
+یک عدد تی‌بگ را در یک فنجان آب داغ
+قرار دهید و پس از 4 تا 6 دقیقه خارج کنید.
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     موارد احتیاط
+========================= -->
+
+<section class="card">
+
+<h2>
+موارد احتیاط
+</h2>
+
+<ul>
+
+
+<li>
+افراد حساس به کافئین بهتر است در مصرف آن احتیاط کنند
                         و از نوشیدن آن در ساعات نزدیک خواب خودداری نمایند.
-                    </li>
+</li>
 
-                    <li>
-                        در دوران بارداری و شیردهی و برای کودکان،
-                        پیش از مصرف منظم با پزشک یا داروساز مشورت کنید.
-                    </li>
-
-                    <li>
-                        در صورت ابتلا به بیماری زمینه‌ای یا مصرف داروهای خاص،
-                        پیش از مصرف منظم با پزشک یا داروساز مشورت نمایید.
-                    </li>
-
-                    <li>
-                        بهتر است دمنوش را همزمان با وعده‌های غذایی اصلی مصرف نکنید،
+<li>
+در دوران بارداری و شیردهی و برای کودکان،
+                        پیش از مصرف منظم با پزشک یا داروساز مشورت کنید.</li>
+<li>
+بهتر است دمنوش را همزمان با وعده‌های غذایی اصلی مصرف نکنید،
                         به‌ویژه اگر دریافت آهن برایتان اهمیت دارد.
-                    </li>
+	</li>
 
-                    <li>
-                        در صورت بروز هرگونه واکنش غیرمعمول، مصرف را متوقف کرده
-                        و با متخصص سلامت مشورت کنید.
-                    </li>
-                </ul>
+</ul>
 
-            </div>
-
-        </div>
-    </section>
+</section>
 
 
-    <!-- =========================
-         PRODUCT INFO
-    ========================== -->
-    <section class="section" id="product-info" style="background:#fff;">
-        <div class="container">
 
-            <div class="section-title">
-                <span class="eyebrow">مشخصات محصول</span>
-                <h2>اطلاعات سبزگام</h2>
-            </div>
+<!-- =========================
+     داستان سبزگام
+========================= -->
 
-            <div class="specs-card">
+<section class="card">
 
-                <div class="spec-row">
-                    <div class="spec-label">نام محصول</div>
-                    <div class="spec-value">سبزگام</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">برند</div>
-                    <div class="spec-value">برگین | BARGIIN</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">نوع</div>
-                    <div class="spec-value">دمنوش گیاهی ترکیبی</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">فرم محصول</div>
-                    <div class="spec-value">تی‌بگ | قوطی</div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">تعداد / وزن خالص</div>
-                    <div class="spec-value">۱۵ عدد تی‌بگ به وزن کلی 30 گرم | قوطی به وزن 80 گرم
-					
-					</div>
-                </div>
-<!--
-                <div class="spec-row">
-                    <div class="spec-label">وزن خالص</div>
-                    <div class="spec-value">… گرم</div>
-                </div>
--->
-                <div class="spec-row">
-                    <div class="spec-label">ترکیبات</div>
-                    <div class="spec-value">
-                      چای سبز، دارچین، زیره سبز، گل محمدی
-                  </div>
-                </div>
-
-                <div class="spec-row">
-                    <div class="spec-label">شکر افزوده</div>
-                    <div class="spec-value">ندارد</div>
-                </div>
-
-				<div class="spec-row">
-                    <div class="spec-label">اسانس افزوده</div>
-                    <div class="spec-value">ندارد</div>
-                </div>
-				
-                <div class="spec-row">
-                    <div class="spec-label">شرایط نگهداری</div>
-                    <div class="spec-value">
-                        در جای خشک و خنک، دور از نور مستقیم خورشید و رطوبت نگهداری شود.
-                        پس از باز شدن بسته‌بندی، درب آن را به‌خوبی بسته نگه دارید.
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- =========================
-         BRAND PHILOSOPHY
-    ========================== -->
-    <section class="section path-section">
-        <div class="container">
-
-            <div class="path-box">
-
-                <span class="eyebrow">راه سبز برگین</span>
-
-                <h2>قرار نیست یک‌شبه تغییر کنیم.</h2>
-
+<h2>
+راه سبز برگین
+</h2>
+  <p>
+قرار نیست یک‌شبه تغییر کنیم.
+	</p>
                 <p>
-                    امروز کمی بیشتر راه برو.
-                </p>
+امروز کمی بیشتر راه برو.
+	</p>
 
                 <p>
                     فردا انتخاب بهتری برای میان‌وعده‌ات داشته باش.
@@ -1676,45 +1407,33 @@ PRODUCT PAGE
                 <p>
                     چند دقیقه از صفحه‌نمایش فاصله بگیر.
                 </p>
-
-                <p>
+<p>
                     زودتر بخواب.
-                </p>
-
-                <div class="path-steps">
-                    <div class="path-step">یک گام کوچک</div>
-                    <div class="path-step">یک انتخاب بهتر</div>
-                    <div class="path-step">یک عادت خوب</div>
-                    <div class="path-step">یک مسیر سبز</div>
-                </div>
-
-                <div class="big-quote">
-                    سبزگام یعنی همین. 🌱
-                </div>
-
-            </div>
-
-        </div>
-    </section>
+</p>
+<p>
+ یک گام کوچک، یک انتخاب بهتر، یک عادت خوب، یک مسیر سبز
+	</p>
+	<p>
+سبزگام یعنی همین.
+	</p>
+</section>
 
 
-    <!-- =========================
-         NOTE
-    ========================== -->
-    <section class="section">
-        <div class="container">
+<!-- =========================
+     دل نوشته برگین
+========================= -->
 
-            <div class="note">
+<section class="card full quote">
 
-                <h2>دل‌نوشته برگین</h2>
+<h2>
+دل نوشته برگین
+</h2>
 
                 <p>گاهی تغییر از چیزهای خیلی کوچک شروع می‌شود...</p>
 
                 <p>از انتخاب یک نوشیدنی ساده،</p>
                 <p>از چند دقیقه فاصله گرفتن از شلوغی،</p>
                 <p>از کمی بیشتر مراقب خودمان بودن.</p>
-
-                <br>
 
                 <p>
                     سبزگام را برای همین لحظه‌های کوچک ساختیم؛
@@ -1727,97 +1446,184 @@ PRODUCT PAGE
                     هر روز یک گام. 🌱
                 </p>
 
-            </div>
-
-        </div>
-    </section>
+</section>
 
 
-    <!-- =========================
-         FAQ
-    ========================== -->
-    <section class="section faq">
-        <div class="container">
+<!-- =========================
+     پرسش‌های متداول
+========================= -->
 
-            <div class="section-title">
-                <span class="eyebrow">سؤالات متداول</span>
-                <h2>قبل از انتخاب سبزگام</h2>
-            </div>
+<section class="card full">
 
-            <div class="faq-list">
+    <h2>
+        پرسش‌های متداول
+    </h2>
 
-                <details>
-                    <summary>آیا سبزگام برای کاهش وزن است؟</summary>
-                    <div class="faq-answer">
-                        سبزگام برای همراهی با سبک زندگی سالم و متعادل طراحی شده است.
+    <div class="faq-list">
+
+        <!-- سؤال اول -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+آیا سبزگام برای کاهش وزن است؟               </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    سبزگام برای همراهی با سبک زندگی سالم و متعادل طراحی شده است.
                         وجود چای سبز آن را به انتخابی مناسب برای علاقه‌مندان به
                         نوشیدنی‌های گیاهی تبدیل می‌کند، اما سبزگام به‌تنهایی باعث
                         کاهش وزن نمی‌شود و جایگزین تغذیه متعادل و فعالیت بدنی نیست.
-                    </div>
-                </details>
+                </p>
 
-                <details>
-                    <summary>آیا سبزگام شکر دارد؟</summary>
-                    <div class="faq-answer">
-                        سبزگام شکر افزوده ندارد. برای حفظ طعم طبیعی ترکیبات،
+            </div>
+
+        </div>
+
+
+        <!-- سؤال دوم -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+                    آیا سبزگام شکر دارد؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    سبزگام شکر افزوده ندارد. برای حفظ طعم طبیعی ترکیبات،
                         پیشنهاد می‌کنیم ابتدا آن را بدون شیرین‌کننده امتحان کنید.
-                    </div>
-                </details>
+                </p>
 
-                <details>
-                    <summary>آیا سبزگام کافئین دارد؟</summary>
-                    <div class="faq-answer">
-                        بله. به دلیل وجود چای سبز، سبزگام حاوی کافئین طبیعی است.
+            </div>
+
+        </div>
+
+
+        <!-- سؤال سوم -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+                    آیا سبزگام کافئین دارد؟
+                </span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+بله. به دلیل وجود چای سبز، سبزگام حاوی کافئین طبیعی است.
                         میزان کافئین بسته به نوع و مقدار چای سبز و شرایط دم‌آوری
-                        می‌تواند متفاوت باشد.
-                    </div>
-                </details>
+                        می‌تواند متفاوت باشد.                </p>
 
-                <details>
-                    <summary>آیا سبزگام را می‌توان هر روز مصرف کرد؟</summary>
-                    <div class="faq-answer">
-                        برای بیشتر بزرگسالان سالم، مصرف متعادل چای سبز معمولاً قابل
+            </div>
+
+        </div>
+
+
+        <!-- سؤال چهارم -->
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
+
+                <span>
+آیا سبزگام را می‌توان هر روز مصرف کرد؟
+				</span>
+
+                <span class="faq-icon">
+                    +
+                </span>
+
+            </button>
+
+            <div class="faq-answer">
+
+                <p>
+                    گسالان سالم، مصرف متعادل چای سبز معمولاً قابل
                         استفاده است؛ اما میزان مناسب مصرف به شرایط فردی و دریافت
                         سایر منابع کافئین بستگی دارد. اگر به کافئین حساس هستید
                         یا داروی خاصی مصرف می‌کنید، درباره مصرف منظم با پزشک
                         یا داروساز مشورت کنید.
-                    </div>
-                </details>
-
-                <details>
-                    <summary>آیا سبزگام طعم تند یا تلخی دارد؟</summary>
-                    <div class="faq-answer">
-                        فرمول سبزگام برای ایجاد یک طعم ملایم و متعادل طراحی شده است.
-                        دمای بالای آب و دم‌آوری طولانی می‌تواند تلخی و گسی چای سبز
-                        را افزایش دهد؛ بنابراین رعایت دمای حدود ۸۰ تا ۸۵ درجه
-                        و زمان ۳ تا ۴ دقیقه پیشنهاد می‌شود.
-                    </div>
-                </details>
+                </p>
 
             </div>
 
         </div>
-    </section>
 
+		
+		        <!-- سؤال پنجم -->
 
-    <!-- =========================
-         CTA
-    ========================== -->
-    <section class="cta">
+        <div class="faq-item">
 
-        <h2>آماده‌ای یک گام سبز برداری؟</h2>
+            <button class="faq-question"
+                    type="button"
+                    aria-expanded="false">
 
-        <p>
-            سبزگام را دم کن، لحظه‌ات را زندگی کن و مسیرت را ادامه بده.
-        </p>
+                <span>
+                    آیا سبزگام طعم تند یا تلخی دارد؟
+                </span>
 
-        <!-- لینک دکمه خرید را در صورت وجود، با آدرس صفحه/سبد خرید خودتان جایگزین کنید -->
-        <a href="https://eitaa.com/Bargiin" class="btn btn-primary">خرید سبزگام</a>
+                <span class="faq-icon">
+                    +
+                </span>
 
+            </button>
 
-    </section>
+            <div class="faq-answer">
+
+                <p>
+فرمول سبزگام برای ایجاد یک طعم ملایم و متعادل طراحی شده است.
+                        دمای بالای آب و دم‌آوری طولانی می‌تواند تلخی و گسی چای سبز
+                        را افزایش دهد؛ بنابراین رعایت دمای حدود ۸۰ تا ۸۵ درجه
+                        و زمان ۳ تا ۴ دقیقه پیشنهاد می‌شود.
+				</p>
+
+            </div>
+
+        </div>
+		
+		
+    </div>
+
+</section>
+
 	
-	
+</div>
+
 </main>
 
 
@@ -1836,18 +1642,6 @@ FOOTER
 
 
             <div class="footer-brand">
-
-
-                <a href="index.html" class="footer-logo">
-
-                    <img
-                        src="assets/images/logo/logo-white.svg"
-						 alt="برگین"
-                    >
-
-                </a>
-
-
 
                 <p>
 
@@ -1922,7 +1716,7 @@ FOOTER
 
                     <li>
                         <a href="../articles/herbs.html">
-                            مقالات
+                            مجله برگین
                         </a>
                     </li>
 
@@ -2096,6 +1890,51 @@ FOOTER
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    const track = document.getElementById("galleryTrack");
+    const slides = document.querySelectorAll(".gallery-slide");
+    const prevBtn = document.getElementById("galleryPrev");
+    const nextBtn = document.getElementById("galleryNext");
+    const dots = document.querySelectorAll(".gallery-dot");
+
+    let currentIndex = 0;
+
+    function updateGallery(index) {
+
+        currentIndex = (index + slides.length) % slides.length;
+
+        track.style.transform =
+            "translateX(" + (currentIndex * 100) + "%)";
+
+        dots.forEach(function (dot, i) {
+            dot.classList.toggle("active", i === currentIndex);
+        });
+
+    }
+
+    nextBtn.addEventListener("click", function () {
+        updateGallery(currentIndex + 1);
+    });
+
+    prevBtn.addEventListener("click", function () {
+        updateGallery(currentIndex - 1);
+    });
+
+    dots.forEach(function (dot, i) {
+
+        dot.addEventListener("click", function () {
+            updateGallery(i);
+        });
+
+    });
+
+});
+
+</script>	
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
     const menuBtn = document.getElementById("menuBtn");
     const navbar = document.querySelector(".navbar");
     const overlay = document.querySelector(".header-overlay");
@@ -2252,6 +2091,183 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>	
+	
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const faqQuestions =
+        document.querySelectorAll(".faq-question");
+
+    faqQuestions.forEach(function (question) {
+
+        question.addEventListener("click", function () {
+
+            const item = question.closest(".faq-item");
+            const isOpen = item.classList.contains("open");
+
+            // بستن سایر پاسخ‌ها
+
+            document.querySelectorAll(".faq-item").forEach(function (otherItem) {
+
+                otherItem.classList.remove("open");
+
+                const otherQuestion =
+                    otherItem.querySelector(".faq-question");
+
+                otherQuestion.setAttribute("aria-expanded", "false");
+
+                otherItem.querySelector(".faq-icon").textContent = "+";
+
+            });
+
+            // باز کردن سؤال انتخاب‌شده
+
+            if (!isOpen) {
+
+                item.classList.add("open");
+
+                question.setAttribute("aria-expanded", "true");
+
+                item.querySelector(".faq-icon").textContent = "×";
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+	
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const gallery = document.getElementById("aramisGallery");
+
+    if (!gallery) return;
+
+    const track = gallery.querySelector("#galleryTrack");
+    const slides = gallery.querySelectorAll(".gallery-slide");
+
+    const prevBtn = gallery.querySelector("#galleryPrev");
+    const nextBtn = gallery.querySelector("#galleryNext");
+
+    const thumbnails = gallery.querySelectorAll(".gallery-thumbnail");
+    const dots = gallery.querySelectorAll(".gallery-dot");
+
+    let currentIndex = 0;
+
+    /* تغییر تصویر اصلی */
+
+    function updateGallery(index) {
+
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+
+        if (index >= slides.length) {
+            index = 0;
+        }
+
+        currentIndex = index;
+
+        /*
+        جابه‌جایی نوار تصاویر
+        */
+
+        track.style.transform =
+            "translateX(-" + (currentIndex * 100) + "%)";
+
+
+        /*
+        فعال کردن تصویر کوچک
+        */
+
+        thumbnails.forEach(function (thumbnail, i) {
+
+            thumbnail.classList.toggle(
+                "active",
+                i === currentIndex
+            );
+
+        });
+
+
+        /*
+        فعال کردن نقاط راهنما
+        */
+
+        dots.forEach(function (dot, i) {
+
+            dot.classList.toggle(
+                "active",
+                i === currentIndex
+            );
+
+        });
+
+    }
+
+
+    /* کلیک روی تصاویر کوچک */
+
+    thumbnails.forEach(function (thumbnail, index) {
+
+        thumbnail.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            updateGallery(index);
+
+        });
+
+    });
+
+
+    /* کلیک روی نقاط */
+
+    dots.forEach(function (dot, index) {
+
+        dot.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            updateGallery(index);
+
+        });
+
+    });
+
+
+    /* تصویر قبلی */
+
+    prevBtn.addEventListener("click", function () {
+
+        updateGallery(currentIndex - 1);
+
+    });
+
+
+    /* تصویر بعدی */
+
+    nextBtn.addEventListener("click", function () {
+
+        updateGallery(currentIndex + 1);
+
+    });
+
+
+    /* مقدار اولیه */
+
+    updateGallery(0);
+
+});
+
+</script>
 
 </body>
 
